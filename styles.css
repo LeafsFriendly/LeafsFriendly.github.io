@@ -233,6 +233,7 @@ button:active {
 
     .info_box {
         width: 150px;
+        font-size: 0.5rem;
     }
 
     select {
@@ -253,7 +254,7 @@ button:active {
 
     .info_box {
         width: 125px;
-        font-size: 0.25em;
+        font-size: 0.43rem;
     }
 
     select {
@@ -261,7 +262,7 @@ button:active {
     }
 
     #cap_info {
-        font-size: 0.4em;
+        font-size: 0.3em;
     }
 
 }
