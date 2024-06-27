@@ -18,8 +18,10 @@ h2 {
     background-color: #003089;
     margin: 0;
     padding: 10px;
+}
 
-
+h3 {
+    margin-left: 0.6%;
 }
 
 #cap_info {
@@ -222,6 +224,10 @@ button:active {
 #reset_button:active {
     background-color: #fb8f8f;
     margin-top: 5px;
+}
+
+a {
+    color: white;
 }
 
 

@@ -66,6 +66,13 @@ var knies_matthew_birthday = '2002-10-17';
 var holmberg_pontus_birthday = '1999-03-09';
 var cowan_easton_birthday = '2005-05-20';
 var minten_fraser_birthday = '2004-07-05';
+var grebyonkin_nikita_birthday = '2003-05-02';
+var hirvonen_roni_birthday = '2002-01-10';
+var quillan_jacob_birthday = '2002-02-02';
+var tverberg_ryan_birthday = '2002-01-30';
+var kressler_braeden_birthday = '2003-01-05';
+var voit_ty_birthday = '2003-06-10';
+var abruzzese_nick_birthday = '1999-06-04';
 
 var rielly_morgan_birthday = '1994-03-09';
 var mccabe_jake_birthday = '1993-10-12';
@@ -73,10 +80,17 @@ var benoit_simon_birthday = '1998-09-19';
 var timmins_conor_birthday = '1998-09-18';
 var webber_cade_birthday = '2001-01-05';
 var niemela_topi_birthday = '2002-03-25';
+var rifai_marshall_birthday = '1998-03-16';
+var mattinen_nicolas_birthday = '1998-03-05';
+var villeneuve_william_birthday = '2002-03-20';
+var kokkonen_mikko_birthday = '2001-01-18';
+var chadwick_noah_birthday = '2005-05-10';
 
 
 var woll_joseph_birthday = '1998-07-12';
 var hildeby_dennis_birthday = '2001-08-19';
+var akhtiamov_artur_birthday = '2001-10-31';
+var peksa_vyacheslav_birthday = '2002-08-27';
 
 //---------------------------------------------------------------------------------
 
@@ -110,6 +124,13 @@ var knies_matthew_age = calculateAge(knies_matthew_birthday);
 var holmberg_pontus_age = calculateAge(holmberg_pontus_birthday);
 var cowan_easton_age = calculateAge(cowan_easton_birthday);
 var minten_fraser_age = calculateAge(minten_fraser_birthday);
+var grebyonkin_nikita_age = calculateAge(grebyonkin_nikita_birthday);
+var hirvonen_roni_age = calculateAge(hirvonen_roni_birthday);
+var quillan_jacob_age = calculateAge(quillan_jacob_birthday);
+var tverberg_ryan_age = calculateAge(tverberg_ryan_birthday);
+var kressler_braeden_age = calculateAge(kressler_braeden_birthday);
+var voit_ty_age = calculateAge(voit_ty_birthday);
+var abruzzese_nick_age = calculateAge(abruzzese_nick_birthday);
 
 var rielly_morgan_age = calculateAge(rielly_morgan_birthday);
 var mccabe_jake_age = calculateAge(mccabe_jake_birthday);
@@ -117,9 +138,16 @@ var benoit_simon_age = calculateAge(benoit_simon_birthday);
 var timmins_conor_age = calculateAge(timmins_conor_birthday);
 var webber_cade_age = calculateAge(webber_cade_birthday);
 var niemela_topi_age = calculateAge(niemela_topi_birthday);
+var rifai_marshall_age = calculateAge(rifai_marshall_birthday);
+var mattinen_nicolas_age = calculateAge(mattinen_nicolas_birthday);
+var villeneuve_william_age = calculateAge(villeneuve_william_birthday);
+var kokkonen_mikko_age = calculateAge(kokkonen_mikko_birthday);
+var chadwick_noah_age = calculateAge(chadwick_noah_birthday);
 
 var woll_joseph_age = calculateAge(woll_joseph_birthday);
 var hildeby_dennis_age = calculateAge(hildeby_dennis_birthday);
+var akhtiamov_artur_age = calculateAge(akhtiamov_artur_birthday);
+var peksa_vyacheslav_age = calculateAge(peksa_vyacheslav_birthday);
 
 
 
@@ -139,6 +167,13 @@ var knies_matthew = new Player("Matthew Knies", 925000, 0, 1, "RFA", "LW", knies
 var holmberg_pontus = new Player("Pontus Holmberg", 800000, 0, 1, "RFA (Arb)", "C", holmberg_pontus_age, "LH", "None");
 var cowan_easton = new Player("Easton Cowan", 904667, 0, 3, "RFA", "LW", cowan_easton_age, "LH", "None");
 var minten_fraser = new Player("Fraser Minten", 816667, 0, 3, "RFA", "C", minten_fraser_age, "LH", "None");
+var grebyonkin_nikita = new Player("Nikita Grebyonkin", 875000, 0, 2, "10.2c", "RW", grebyonkin_nikita_age, "LH", "None");
+var hirvonen_roni = new Player("Roni Hirvonen", 856667, 0, 1, "RFA", "LW", hirvonen_roni_age, "LH", "None");
+var quillan_jacob = new Player("Jacob Quillan", 875000, 0, 2, "RFA", "C", quillan_jacob_age, "LH", "None");
+var tverberg_ryan = new Player("Ryan Tverberg", 851667, 0, 2, "RFA", "RW", tverberg_ryan_age, "RH", "None");
+var kressler_braeden = new Player("Braeden Kressler", 800556, 0, 2, "RFA", "C", kressler_braeden_age, "RH", "None");
+var voit_ty = new Player("Ty Voit", 800556, 0, 2, "RFA", "LW", voit_ty_age, "RH", "None");
+var abruzzese_nick = new Player("Nick Abruzzese", 775000, 0, 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
 
 var rielly_morgan = new Player("Morgan Rielly", 7500000, 0, 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
 var mccabe_jake = new Player("Jake McCabe", 2000000, 0, 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
@@ -146,9 +181,17 @@ var benoit_simon = new Player("Simon Benoit", 1350000, 0, 3, "UFA", "LD", benoit
 var timmins_conor = new Player("Conor Timmins", 1100000, 0, 1, "RFA (Arb)", "RD", timmins_conor_age, "RH", "None");
 var webber_cade = new Player("Cade Webber", 875000, 0, 1, "10.2c", "LD", webber_cade_age, "LH", "None");
 var niemela_topi = new Player("Topi Niemela", 856667, 0, 1, "RFA", "RD", niemela_topi_age, "RH", "None");
+var rifai_marshall = new Player("Marshall Rifai", 775000, 0, 1, "UFA", "LD", rifai_marshall_age, "LH", "None");
+var mattinen_nicolas = new Player("Nicolas Mattinen", 775000, 0, 1, "UFA", "RD", mattinen_nicolas_age, "RH", "None");
+var villeneuve_william = new Player("William Villeneuve", 817778, 0, 1, "RFA", "RD", villeneuve_william_age, "RH", "None");
+var kokkonen_mikko = new Player("Mikko Kokkonen", 846667, 0, 1, "RFA", "LD", kokkonen_mikko_age, "LH", "None");
+var chadwick_noah = new Player("Noah Chadwick", 826111, 0, 3, "RFA", "LD", chadwick_noah_age, "LH", "None");
 
 var woll_joseph = new Player("Joseph Woll", 766667, 0, 1, "RFA (Arb)", "G", woll_joseph_age, "LH", "None");
 var hildeby_dennis = new Player("Dennis Hildeby", 843333, 0, 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
+var akhtiamov_artur = new Player("Artur Akhtiamov", 851667, 0, 2, "RFA", "G", akhtiamov_artur_age, "LH", "None");
+var peksa_vyacheslav = new Player("Vyacheslav Peksa", 851667, 0, 2, "RFA", "G", peksa_vyacheslav_age, "LH", "None");
+
 
 //Step 4 of 5
 
@@ -173,6 +216,20 @@ player_list.push(woll_joseph);
 player_list.push(hildeby_dennis);
 player_list.push(webber_cade);
 player_list.push(niemela_topi);
+player_list.push(grebyonkin_nikita);
+player_list.push(hirvonen_roni);
+player_list.push(quillan_jacob);
+player_list.push(tverberg_ryan);
+player_list.push(kressler_braeden);
+player_list.push(voit_ty);
+player_list.push(abruzzese_nick);
+player_list.push(rifai_marshall);
+player_list.push(mattinen_nicolas);
+player_list.push(villeneuve_william);
+player_list.push(kokkonen_mikko);
+player_list.push(chadwick_noah);
+player_list.push(akhtiamov_artur);
+player_list.push(peksa_vyacheslav);
 
 //------------------------------- PLAYER SELECT OPTIONS---------------------------------------------
 
@@ -199,6 +256,13 @@ function populateSelects(selectId) {
                         <option value="Pontus Holmberg">Pontus Holmberg</option>
                         <option value="Easton Cowan">Easton Cowan</option>
                         <option value="Fraser Minten">Fraser Minten</option>
+                        <option value="Nikita Grebyonkin">Nikita Grebyonkin</option>
+                        <option value="Roni Hirvonen">Roni Hirvonen</option>
+                        <option value="Jacob Quillan">Jacob Quillan</option>
+                        <option value="Ryan Tverberg">Ryan Tverberg</option>
+                        <option value="Braeden Kressler">Braeden Kressler</option>
+                        <option value="Ty Voit">Ty Voit</option>
+                        <option value="Nick Abruzzese">Nick Abruzzese</option>
                     </optgroup>
 
                     <optgroup label="Defensemen">
@@ -208,12 +272,22 @@ function populateSelects(selectId) {
                         <option value="Conor Timmins">Conor Timmins</option>
                         <option value="Cade Webber">Cade Webber</option>
                         <option value="Topi Niemela">Topi Niemela</option>
+
+                        <option value="Marshall Rifai">Marshall Rifai</option>
+                        <option value="Nicolas Mattinen">Nicolas Mattinen</option>
+                        <option value="William Villeneuve">William Villeneuve</option>
+                        <option value="Mikko Kokkonen">Mikko Kokkonen</option>
+                        <option value="Noah Chadwick">Noah Chadwick</option>
                     </optgroup>
 
                     <optgroup label="Goaltenders">
                         <option value="Joseph Woll">Joseph Woll</option>
                         <option value="Dennis Hildeby">Dennis Hildeby</option>
+                        <option value="Artur Akhtiamov">Artur Akhtiamov</option>
+                        <option value="Vyacheslav Peksa">Vyacheslav Peksa</option>
                     </optgroup>
+
+                    <optgroup label="Created Players"></optgroup>
                 </select>`;
 
 
