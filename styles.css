@@ -203,6 +203,9 @@ button:active {
         transform-origin: top;
       }
 
+    #create_a_player_h2 {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 612px){
@@ -221,6 +224,10 @@ button:active {
 
     #cap_info {
         font-size: 0.75em;
+    }
+
+    #create_a_player_h2 {
+        font-size: 1.1rem;
     }
 
 }
@@ -242,6 +249,10 @@ button:active {
 
     #cap_info {
         font-size: 0.7em;
+    }
+
+    #create_a_player_h2 {
+        font-size: 0.9rem;
     }
 
 }
@@ -266,6 +277,12 @@ button:active {
     }
 
 }
+
+#reset_button {
+    background-color: #bf0000;
+    margin-top: 5px;
+}
+
 
 
 

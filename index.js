@@ -2960,6 +2960,20 @@ function create_player_2() {
 
 }
 
+function reset_player() {
+
+    document.getElementById("create_name").value = "";
+    document.getElementById("create_salary").value = "775000";
+    document.getElementById("create_bonus").value = 0;
+    document.getElementById("create_term").value = 1;
+    document.getElementById("create_expiry").value = "UFA";
+    document.getElementById("create_position").value = "LW";
+    document.getElementById("create_age").value = "18";
+    document.getElementById("create_handed").value = "LH";
+    document.getElementById("create_clause").value = "None";
+
+}
+
 
 
 
