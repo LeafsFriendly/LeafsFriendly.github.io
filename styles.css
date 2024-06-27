@@ -44,7 +44,9 @@ h2 {
     font-size: 1.2em;
 }
 
-#forwards, #defence, #scratches {
+#forwards,
+#defence,
+#scratches {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -52,7 +54,10 @@ h2 {
     margin-right: 10%; */
 }
 
-.line, .pair, .goalies, .scratches {
+.line,
+.pair,
+.goalies,
+.scratches {
     display: flex;
     justify-content: space-evenly;
 }
@@ -115,7 +120,9 @@ label {
 
 
 
-#create_name, #create_salary, #create_bonus {
+#create_name,
+#create_salary,
+#create_bonus {
     width: 150px;
     text-align: center;
     border-radius: 5px;
@@ -126,7 +133,12 @@ label {
 }
 
 
-#create_position, #create_expiry, #create_handed, #create_clause, #create_age, #create_term {
+#create_position,
+#create_expiry,
+#create_handed,
+#create_clause,
+#create_age,
+#create_term {
     width: 120px;
     cursor: hover;
     text-align: center;
@@ -197,22 +209,38 @@ button:active {
     color: #00205b;
 }
 
-@media (max-width: 670px){
+#reset_button {
+    background-color: #bf0000;
+    margin-top: 5px;
+}
+
+#reset_button:hover {
+    background-color: #f93131;
+    margin-top: 5px;
+}
+
+#reset_button:active {
+    background-color: #fb8f8f;
+    margin-top: 5px;
+}
+
+
+@media (max-width: 670px) {
     body {
         transform: scale(0.9);
         transform-origin: top;
-      }
+    }
 
     #create_a_player_h2 {
         font-size: 1.3rem;
     }
 }
 
-@media (max-width: 612px){
+@media (max-width: 612px) {
     body {
         transform: scale(0.85);
         transform-origin: top;
-      }
+    }
 
     .info_box {
         width: 175px;
@@ -232,11 +260,11 @@ button:active {
 
 }
 
-@media (max-width: 535px){
+@media (max-width: 535px) {
     body {
         transform: scale(0.8);
         transform-origin: top;
-      }
+    }
 
     .info_box {
         width: 150px;
@@ -257,11 +285,11 @@ button:active {
 
 }
 
-@media (max-width: 460px){
+@media (max-width: 460px) {
     body {
         transform: scale(0.75);
         transform-origin: top;
-      }
+    }
 
     .info_box {
         width: 125px;
@@ -277,15 +305,3 @@ button:active {
     }
 
 }
-
-#reset_button {
-    background-color: #bf0000;
-    margin-top: 5px;
-}
-
-
-
-
-
-
-

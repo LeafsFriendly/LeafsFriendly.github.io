@@ -50,27 +50,107 @@ class Player {
 
 //-----------------------------------------PLAYER DATA BACKEND------------------------------------------
 
-var matthews_auston = new Player("Auston Matthews", 13250000, 0, 4, "UFA", "C", 26, "LH", "NMC");
-var tavares_john = new Player("John Tavares", 11000000, 0, 1, "UFA", "C", 33, "LH", "NMC");
-var nylander_william = new Player("William Nylander", 11500000, 0, 8, "UFA", "RW", 28, "RH", "NMC");
-var marner_mitchell = new Player("Mitchell Marner", 10903000, 0, 1, "UFA", "RW", 27, "RH", "NMC");
-var kampf_david = new Player("David Kampf", 2400000, 0, 3, "UFA", "C", 29, "LH", "M-NTC");
-var jarnkrok_calle = new Player("Calle Jarnkrok", 2100000, 0, 2, "UFA", "RW", 32, "RH", "M-NTC");
-var reaves_ryan = new Player("Ryan Reaves", 1350000, 0, 2, "UFA", "RW", 37, "RH", "None");
-var mcmann_bobby = new Player("Bobby McMann", 1350000, 0, 2, "UFA", "LW", 28, "LH", "None");
-var knies_matthew = new Player("Matthew Knies", 925000, 0, 1, "RFA", "LW", 21, "LH", "None");
-var holmberg_pontus = new Player("Pontus Holmberg", 800000, 0, 1, "RFA (Arb)", "C", 25, "LH", "None");
-var cowan_easton = new Player("Easton Cowan", 904667, 0, 3, "RFA", "LW", 19, "LH", "None");
-var minten_fraser = new Player("Fraser Minten", 816667, 0, 3, "RFA", "C", 19, "LH", "None");
+//Player Age in YYYY-MM-DD Format Only
 
-var rielly_morgan = new Player("Morgan Rielly", 7500000, 0, 6, "UFA", "LD", 30, "LH", "NMC");
-var mccabe_jake = new Player("Jake McCabe", 2000000, 0, 1, "UFA", "LD", 30, "LH", "M-NTC");
-var benoit_simon = new Player("Simon Benoit", 1350000, 0, 3, "UFA", "LD", 25, "LH", "None");
-var timmins_conor = new Player("Conor Timmins", 1100000, 0, 1, "RFA (Arb)", "RD", 25, "RH", "None");
-var webber_cade = new Player("Cade Webber", 875000, 0, 1, "10.2c", "LD", 23, "LH", "None");
+//Step 1 of 5
 
-var woll_joseph = new Player("Joseph Woll", 766667, 0, 1, "RFA (Arb)", "G", 25, "LH", "None");
-var hildeby_dennis = new Player("Dennis Hildeby", 843333, 0, 1, "RFA", "G", 22, "LH", "None");
+var matthews_auston_birthday = '1997-09-17';
+var tavares_john_birthday = '1990-09-20';
+var nylander_william_birthday = '1996-05-01';
+var marner_mitch_birthday = '1997-05-05';
+var kampf_david_birthday = '1995-01-12';
+var jarnkrok_calle_birthday = '1991-09-25';
+var reaves_ryan_birthday = '1987-01-20';
+var mcmann_bobby_birthday = '1996-06-15';
+var knies_matthew_birthday = '2002-10-17';
+var holmberg_pontus_birthday = '1999-03-09';
+var cowan_easton_birthday = '2005-05-20';
+var minten_fraser_birthday = '2004-07-05';
+
+var rielly_morgan_birthday = '1994-03-09';
+var mccabe_jake_birthday = '1993-10-12';
+var benoit_simon_birthday = '1998-09-19';
+var timmins_conor_birthday = '1998-09-18';
+var webber_cade_birthday = '2001-01-05';
+var niemela_topi_birthday = '2002-03-25';
+
+
+var woll_joseph_birthday = '1998-07-12';
+var hildeby_dennis_birthday = '2001-08-19';
+
+//---------------------------------------------------------------------------------
+
+function calculateAge(birthday) {
+
+    var birthDate = new Date(birthday);
+    var today = new Date();
+    var age = today.getFullYear() - birthDate.getFullYear();
+
+    var monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+
+//-----------------------------------------------------------------------------------
+
+//Step 2 of 5
+
+var matthews_auston_age = calculateAge(matthews_auston_birthday);
+var tavares_john_age = calculateAge(tavares_john_birthday);
+var nylander_william_age = calculateAge(nylander_william_birthday);
+var marner_mitch_age = calculateAge(marner_mitch_birthday);
+var kampf_david_age = calculateAge(kampf_david_birthday);
+var jarnkrok_calle_age = calculateAge(jarnkrok_calle_birthday);
+var reaves_ryan_age = calculateAge(reaves_ryan_birthday);
+var mcmann_bobby_age = calculateAge(mcmann_bobby_birthday);
+var knies_matthew_age = calculateAge(knies_matthew_birthday);
+var holmberg_pontus_age = calculateAge(holmberg_pontus_birthday);
+var cowan_easton_age = calculateAge(cowan_easton_birthday);
+var minten_fraser_age = calculateAge(minten_fraser_birthday);
+
+var rielly_morgan_age = calculateAge(rielly_morgan_birthday);
+var mccabe_jake_age = calculateAge(mccabe_jake_birthday);
+var benoit_simon_age = calculateAge(benoit_simon_birthday);
+var timmins_conor_age = calculateAge(timmins_conor_birthday);
+var webber_cade_age = calculateAge(webber_cade_birthday);
+var niemela_topi_age = calculateAge(niemela_topi_birthday);
+
+var woll_joseph_age = calculateAge(woll_joseph_birthday);
+var hildeby_dennis_age = calculateAge(hildeby_dennis_birthday);
+
+
+
+//----------------------------------------------------------------------------------
+
+//Step 3 of 5
+
+var matthews_auston = new Player("Auston Matthews", 13250000, 0, 4, "UFA", "C", matthews_auston_age, "LH", "NMC");
+var tavares_john = new Player("John Tavares", 11000000, 0, 1, "UFA", "C", tavares_john_age, "LH", "NMC");
+var nylander_william = new Player("William Nylander", 11500000, 0, 8, "UFA", "RW", nylander_william_age, "RH", "NMC");
+var marner_mitchell = new Player("Mitchell Marner", 10903000, 0, 1, "UFA", "RW", marner_mitch_age, "RH", "NMC");
+var kampf_david = new Player("David Kampf", 2400000, 0, 3, "UFA", "C", kampf_david_age, "LH", "M-NTC");
+var jarnkrok_calle = new Player("Calle Jarnkrok", 2100000, 0, 2, "UFA", "RW", jarnkrok_calle_age, "RH", "M-NTC");
+var reaves_ryan = new Player("Ryan Reaves", 1350000, 0, 2, "UFA", "RW", reaves_ryan_age, "RH", "None");
+var mcmann_bobby = new Player("Bobby McMann", 1350000, 0, 2, "UFA", "LW", mcmann_bobby_age, "LH", "None");
+var knies_matthew = new Player("Matthew Knies", 925000, 0, 1, "RFA", "LW", knies_matthew_age, "LH", "None");
+var holmberg_pontus = new Player("Pontus Holmberg", 800000, 0, 1, "RFA (Arb)", "C", holmberg_pontus_age, "LH", "None");
+var cowan_easton = new Player("Easton Cowan", 904667, 0, 3, "RFA", "LW", cowan_easton_age, "LH", "None");
+var minten_fraser = new Player("Fraser Minten", 816667, 0, 3, "RFA", "C", minten_fraser_age, "LH", "None");
+
+var rielly_morgan = new Player("Morgan Rielly", 7500000, 0, 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
+var mccabe_jake = new Player("Jake McCabe", 2000000, 0, 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
+var benoit_simon = new Player("Simon Benoit", 1350000, 0, 3, "UFA", "LD", benoit_simon_age, "LH", "None");
+var timmins_conor = new Player("Conor Timmins", 1100000, 0, 1, "RFA (Arb)", "RD", timmins_conor_age, "RH", "None");
+var webber_cade = new Player("Cade Webber", 875000, 0, 1, "10.2c", "LD", webber_cade_age, "LH", "None");
+var niemela_topi = new Player("Topi Niemela", 856667, 0, 1, "RFA", "RD", niemela_topi_age, "RH", "None");
+
+var woll_joseph = new Player("Joseph Woll", 766667, 0, 1, "RFA (Arb)", "G", woll_joseph_age, "LH", "None");
+var hildeby_dennis = new Player("Dennis Hildeby", 843333, 0, 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
+
+//Step 4 of 5
 
 player_list = [];
 player_list.push(matthews_auston);
@@ -92,8 +172,11 @@ player_list.push(timmins_conor);
 player_list.push(woll_joseph);
 player_list.push(hildeby_dennis);
 player_list.push(webber_cade);
+player_list.push(niemela_topi);
 
 //------------------------------- PLAYER SELECT OPTIONS---------------------------------------------
+
+//Step 5 of 5
 
 
 function populateSelects(selectId) {
@@ -124,6 +207,7 @@ function populateSelects(selectId) {
                         <option value="Simon Benoit">Simon Benoit</option>
                         <option value="Conor Timmins">Conor Timmins</option>
                         <option value="Cade Webber">Cade Webber</option>
+                        <option value="Topi Niemela">Topi Niemela</option>
                     </optgroup>
 
                     <optgroup label="Goaltenders">
@@ -132,7 +216,7 @@ function populateSelects(selectId) {
                     </optgroup>
                 </select>`;
 
-    
+
     document.getElementById(selectId).innerHTML = selectOptions;
 
 }
