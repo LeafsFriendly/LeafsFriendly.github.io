@@ -73,6 +73,7 @@ var tverberg_ryan_birthday = '2002-01-30';
 var kressler_braeden_birthday = '2003-01-05';
 var voit_ty_birthday = '2003-06-10';
 var abruzzese_nick_birthday = '1999-06-04';
+var domi_max_birthday = '1995-05-02';
 
 var rielly_morgan_birthday = '1994-03-09';
 var mccabe_jake_birthday = '1993-10-12';
@@ -85,7 +86,7 @@ var mattinen_nicolas_birthday = '1998-03-05';
 var villeneuve_william_birthday = '2002-03-20';
 var kokkonen_mikko_birthday = '2001-01-18';
 var chadwick_noah_birthday = '2005-05-10';
-
+var liljegren_timothy_birthday = '1999-04-30';
 
 var woll_joseph_birthday = '1998-07-12';
 var hildeby_dennis_birthday = '2001-08-19';
@@ -131,6 +132,7 @@ var tverberg_ryan_age = calculateAge(tverberg_ryan_birthday);
 var kressler_braeden_age = calculateAge(kressler_braeden_birthday);
 var voit_ty_age = calculateAge(voit_ty_birthday);
 var abruzzese_nick_age = calculateAge(abruzzese_nick_birthday);
+var domi_max_age = calculateAge(domi_max_birthday);
 
 var rielly_morgan_age = calculateAge(rielly_morgan_birthday);
 var mccabe_jake_age = calculateAge(mccabe_jake_birthday);
@@ -143,6 +145,7 @@ var mattinen_nicolas_age = calculateAge(mattinen_nicolas_birthday);
 var villeneuve_william_age = calculateAge(villeneuve_william_birthday);
 var kokkonen_mikko_age = calculateAge(kokkonen_mikko_birthday);
 var chadwick_noah_age = calculateAge(chadwick_noah_birthday);
+var liljegren_timothy_age = calculateAge(liljegren_timothy_birthday);
 
 var woll_joseph_age = calculateAge(woll_joseph_birthday);
 var hildeby_dennis_age = calculateAge(hildeby_dennis_birthday);
@@ -174,6 +177,7 @@ var tverberg_ryan = new Player("Ryan Tverberg", 851667, 0, 2, "RFA", "RW", tverb
 var kressler_braeden = new Player("Braeden Kressler", 800556, 0, 2, "RFA", "C", kressler_braeden_age, "RH", "None");
 var voit_ty = new Player("Ty Voit", 800556, 0, 2, "RFA", "LW", voit_ty_age, "RH", "None");
 var abruzzese_nick = new Player("Nick Abruzzese", 775000, 0, 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
+var domi_max = new Player("Max Domi", 3750000, 0, 4, "UFA", "C", domi_max_age, "LH", "M-NTC");
 
 var rielly_morgan = new Player("Morgan Rielly", 7500000, 0, 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
 var mccabe_jake = new Player("Jake McCabe", 2000000, 0, 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
@@ -186,6 +190,7 @@ var mattinen_nicolas = new Player("Nicolas Mattinen", 775000, 0, 1, "UFA", "RD",
 var villeneuve_william = new Player("William Villeneuve", 817778, 0, 1, "RFA", "RD", villeneuve_william_age, "RH", "None");
 var kokkonen_mikko = new Player("Mikko Kokkonen", 846667, 0, 1, "RFA", "LD", kokkonen_mikko_age, "LH", "None");
 var chadwick_noah = new Player("Noah Chadwick", 826111, 0, 3, "RFA", "LD", chadwick_noah_age, "LH", "None");
+var liljegren_timothy = new Player("Timothy Liljegren", 3000000, 0, 2, "UFA", "RD", liljegren_timothy_age, "RH", "None");
 
 var woll_joseph = new Player("Joseph Woll", 766667, 0, 1, "RFA (Arb)", "G", woll_joseph_age, "LH", "None");
 var hildeby_dennis = new Player("Dennis Hildeby", 843333, 0, 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
@@ -230,6 +235,8 @@ player_list.push(kokkonen_mikko);
 player_list.push(chadwick_noah);
 player_list.push(akhtiamov_artur);
 player_list.push(peksa_vyacheslav);
+player_list.push(domi_max);
+player_list.push(liljegren_timothy);
 
 //------------------------------- PLAYER SELECT OPTIONS---------------------------------------------
 
@@ -248,6 +255,7 @@ function populateSelects(selectId) {
                         <option value="William Nylander">William Nylander</option>
                         <option value="John Tavares">John Tavares</option>
                         <option value="Mitchell Marner">Mitchell Marner</option>
+                        <option value="Max Domi">Max Domi</option>
                         <option value="David Kampf">David Kampf</option>
                         <option value="Calle Jarnkrok">Calle Jarnkrok</option>
                         <option value="Ryan Reaves">Ryan Reaves</option>
@@ -268,6 +276,7 @@ function populateSelects(selectId) {
                     <optgroup label="Defensemen">
                         <option value="Morgan Rielly">Morgan Rielly</option>
                         <option value="Jake McCabe">Jake McCabe</option>
+                        <option value="Timothy Liljegren">Timothy Liljegren</option>
                         <option value="Simon Benoit">Simon Benoit</option>
                         <option value="Conor Timmins">Conor Timmins</option>
                         <option value="Cade Webber">Cade Webber</option>
