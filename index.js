@@ -87,11 +87,16 @@ var villeneuve_william_birthday = '2002-03-20';
 var kokkonen_mikko_birthday = '2001-01-18';
 var chadwick_noah_birthday = '2005-05-10';
 var liljegren_timothy_birthday = '1999-04-30';
+var ekman_larsson_oliver_birthday = '1991-07-17';
+var tanev_christopher_birthday = '1989-12-20';
+var hakanpaa_jani_birthday = '1992-03-31';
 
 var woll_joseph_birthday = '1998-07-12';
 var hildeby_dennis_birthday = '2001-08-19';
 var akhtiamov_artur_birthday = '2001-10-31';
 var peksa_vyacheslav_birthday = '2002-08-27';
+var murray_matt_birthday = '1994-05-25';
+var stolarz_anthony_birthday = '1994-01-20';
 
 //---------------------------------------------------------------------------------
 
@@ -146,13 +151,16 @@ var villeneuve_william_age = calculateAge(villeneuve_william_birthday);
 var kokkonen_mikko_age = calculateAge(kokkonen_mikko_birthday);
 var chadwick_noah_age = calculateAge(chadwick_noah_birthday);
 var liljegren_timothy_age = calculateAge(liljegren_timothy_birthday);
+var ekman_larsson_oliver_age = calculateAge(ekman_larsson_oliver_birthday);
+var tanev_christopher_age = calculateAge(tanev_christopher_birthday);
+var hakanpaa_jani_age = calculateAge(hakanpaa_jani_birthday);
 
 var woll_joseph_age = calculateAge(woll_joseph_birthday);
 var hildeby_dennis_age = calculateAge(hildeby_dennis_birthday);
 var akhtiamov_artur_age = calculateAge(akhtiamov_artur_birthday);
 var peksa_vyacheslav_age = calculateAge(peksa_vyacheslav_birthday);
-
-
+var murray_matt_age = calculateAge(murray_matt_birthday);
+var stolarz_anthony_age = calculateAge(stolarz_anthony_birthday);
 
 //----------------------------------------------------------------------------------
 
@@ -191,11 +199,17 @@ var villeneuve_william = new Player("William Villeneuve", 817778, 0, 1, "RFA", "
 var kokkonen_mikko = new Player("Mikko Kokkonen", 846667, 0, 1, "RFA", "LD", kokkonen_mikko_age, "LH", "None");
 var chadwick_noah = new Player("Noah Chadwick", 826111, 0, 3, "RFA", "LD", chadwick_noah_age, "LH", "None");
 var liljegren_timothy = new Player("Timothy Liljegren", 3000000, 0, 2, "UFA", "RD", liljegren_timothy_age, "RH", "None");
+var ekman_larsson_oliver = new Player("Oliver Ekman-Larsson", 3500000, 0, 4, "UFA", "LD", ekman_larsson_oliver_age, "LH", "M-NTC");
+var tanev_christopher = new Player("Christopher Tanev", 4500000, 0, 6, "UFA", "RD", tanev_christopher_age, "RH", "NMC");
+var hakanpaa_jani = new Player("Jani Hakanpaa", 1500000, 0, 2, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
 
-var woll_joseph = new Player("Joseph Woll", 766667, 0, 1, "RFA (Arb)", "G", woll_joseph_age, "LH", "None");
+
+var woll_joseph = new Player("Joseph Woll", 766667, 0, 4, "UFA", "G", woll_joseph_age, "LH", "None");
 var hildeby_dennis = new Player("Dennis Hildeby", 843333, 0, 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
 var akhtiamov_artur = new Player("Artur Akhtiamov", 851667, 0, 2, "RFA", "G", akhtiamov_artur_age, "LH", "None");
 var peksa_vyacheslav = new Player("Vyacheslav Peksa", 851667, 0, 2, "RFA", "G", peksa_vyacheslav_age, "LH", "None");
+var murray_matt = new Player("Matt Murray", 875000, 0, 1, "UFA", "G", murray_matt_age, "LH", "None");
+var stolarz_anthony = new Player("Anthony Stolarz", 2500000, 0, 2, "UFA", "G", stolarz_anthony_age, "LH", "None");
 
 
 //Step 4 of 5
@@ -237,6 +251,11 @@ player_list.push(akhtiamov_artur);
 player_list.push(peksa_vyacheslav);
 player_list.push(domi_max);
 player_list.push(liljegren_timothy);
+player_list.push(ekman_larsson_oliver);
+player_list.push(tanev_christopher);
+player_list.push(hakanpaa_jani);
+player_list.push(murray_matt);
+player_list.push(stolarz_anthony);
 
 //------------------------------- PLAYER SELECT OPTIONS---------------------------------------------
 
@@ -275,13 +294,15 @@ function populateSelects(selectId) {
 
                     <optgroup label="Defensemen">
                         <option value="Morgan Rielly">Morgan Rielly</option>
+                        <option value="Christopher Tanev">Christopher Tanev</option>
+                        <option value="Oliver Ekman-Larsson">Oliver Ekman-Larsson</option>
                         <option value="Jake McCabe">Jake McCabe</option>
                         <option value="Timothy Liljegren">Timothy Liljegren</option>
+                        <option value="Jani Hakanpaa">Jani Hakanpaa</option>
                         <option value="Simon Benoit">Simon Benoit</option>
                         <option value="Conor Timmins">Conor Timmins</option>
                         <option value="Cade Webber">Cade Webber</option>
                         <option value="Topi Niemela">Topi Niemela</option>
-
                         <option value="Marshall Rifai">Marshall Rifai</option>
                         <option value="Nicolas Mattinen">Nicolas Mattinen</option>
                         <option value="William Villeneuve">William Villeneuve</option>
@@ -291,6 +312,8 @@ function populateSelects(selectId) {
 
                     <optgroup label="Goaltenders">
                         <option value="Joseph Woll">Joseph Woll</option>
+                        <option value="Anthony Stolarz">Anthony Stolarz</option>
+                        <option value="Matt Murray">Matt Murray</option>
                         <option value="Dennis Hildeby">Dennis Hildeby</option>
                         <option value="Artur Akhtiamov">Artur Akhtiamov</option>
                         <option value="Vyacheslav Peksa">Vyacheslav Peksa</option>
