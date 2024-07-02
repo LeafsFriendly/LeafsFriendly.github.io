@@ -74,6 +74,7 @@ var kressler_braeden_birthday = '2003-01-05';
 var voit_ty_birthday = '2003-06-10';
 var abruzzese_nick_birthday = '1999-06-04';
 var domi_max_birthday = '1995-05-02';
+var pare_cedric_birthday = '1999-01-24';
 
 var rielly_morgan_birthday = '1994-03-09';
 var mccabe_jake_birthday = '1993-10-12';
@@ -90,6 +91,8 @@ var liljegren_timothy_birthday = '1999-04-30';
 var ekman_larsson_oliver_birthday = '1991-07-17';
 var tanev_christopher_birthday = '1989-12-20';
 var hakanpaa_jani_birthday = '1992-03-31';
+var mermis_dakota_birthday = '1994-01-05';
+var myers_philippe_birthday = '1997-01-25';
 
 var woll_joseph_birthday = '1998-07-12';
 var hildeby_dennis_birthday = '2001-08-19';
@@ -138,6 +141,7 @@ var kressler_braeden_age = calculateAge(kressler_braeden_birthday);
 var voit_ty_age = calculateAge(voit_ty_birthday);
 var abruzzese_nick_age = calculateAge(abruzzese_nick_birthday);
 var domi_max_age = calculateAge(domi_max_birthday);
+var pare_cedric_age = calculateAge(pare_cedric_birthday);
 
 var rielly_morgan_age = calculateAge(rielly_morgan_birthday);
 var mccabe_jake_age = calculateAge(mccabe_jake_birthday);
@@ -154,6 +158,8 @@ var liljegren_timothy_age = calculateAge(liljegren_timothy_birthday);
 var ekman_larsson_oliver_age = calculateAge(ekman_larsson_oliver_birthday);
 var tanev_christopher_age = calculateAge(tanev_christopher_birthday);
 var hakanpaa_jani_age = calculateAge(hakanpaa_jani_birthday);
+var mermis_dakota_age = calculateAge(mermis_dakota_birthday);
+var myers_philippe_age = calculateAge(myers_philippe_birthday);
 
 var woll_joseph_age = calculateAge(woll_joseph_birthday);
 var hildeby_dennis_age = calculateAge(hildeby_dennis_birthday);
@@ -186,6 +192,7 @@ var kressler_braeden = new Player("Braeden Kressler", 800556, 0, 2, "RFA", "C", 
 var voit_ty = new Player("Ty Voit", 800556, 0, 2, "RFA", "LW", voit_ty_age, "RH", "None");
 var abruzzese_nick = new Player("Nick Abruzzese", 775000, 0, 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
 var domi_max = new Player("Max Domi", 3750000, 0, 4, "UFA", "C", domi_max_age, "LH", "M-NTC");
+var pare_cedric = new Player("Cedric Pare", 775000, 0, 1, "RFA", "C", pare_cedric_age, "LH", "None");
 
 var rielly_morgan = new Player("Morgan Rielly", 7500000, 0, 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
 var mccabe_jake = new Player("Jake McCabe", 2000000, 0, 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
@@ -202,6 +209,8 @@ var liljegren_timothy = new Player("Timothy Liljegren", 3000000, 0, 2, "UFA", "R
 var ekman_larsson_oliver = new Player("Oliver Ekman-Larsson", 3500000, 0, 4, "UFA", "LD", ekman_larsson_oliver_age, "LH", "M-NTC");
 var tanev_christopher = new Player("Christopher Tanev", 4500000, 0, 6, "UFA", "RD", tanev_christopher_age, "RH", "NMC");
 var hakanpaa_jani = new Player("Jani Hakanpaa", 1500000, 0, 2, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
+var mermis_dakota = new Player("Dakota Mermis", 775000, 0, 1, "UFA", "LD", mermis_dakota_age, "LH", "None");
+var myers_philippe = new Player("Philippe Myers", 775000, 0, 1, "UFA", "RD", myers_philippe_age, "RH", "None");
 
 
 var woll_joseph = new Player("Joseph Woll", 766667, 0, 4, "UFA", "G", woll_joseph_age, "LH", "None");
@@ -256,6 +265,9 @@ player_list.push(tanev_christopher);
 player_list.push(hakanpaa_jani);
 player_list.push(murray_matt);
 player_list.push(stolarz_anthony);
+player_list.push(pare_cedric);
+player_list.push(mermis_dakota);
+player_list.push(myers_philippe);
 
 //------------------------------- PLAYER SELECT OPTIONS---------------------------------------------
 
@@ -290,6 +302,7 @@ function populateSelects(selectId) {
                         <option value="Braeden Kressler">Braeden Kressler</option>
                         <option value="Ty Voit">Ty Voit</option>
                         <option value="Nick Abruzzese">Nick Abruzzese</option>
+                        <option value="Cedric Pare">Cedric Pare</option>
                     </optgroup>
 
                     <optgroup label="Defensemen">
@@ -302,6 +315,8 @@ function populateSelects(selectId) {
                         <option value="Simon Benoit">Simon Benoit</option>
                         <option value="Conor Timmins">Conor Timmins</option>
                         <option value="Cade Webber">Cade Webber</option>
+                        <option value="Dakota Mermis">Dakota Mermis</option>
+                        <option value="Philippe Myers">Philippe Myers</option>
                         <option value="Topi Niemela">Topi Niemela</option>
                         <option value="Marshall Rifai">Marshall Rifai</option>
                         <option value="Nicolas Mattinen">Nicolas Mattinen</option>
@@ -351,6 +366,98 @@ populateSelects("s1_populate");
 populateSelects("s2_populate");
 populateSelects("s3_populate");
 
+//--------------------------------Prefill RFA or Reserve Player----------------------------------
+
+
+//Step 1/5
+
+var robertson_nicholas_birthday = '2001-09-11';
+var dewar_connor_birthday = '1999-06-26';
+var steeves_alex_birthday = '1999-12-10';
+
+var danford_ben_birthday = '2006-02-06';
+
+
+//Step 2/5
+
+var robertson_nicholas_age = calculateAge(robertson_nicholas_birthday);
+var dewar_connor_age = calculateAge(dewar_connor_birthday);
+var steeves_alex_age = calculateAge(steeves_alex_birthday);
+
+var danford_ben_age = calculateAge(danford_ben_birthday);
+
+//Step 3/5
+
+var robertson_nicholas = new Player("Nicholas Robertson", 775000, 0, 1, "RFA", "LW", robertson_nicholas_age, "LH", "None");
+var dewar_connor = new Player("Connor Dewar", 775000, 0, 1, "RFA", "LW", dewar_connor_age, "LH", "None");
+var steeves_alex = new Player("Alex Steeves", 775000, 0, 1, "RFA", "LW", steeves_alex_age, "LH", "None");
+
+var danford_ben = new Player("Ben Danford", 775000, 0, 1, "RFA", "RD", danford_ben_age, "RH", "None");
+
+//Step 4/5
+
+prefill_list = [];
+prefill_list.push(robertson_nicholas);
+prefill_list.push(danford_ben);
+prefill_list.push(dewar_connor);
+prefill_list.push(steeves_alex);
+
+
+//Step 5/5
+
+const prefillOptions = `
+<select id="prefill">
+<option value="Select">Select</option>
+<optgroup label="RFA">
+    <option value="Nicholas Robertson">Nicholas Robertson</option>
+    <option value="Connor Dewar">Connor Dewar</option>
+    <option value="Alex Steeves">Alex Steeves</option>
+
+</optgroup>
+
+<optgroup label="Reserve">
+    <option value="Ben Danford">Ben Danford</option>
+</optgroup>
+</select>`;
+
+
+document.getElementById("prefill_populate").innerHTML = prefillOptions;
+
+
+//-----
+
+document.getElementById("prefill");
+prefill.addEventListener('change', prefillSelects);
+
+
+function prefillSelects() {
+
+    var selected_player_key = prefill.value;
+    var selected_player;
+
+    for (let i = 0; i < prefill_list.length; i++) {
+        if (prefill_list[i].get_name() == selected_player_key) {
+            selected_player = prefill_list[i];
+        }
+    }
+
+    if (selected_player_key == "Select") {
+        reset_player();
+
+    } else {
+
+        document.getElementById("create_name").value = selected_player.get_name();
+        document.getElementById("create_salary").value = selected_player.get_salary();
+        document.getElementById("create_bonus").value = selected_player.get_bonus();
+        document.getElementById("create_term").value = selected_player.get_term();
+        document.getElementById("create_expiry").value = selected_player.get_expiry();
+        document.getElementById("create_position").value = selected_player.get_position();
+        document.getElementById("create_age").value = selected_player.get_age();
+        document.getElementById("create_handed").value = selected_player.get_handed();
+        document.getElementById("create_clause").value = selected_player.get_clause();
+    }
+
+}
 
 //--------------------------------INITIALIZE CAP SPACE------------------------------------------
 

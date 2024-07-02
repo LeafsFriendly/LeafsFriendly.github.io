@@ -198,7 +198,8 @@ button:active {
 
 #create_a_player_heading {
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 #create_a_player_h2 {
@@ -228,6 +229,15 @@ button:active {
 
 a {
     color: white;
+}
+
+#prefill_heading {
+    text-align: center;
+}
+
+#prefill_heading select {
+    margin-top: 6px;
+    border-radius: 5px 5px 5px 5px;
 }
 
 
