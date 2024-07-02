@@ -248,7 +248,11 @@ a {
     }
 
     #create_a_player_h2 {
-        font-size: 1.3rem;
+        transform: scale(0.75);
+    }
+
+    #prefill_populate {
+        transform: scale(0.75);
     }
 }
 
@@ -271,7 +275,11 @@ a {
     }
 
     #create_a_player_h2 {
-        font-size: 1.1rem;
+        transform: scale(0.75);
+    }
+
+    #prefill_populate {
+        transform: scale(0.75);
     }
 
 }
@@ -296,7 +304,11 @@ a {
     }
 
     #create_a_player_h2 {
-        font-size: 0.9rem;
+        transform: scale(0.75);
+    }
+
+    #prefill_populate {
+        transform: scale(0.75);
     }
 
 }
@@ -318,6 +330,14 @@ a {
 
     #cap_info {
         font-size: 0.3em;
+    }
+
+    #create_a_player_h2 {
+        transform: scale(0.75);
+    }
+
+    #prefill_populate {
+        transform: scale(0.75);
     }
 
 }
