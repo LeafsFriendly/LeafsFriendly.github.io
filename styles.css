@@ -247,6 +247,10 @@ a {
         transform-origin: top;
     }
 
+    #create_player {
+        transform: scale(0.75);
+    }
+
     #create_a_player_h2 {
         transform: scale(0.75);
     }
@@ -272,6 +276,10 @@ a {
 
     #cap_info {
         font-size: 0.75em;
+    }
+
+    #create_player {
+        transform: scale(0.75);
     }
 
     #create_a_player_h2 {
@@ -303,12 +311,16 @@ a {
         font-size: 0.7em;
     }
 
-    #create_a_player_h2 {
+    #create_player {
         transform: scale(0.75);
     }
 
+    #create_a_player_h2 {
+        transform: scale(0.7);
+    }
+
     #prefill_populate {
-        transform: scale(0.75);
+        transform: scale(0.7);
     }
 
 }
@@ -332,12 +344,12 @@ a {
         font-size: 0.3em;
     }
 
-    #create_a_player_h2 {
-        transform: scale(0.75);
+    #create_player {
+        display: flex;
+        flex-direction: column;
     }
 
-    #prefill_populate {
-        transform: scale(0.75);
-    }
+
+ 
 
 }
