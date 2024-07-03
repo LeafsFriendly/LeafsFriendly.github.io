@@ -259,7 +259,7 @@ a {
         transform: scale(0.75);
     }
 
-    #lw1_populate,
+    /* #lw1_populate,
     #c1_populate,
     #rw1_populate,
     #lw2_populate,
@@ -282,8 +282,8 @@ a {
     #s1_populate,
     #s2_populate,
     #s3_populate{
-        font-size: 0.6rem;
-    }
+        font-size: 10px;
+    } */
 }
 
 @media (max-width: 612px) {
@@ -316,31 +316,7 @@ a {
         transform: scale(0.75);
     }
 
-    #lw1_populate,
-    #c1_populate,
-    #rw1_populate,
-    #lw2_populate,
-    #c2_populate,
-    #rw2_populate,
-    #lw3_populate,
-    #c3_populate,
-    #rw3_populate,
-    #lw4_populate,
-    #c4_populate,
-    #rw4_populate,
-    #ld1_populate,
-    #rd1_populate,
-    #ld2_populate,
-    #rd2_populate,
-    #ld3_populate,
-    #rd3_populate,
-    #g1_populate,
-    #g2_populate,
-    #s1_populate,
-    #s2_populate,
-    #s3_populate{
-        font-size: 0.55rem;
-    }
+
 
 }
 
@@ -375,31 +351,6 @@ a {
         transform: scale(0.7);
     }
 
-    #lw1_populate,
-    #c1_populate,
-    #rw1_populate,
-    #lw2_populate,
-    #c2_populate,
-    #rw2_populate,
-    #lw3_populate,
-    #c3_populate,
-    #rw3_populate,
-    #lw4_populate,
-    #c4_populate,
-    #rw4_populate,
-    #ld1_populate,
-    #rd1_populate,
-    #ld2_populate,
-    #rd2_populate,
-    #ld3_populate,
-    #rd3_populate,
-    #g1_populate,
-    #g2_populate,
-    #s1_populate,
-    #s2_populate,
-    #s3_populate{
-        font-size: 0.5rem;
-    }
 
 }
 
@@ -427,31 +378,6 @@ a {
         flex-direction: column;
     }
 
-    #lw1_populate,
-    #c1_populate,
-    #rw1_populate,
-    #lw2_populate,
-    #c2_populate,
-    #rw2_populate,
-    #lw3_populate,
-    #c3_populate,
-    #rw3_populate,
-    #lw4_populate,
-    #c4_populate,
-    #rw4_populate,
-    #ld1_populate,
-    #rd1_populate,
-    #ld2_populate,
-    #rd2_populate,
-    #ld3_populate,
-    #rd3_populate,
-    #g1_populate,
-    #g2_populate,
-    #s1_populate,
-    #s2_populate,
-    #s3_populate{
-        font-size: 0.45rem;
-    }
 
 
  
