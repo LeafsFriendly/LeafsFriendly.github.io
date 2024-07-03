@@ -258,6 +258,32 @@ a {
     #prefill_populate {
         transform: scale(0.75);
     }
+
+    #lw1_populate,
+    #c1_populate,
+    #rw1_populate,
+    #lw2_populate,
+    #c2_populate,
+    #rw2_populate,
+    #lw3_populate,
+    #c3_populate,
+    #rw3_populate,
+    #lw4_populate,
+    #c4_populate,
+    #rw4_populate,
+    #ld1_populate,
+    #rd1_populate,
+    #ld2_populate,
+    #rd2_populate,
+    #ld3_populate,
+    #rd3_populate,
+    #g1_populate,
+    #g2_populate,
+    #s1_populate,
+    #s2_populate,
+    #s3_populate{
+        font-size: 0.95em;
+    }
 }
 
 @media (max-width: 612px) {
@@ -288,6 +314,32 @@ a {
 
     #prefill_populate {
         transform: scale(0.75);
+    }
+
+    #lw1_populate,
+    #c1_populate,
+    #rw1_populate,
+    #lw2_populate,
+    #c2_populate,
+    #rw2_populate,
+    #lw3_populate,
+    #c3_populate,
+    #rw3_populate,
+    #lw4_populate,
+    #c4_populate,
+    #rw4_populate,
+    #ld1_populate,
+    #rd1_populate,
+    #ld2_populate,
+    #rd2_populate,
+    #ld3_populate,
+    #rd3_populate,
+    #g1_populate,
+    #g2_populate,
+    #s1_populate,
+    #s2_populate,
+    #s3_populate{
+        font-size: 0.85em;
     }
 
 }
@@ -323,6 +375,32 @@ a {
         transform: scale(0.7);
     }
 
+    #lw1_populate,
+    #c1_populate,
+    #rw1_populate,
+    #lw2_populate,
+    #c2_populate,
+    #rw2_populate,
+    #lw3_populate,
+    #c3_populate,
+    #rw3_populate,
+    #lw4_populate,
+    #c4_populate,
+    #rw4_populate,
+    #ld1_populate,
+    #rd1_populate,
+    #ld2_populate,
+    #rd2_populate,
+    #ld3_populate,
+    #rd3_populate,
+    #g1_populate,
+    #g2_populate,
+    #s1_populate,
+    #s2_populate,
+    #s3_populate{
+        font-size: 0.7em;
+    }
+
 }
 
 @media (max-width: 460px) {
@@ -347,6 +425,32 @@ a {
     #create_player {
         display: flex;
         flex-direction: column;
+    }
+
+    #lw1_populate,
+    #c1_populate,
+    #rw1_populate,
+    #lw2_populate,
+    #c2_populate,
+    #rw2_populate,
+    #lw3_populate,
+    #c3_populate,
+    #rw3_populate,
+    #lw4_populate,
+    #c4_populate,
+    #rw4_populate,
+    #ld1_populate,
+    #rd1_populate,
+    #ld2_populate,
+    #rd2_populate,
+    #ld3_populate,
+    #rd3_populate,
+    #g1_populate,
+    #g2_populate,
+    #s1_populate,
+    #s2_populate,
+    #s3_populate{
+        font-size: 0.6em;
     }
 
 
