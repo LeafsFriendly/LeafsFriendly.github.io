@@ -3271,6 +3271,69 @@ function reset_player() {
 
 }
 
+//--------------------- SET SELECTED/DEFAULT PLAYERS --------------------------
+
+document.addEventListener('DOMContentLoaded', set_selected);
+
+function set_selected() {
+    document.getElementById('lw1').value = "Matthew Knies";
+    update_lw1();
+    document.getElementById('c1').value = "Auston Matthews";
+    update_c1();
+    document.getElementById('rw1').value = "Mitchell Marner";
+    update_rw1();
+    //
+    document.getElementById('lw2').value = "Bobby McMann";
+    update_lw2();
+    document.getElementById('c2').value = "John Tavares";
+    update_c2();
+    document.getElementById('rw2').value = "William Nylander";
+    update_rw2();
+    //
+    document.getElementById('lw3').value = "Easton Cowan";
+    update_lw3();
+    document.getElementById('c3').value = "Max Domi";
+    update_c3();
+    document.getElementById('rw3').value = "Calle Jarnkrok";
+    update_rw3();
+    //
+    document.getElementById('lw4').value = "Pontus Holmberg";
+    update_lw4();
+    document.getElementById('c4').value = "David Kampf";
+    update_c4();
+    document.getElementById('rw4').value = "Ryan Reaves";
+    update_rw4();
+    //
+    document.getElementById('ld1').value = "Morgan Rielly";
+    update_ld1();
+    document.getElementById('rd1').value = "Christopher Tanev";
+    update_rd1();
+    //
+    document.getElementById('ld2').value = "Oliver Ekman-Larsson";
+    update_ld2();
+    document.getElementById('rd2').value = "Jake McCabe";
+    update_rd2();
+    //
+    document.getElementById('ld3').value = "Simon Benoit";
+    update_ld3();
+    document.getElementById('rd3').value = "Timothy Liljegren";
+    update_rd3();
+    //
+    document.getElementById('g1').value = "Joseph Woll";
+    update_g1();
+    document.getElementById('g2').value = "Anthony Stolarz";
+    update_g2();
+    //
+    document.getElementById('s1').value = "Select";
+    update_s1();
+    document.getElementById('s2').value = "Select";
+    update_s2();
+    document.getElementById('s3').value = "Select";
+    update_s3();
+}
+
+
+
 
 
 
