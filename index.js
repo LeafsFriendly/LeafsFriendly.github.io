@@ -477,7 +477,14 @@ const cap_space = Number(cap_space_raw.innerHTML);
 
 cap_space_raw.textContent = cap_ceiling - overages;
 
+function calculate_cap_space() {
 
+    const cap_hit = document.getElementById("cap_hit").innerHTML;
+    const number_cap_hit = Number(cap_hit);
+
+    const new_cap_space = cap_ceiling - number_cap_hit;
+    document.getElementById("cap_space").textContent = new_cap_space;
+}
 
 //------------------------------ LW1 --------------------------------------
 
@@ -523,9 +530,7 @@ function update_lw1() {
             const new_bonuses = Number(bonuses) - Number(lw1_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(lw1_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw1_last_player = null;
         }
@@ -568,9 +573,7 @@ function update_lw1() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw1_last_player = selected_player;
         }
@@ -584,9 +587,7 @@ function update_lw1() {
             const new_bonuses = Number(bonuses) - Number(lw1_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(lw1_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw1_last_player = selected_player;
         }
@@ -637,9 +638,7 @@ function update_c1() {
             const new_bonuses = Number(bonuses) - Number(c1_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(c1_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c1_last_player = null;
         }
@@ -682,9 +681,7 @@ function update_c1() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c1_last_player = selected_player;
         }
@@ -698,9 +695,7 @@ function update_c1() {
             const new_bonuses = Number(bonuses) - Number(c1_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(c1_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c1_last_player = selected_player;
         }
@@ -751,9 +746,7 @@ function update_rw1() {
             const new_bonuses = Number(bonuses) - Number(rw1_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rw1_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw1_last_player = null;
         }
@@ -796,9 +789,7 @@ function update_rw1() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw1_last_player = selected_player;
         }
@@ -812,9 +803,7 @@ function update_rw1() {
             const new_bonuses = Number(bonuses) - Number(rw1_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rw1_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw1_last_player = selected_player;
         }
@@ -865,9 +854,7 @@ function update_lw2() {
             const new_bonuses = Number(bonuses) - Number(lw2_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(lw2_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw2_last_player = null;
         }
@@ -910,9 +897,7 @@ function update_lw2() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw2_last_player = selected_player;
         }
@@ -926,9 +911,7 @@ function update_lw2() {
             const new_bonuses = Number(bonuses) - Number(lw2_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(lw2_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw2_last_player = selected_player;
         }
@@ -979,9 +962,7 @@ function update_c2() {
             const new_bonuses = Number(bonuses) - Number(c2_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(c2_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c2_last_player = null;
         }
@@ -1024,9 +1005,7 @@ function update_c2() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c2_last_player = selected_player;
         }
@@ -1040,9 +1019,7 @@ function update_c2() {
             const new_bonuses = Number(bonuses) - Number(c2_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(c2_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c2_last_player = selected_player;
         }
@@ -1093,9 +1070,7 @@ function update_rw2() {
             const new_bonuses = Number(bonuses) - rw2_last_player.get_bonus();
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + rw2_last_player.get_salary();
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw2_last_player = null;
         }
@@ -1138,9 +1113,7 @@ function update_rw2() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw2_last_player = selected_player;
         }
@@ -1154,9 +1127,7 @@ function update_rw2() {
             const new_bonuses = Number(bonuses) - Number(rw2_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rw2_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw2_last_player = selected_player;
         }
@@ -1207,9 +1178,7 @@ function update_lw3() {
             const new_bonuses = Number(bonuses) - Number(lw3_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(lw3_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw3_last_player = null;
         }
@@ -1252,9 +1221,7 @@ function update_lw3() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw3_last_player = selected_player;
         }
@@ -1268,9 +1235,7 @@ function update_lw3() {
             const new_bonuses = Number(bonuses) - Number(lw3_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(lw3_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw3_last_player = selected_player;
         }
@@ -1321,9 +1286,7 @@ function update_c3() {
             const new_bonuses = Number(bonuses) - Number(c3_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(c3_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c3_last_player = null;
         }
@@ -1366,9 +1329,7 @@ function update_c3() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c3_last_player = selected_player;
         }
@@ -1382,9 +1343,7 @@ function update_c3() {
             const new_bonuses = Number(bonuses) - Number(c3_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(c3_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c3_last_player = selected_player;
         }
@@ -1435,9 +1394,7 @@ function update_rw3() {
             const new_bonuses = Number(bonuses) - Number(rw3_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rw3_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw3_last_player = null;
         }
@@ -1480,9 +1437,7 @@ function update_rw3() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw3_last_player = selected_player;
         }
@@ -1496,9 +1451,7 @@ function update_rw3() {
             const new_bonuses = Number(bonuses) - Number(rw3_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rw3_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw3_last_player = selected_player;
         }
@@ -1549,9 +1502,7 @@ function update_lw4() {
             const new_bonuses = Number(bonuses) - Number(lw4_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(lw4_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw4_last_player = null;
         }
@@ -1594,9 +1545,7 @@ function update_lw4() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw4_last_player = selected_player;
         }
@@ -1610,9 +1559,7 @@ function update_lw4() {
             const new_bonuses = Number(bonuses) - Number(lw4_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(lw4_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             lw4_last_player = selected_player;
         }
@@ -1663,9 +1610,7 @@ function update_c4() {
             const new_bonuses = Number(bonuses) - Number(c4_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(c4_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c4_last_player = null;
         }
@@ -1708,9 +1653,7 @@ function update_c4() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c4_last_player = selected_player;
         }
@@ -1724,9 +1667,7 @@ function update_c4() {
             const new_bonuses = Number(bonuses) - Number(c4_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(c4_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             c4_last_player = selected_player;
         }
@@ -1777,9 +1718,7 @@ function update_rw4() {
             const new_bonuses = Number(bonuses) - Number(rw4_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rw4_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw4_last_player = null;
         }
@@ -1822,9 +1761,7 @@ function update_rw4() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw4_last_player = selected_player;
         }
@@ -1838,9 +1775,7 @@ function update_rw4() {
             const new_bonuses = Number(bonuses) - Number(rw4_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rw4_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rw4_last_player = selected_player;
         }
@@ -1891,9 +1826,7 @@ function update_ld1() {
             const new_bonuses = Number(bonuses) - Number(ld1_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(ld1_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld1_last_player = null;
         }
@@ -1936,9 +1869,7 @@ function update_ld1() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld1_last_player = selected_player;
         }
@@ -1952,9 +1883,7 @@ function update_ld1() {
             const new_bonuses = Number(bonuses) - Number(ld1_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(ld1_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld1_last_player = selected_player;
         }
@@ -2005,9 +1934,7 @@ function update_rd1() {
             const new_bonuses = Number(bonuses) - Number(rd1_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rd1_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd1_last_player = null;
         }
@@ -2050,9 +1977,7 @@ function update_rd1() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd1_last_player = selected_player;
         }
@@ -2066,9 +1991,7 @@ function update_rd1() {
             const new_bonuses = Number(bonuses) - Number(rd1_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rd1_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd1_last_player = selected_player;
         }
@@ -2119,9 +2042,7 @@ function update_ld2() {
             const new_bonuses = Number(bonuses) - Number(ld2_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(ld2_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld2_last_player = null;
         }
@@ -2164,9 +2085,7 @@ function update_ld2() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld2_last_player = selected_player;
         }
@@ -2180,9 +2099,7 @@ function update_ld2() {
             const new_bonuses = Number(bonuses) - Number(ld2_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(ld2_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld2_last_player = selected_player;
         }
@@ -2233,9 +2150,7 @@ function update_rd2() {
             const new_bonuses = Number(bonuses) - Number(rd2_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rd2_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd2_last_player = null;
         }
@@ -2278,9 +2193,7 @@ function update_rd2() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd2_last_player = selected_player;
         }
@@ -2294,9 +2207,7 @@ function update_rd2() {
             const new_bonuses = Number(bonuses) - Number(rd2_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rd2_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd2_last_player = selected_player;
         }
@@ -2347,9 +2258,7 @@ function update_ld3() {
             const new_bonuses = Number(bonuses) - Number(ld3_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(ld3_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld3_last_player = null;
         }
@@ -2392,9 +2301,7 @@ function update_ld3() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld3_last_player = selected_player;
         }
@@ -2408,9 +2315,7 @@ function update_ld3() {
             const new_bonuses = Number(bonuses) - Number(ld3_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(ld3_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             ld3_last_player = selected_player;
         }
@@ -2461,9 +2366,7 @@ function update_rd3() {
             const new_bonuses = Number(bonuses) - Number(rd3_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rd3_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd3_last_player = null;
         }
@@ -2506,9 +2409,7 @@ function update_rd3() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd3_last_player = selected_player;
         }
@@ -2522,9 +2423,7 @@ function update_rd3() {
             const new_bonuses = Number(bonuses) - Number(rd3_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(rd3_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             rd3_last_player = selected_player;
         }
@@ -2575,9 +2474,7 @@ function update_g1() {
             const new_bonuses = Number(bonuses) - Number(g1_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(g1_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             g1_last_player = null;
         }
@@ -2620,9 +2517,7 @@ function update_g1() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             g1_last_player = selected_player;
         }
@@ -2636,9 +2531,7 @@ function update_g1() {
             const new_bonuses = Number(bonuses) - Number(g1_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(g1_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             g1_last_player = selected_player;
         }
@@ -2689,9 +2582,7 @@ function update_g2() {
             const new_bonuses = Number(bonuses) - Number(g2_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(g2_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             g2_last_player = null;
         }
@@ -2734,9 +2625,7 @@ function update_g2() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             g2_last_player = selected_player;
         }
@@ -2750,9 +2639,7 @@ function update_g2() {
             const new_bonuses = Number(bonuses) - Number(g2_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(g2_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             g2_last_player = selected_player;
         }
@@ -2803,9 +2690,7 @@ function update_s1() {
             const new_bonuses = Number(bonuses) - Number(s1_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(s1_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s1_last_player = null;
         }
@@ -2848,9 +2733,7 @@ function update_s1() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s1_last_player = selected_player;
         }
@@ -2864,9 +2747,7 @@ function update_s1() {
             const new_bonuses = Number(bonuses) - Number(s1_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(s1_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s1_last_player = selected_player;
         }
@@ -2917,9 +2798,7 @@ function update_s2() {
             const new_bonuses = Number(bonuses) - Number(s2_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(s2_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s2_last_player = null;
         }
@@ -2962,9 +2841,7 @@ function update_s2() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s2_last_player = selected_player;
         }
@@ -2978,9 +2855,7 @@ function update_s2() {
             const new_bonuses = Number(bonuses) - Number(s2_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(s2_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s2_last_player = selected_player;
         }
@@ -3030,9 +2905,7 @@ function update_s3() {
             const new_bonuses = Number(bonuses) - Number(s3_last_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(s3_last_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s3_last_player = null;
         }
@@ -3075,9 +2948,7 @@ function update_s3() {
             const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s3_last_player = selected_player;
         }
@@ -3091,9 +2962,7 @@ function update_s3() {
             const new_bonuses = Number(bonuses) - Number(s3_last_player.get_bonus()) + Number(selected_player.get_bonus());
             document.getElementById("bonuses").textContent = new_bonuses;
 
-            const cap_space = document.getElementById("cap_space").innerHTML;
-            const new_cap_space = Number(cap_space) + Number(s3_last_player.get_salary()) - Number(selected_player.get_salary());
-            document.getElementById("cap_space").textContent = new_cap_space;
+            calculate_cap_space();
 
             s3_last_player = selected_player;
         }
