@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    background-color: #00205b;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 275%;
+}
+
+h3 {
+    text-align: center;
+    font-size: 100%;
+    color: rgb(140, 140, 140);
+}
+
+.a_button {
+    display: inline-block;
+    padding: 1.25% 1.5%;
+    color: #00205b;
+    font-size: calc();
+    background-color: white;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 85%;
+
+}
+
+#years {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#about {
+    color: white;
+}
+
+#credits {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 5%;
+}
+
