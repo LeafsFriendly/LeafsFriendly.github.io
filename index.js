@@ -116,6 +116,14 @@ function calculateAge(birthday) {
     return age;
 }
 
+function formatMoney(amount) {
+    return '$' + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function parseMoneyToString(moneyStr) {
+    return moneyStr.replace(/[$,]/g, '');
+}
+
 
 //-----------------------------------------------------------------------------------
 
@@ -172,53 +180,53 @@ var stolarz_anthony_age = calculateAge(stolarz_anthony_birthday);
 
 //Step 3 of 5
 
-var matthews_auston = new Player("Auston Matthews", 13250000, 0, 4, "UFA", "C", matthews_auston_age, "LH", "NMC");
-var tavares_john = new Player("John Tavares", 11000000, 0, 1, "UFA", "C", tavares_john_age, "LH", "NMC");
-var nylander_william = new Player("William Nylander", 11500000, 0, 8, "UFA", "RW", nylander_william_age, "RH", "NMC");
-var marner_mitchell = new Player("Mitchell Marner", 10903000, 0, 1, "UFA", "RW", marner_mitch_age, "RH", "NMC");
-var kampf_david = new Player("David Kampf", 2400000, 0, 3, "UFA", "C", kampf_david_age, "LH", "M-NTC");
-var jarnkrok_calle = new Player("Calle Jarnkrok", 2100000, 0, 2, "UFA", "RW", jarnkrok_calle_age, "RH", "M-NTC");
-var reaves_ryan = new Player("Ryan Reaves", 1350000, 0, 2, "UFA", "RW", reaves_ryan_age, "RH", "None");
-var mcmann_bobby = new Player("Bobby McMann", 1350000, 0, 2, "UFA", "LW", mcmann_bobby_age, "LH", "None");
-var knies_matthew = new Player("Matthew Knies", 925000, 0, 1, "RFA", "LW", knies_matthew_age, "LH", "None");
-var holmberg_pontus = new Player("Pontus Holmberg", 800000, 0, 1, "RFA (Arb)", "C", holmberg_pontus_age, "LH", "None");
-var cowan_easton = new Player("Easton Cowan", 904667, 0, 3, "RFA", "LW", cowan_easton_age, "LH", "None");
-var minten_fraser = new Player("Fraser Minten", 816667, 0, 3, "RFA", "C", minten_fraser_age, "LH", "None");
-var grebyonkin_nikita = new Player("Nikita Grebyonkin", 875000, 0, 2, "10.2c", "RW", grebyonkin_nikita_age, "LH", "None");
-var hirvonen_roni = new Player("Roni Hirvonen", 856667, 0, 1, "RFA", "LW", hirvonen_roni_age, "LH", "None");
-var quillan_jacob = new Player("Jacob Quillan", 875000, 0, 2, "RFA", "C", quillan_jacob_age, "LH", "None");
-var tverberg_ryan = new Player("Ryan Tverberg", 851667, 0, 2, "RFA", "RW", tverberg_ryan_age, "RH", "None");
-var kressler_braeden = new Player("Braeden Kressler", 800556, 0, 2, "RFA", "C", kressler_braeden_age, "RH", "None");
-var voit_ty = new Player("Ty Voit", 800556, 0, 2, "RFA", "LW", voit_ty_age, "RH", "None");
-var abruzzese_nick = new Player("Nick Abruzzese", 775000, 0, 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
-var domi_max = new Player("Max Domi", 3750000, 0, 4, "UFA", "C", domi_max_age, "LH", "M-NTC");
-var pare_cedric = new Player("Cedric Pare", 775000, 0, 1, "RFA", "C", pare_cedric_age, "LH", "None");
+var matthews_auston = new Player("Auston Matthews", formatMoney(13250000), formatMoney(0), 4, "UFA", "C", matthews_auston_age, "LH", "NMC");
+var tavares_john = new Player("John Tavares", formatMoney(11000000), formatMoney(0), 1, "UFA", "C", tavares_john_age, "LH", "NMC");
+var nylander_william = new Player("William Nylander", formatMoney(11500000), formatMoney(0), 8, "UFA", "RW", nylander_william_age, "RH", "NMC");
+var marner_mitchell = new Player("Mitchell Marner", formatMoney(10903000), formatMoney(0), 1, "UFA", "RW", marner_mitch_age, "RH", "NMC");
+var kampf_david = new Player("David Kampf", formatMoney(2400000), formatMoney(0), 3, "UFA", "C", kampf_david_age, "LH", "M-NTC");
+var jarnkrok_calle = new Player("Calle Jarnkrok", formatMoney(2100000), formatMoney(0), 2, "UFA", "RW", jarnkrok_calle_age, "RH", "M-NTC");
+var reaves_ryan = new Player("Ryan Reaves", formatMoney(1350000), formatMoney(0), 2, "UFA", "RW", reaves_ryan_age, "RH", "None");
+var mcmann_bobby = new Player("Bobby McMann", formatMoney(1350000), formatMoney(0), 2, "UFA", "LW", mcmann_bobby_age, "LH", "None");
+var knies_matthew = new Player("Matthew Knies", formatMoney(925000), formatMoney(0), 1, "RFA", "LW", knies_matthew_age, "LH", "None");
+var holmberg_pontus = new Player("Pontus Holmberg", formatMoney(800000), formatMoney(0), 1, "RFA (Arb)", "C", holmberg_pontus_age, "LH", "None");
+var cowan_easton = new Player("Easton Cowan", formatMoney(904667), formatMoney(0), 3, "RFA", "LW", cowan_easton_age, "LH", "None");
+var minten_fraser = new Player("Fraser Minten", formatMoney(816667), formatMoney(0), 3, "RFA", "C", minten_fraser_age, "LH", "None");
+var grebyonkin_nikita = new Player("Nikita Grebyonkin", formatMoney(875000), formatMoney(0), 2, "10.2c", "RW", grebyonkin_nikita_age, "LH", "None");
+var hirvonen_roni = new Player("Roni Hirvonen", formatMoney(856667), formatMoney(0), 1, "RFA", "LW", hirvonen_roni_age, "LH", "None");
+var quillan_jacob = new Player("Jacob Quillan", formatMoney(875000), formatMoney(0), 2, "RFA", "C", quillan_jacob_age, "LH", "None");
+var tverberg_ryan = new Player("Ryan Tverberg", formatMoney(851667), formatMoney(0), 2, "RFA", "RW", tverberg_ryan_age, "RH", "None");
+var kressler_braeden = new Player("Braeden Kressler", formatMoney(800556), formatMoney(0), 2, "RFA", "C", kressler_braeden_age, "RH", "None");
+var voit_ty = new Player("Ty Voit", formatMoney(800556), formatMoney(0), 2, "RFA", "LW", voit_ty_age, "RH", "None");
+var abruzzese_nick = new Player("Nick Abruzzese", formatMoney(775000), formatMoney(0), 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
+var domi_max = new Player("Max Domi", formatMoney(3750000), formatMoney(0), 4, "UFA", "C", domi_max_age, "LH", "M-NTC");
+var pare_cedric = new Player("Cedric Pare", formatMoney(775000), formatMoney(0), 1, "RFA", "C", pare_cedric_age, "LH", "None");
 
-var rielly_morgan = new Player("Morgan Rielly", 7500000, 0, 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
-var mccabe_jake = new Player("Jake McCabe", 2000000, 0, 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
-var benoit_simon = new Player("Simon Benoit", 1350000, 0, 3, "UFA", "LD", benoit_simon_age, "LH", "None");
-var timmins_conor = new Player("Conor Timmins", 1100000, 0, 1, "RFA (Arb)", "RD", timmins_conor_age, "RH", "None");
-var webber_cade = new Player("Cade Webber", 875000, 0, 1, "10.2c", "LD", webber_cade_age, "LH", "None");
-var niemela_topi = new Player("Topi Niemela", 856667, 0, 1, "RFA", "RD", niemela_topi_age, "RH", "None");
-var rifai_marshall = new Player("Marshall Rifai", 775000, 0, 1, "UFA", "LD", rifai_marshall_age, "LH", "None");
-var mattinen_nicolas = new Player("Nicolas Mattinen", 775000, 0, 1, "UFA", "RD", mattinen_nicolas_age, "RH", "None");
-var villeneuve_william = new Player("William Villeneuve", 817778, 0, 1, "RFA", "RD", villeneuve_william_age, "RH", "None");
-var kokkonen_mikko = new Player("Mikko Kokkonen", 846667, 0, 1, "RFA", "LD", kokkonen_mikko_age, "LH", "None");
-var chadwick_noah = new Player("Noah Chadwick", 826111, 0, 3, "RFA", "LD", chadwick_noah_age, "LH", "None");
-var liljegren_timothy = new Player("Timothy Liljegren", 3000000, 0, 2, "UFA", "RD", liljegren_timothy_age, "RH", "None");
-var ekman_larsson_oliver = new Player("Oliver Ekman-Larsson", 3500000, 0, 4, "UFA", "LD", ekman_larsson_oliver_age, "LH", "M-NTC");
-var tanev_christopher = new Player("Christopher Tanev", 4500000, 0, 6, "UFA", "RD", tanev_christopher_age, "RH", "NMC");
-var hakanpaa_jani = new Player("Jani Hakanpaa", 1500000, 0, 2, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
-var mermis_dakota = new Player("Dakota Mermis", 775000, 0, 1, "UFA", "LD", mermis_dakota_age, "LH", "None");
-var myers_philippe = new Player("Philippe Myers", 775000, 0, 1, "UFA", "RD", myers_philippe_age, "RH", "None");
+var rielly_morgan = new Player("Morgan Rielly", formatMoney(7500000), formatMoney(0), 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
+var mccabe_jake = new Player("Jake McCabe", formatMoney(2000000), formatMoney(0), 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
+var benoit_simon = new Player("Simon Benoit", formatMoney(1350000), formatMoney(0), 3, "UFA", "LD", benoit_simon_age, "LH", "None");
+var timmins_conor = new Player("Conor Timmins", formatMoney(1100000), formatMoney(0), 1, "RFA (Arb)", "RD", timmins_conor_age, "RH", "None");
+var webber_cade = new Player("Cade Webber", formatMoney(875000), formatMoney(0), 1, "10.2c", "LD", webber_cade_age, "LH", "None");
+var niemela_topi = new Player("Topi Niemela", formatMoney(856667), formatMoney(0), 1, "RFA", "RD", niemela_topi_age, "RH", "None");
+var rifai_marshall = new Player("Marshall Rifai", formatMoney(775000), formatMoney(0), 1, "UFA", "LD", rifai_marshall_age, "LH", "None");
+var mattinen_nicolas = new Player("Nicolas Mattinen", formatMoney(775000), formatMoney(0), 1, "UFA", "RD", mattinen_nicolas_age, "RH", "None");
+var villeneuve_william = new Player("William Villeneuve", formatMoney(817778), formatMoney(0), 1, "RFA", "RD", villeneuve_william_age, "RH", "None");
+var kokkonen_mikko = new Player("Mikko Kokkonen", formatMoney(846667), formatMoney(0), 1, "RFA", "LD", kokkonen_mikko_age, "LH", "None");
+var chadwick_noah = new Player("Noah Chadwick", formatMoney(826111), formatMoney(0), 3, "RFA", "LD", chadwick_noah_age, "LH", "None");
+var liljegren_timothy = new Player("Timothy Liljegren", formatMoney(3000000), formatMoney(0), 2, "UFA", "RD", liljegren_timothy_age, "RH", "None");
+var ekman_larsson_oliver = new Player("Oliver Ekman-Larsson", formatMoney(3500000), formatMoney(0), 4, "UFA", "LD", ekman_larsson_oliver_age, "LH", "M-NTC");
+var tanev_christopher = new Player("Christopher Tanev", formatMoney(4500000), formatMoney(0), 6, "UFA", "RD", tanev_christopher_age, "RH", "NMC");
+var hakanpaa_jani = new Player("Jani Hakanpaa", formatMoney(1500000), formatMoney(0), 2, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
+var mermis_dakota = new Player("Dakota Mermis", formatMoney(775000), formatMoney(0), 1, "UFA", "LD", mermis_dakota_age, "LH", "None");
+var myers_philippe = new Player("Philippe Myers", formatMoney(775000), formatMoney(0), 1, "UFA", "RD", myers_philippe_age, "RH", "None");
 
 
-var woll_joseph = new Player("Joseph Woll", 766667, 0, 4, "UFA", "G", woll_joseph_age, "LH", "None");
-var hildeby_dennis = new Player("Dennis Hildeby", 843333, 0, 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
-var akhtiamov_artur = new Player("Artur Akhtiamov", 851667, 0, 2, "RFA", "G", akhtiamov_artur_age, "LH", "None");
-var peksa_vyacheslav = new Player("Vyacheslav Peksa", 851667, 0, 2, "RFA", "G", peksa_vyacheslav_age, "LH", "None");
-var murray_matt = new Player("Matt Murray", 875000, 0, 1, "UFA", "G", murray_matt_age, "LH", "None");
-var stolarz_anthony = new Player("Anthony Stolarz", 2500000, 0, 2, "UFA", "G", stolarz_anthony_age, "LH", "None");
+var woll_joseph = new Player("Joseph Woll", formatMoney(766667), formatMoney(0), 4, "UFA", "G", woll_joseph_age, "LH", "None");
+var hildeby_dennis = new Player("Dennis Hildeby", formatMoney(843333), formatMoney(0), 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
+var akhtiamov_artur = new Player("Artur Akhtiamov", formatMoney(851667), formatMoney(0), 2, "RFA", "G", akhtiamov_artur_age, "LH", "None");
+var peksa_vyacheslav = new Player("Vyacheslav Peksa", formatMoney(851667), formatMoney(0), 2, "RFA", "G", peksa_vyacheslav_age, "LH", "None");
+var murray_matt = new Player("Matt Murray", formatMoney(875000), formatMoney(0), 1, "UFA", "G", murray_matt_age, "LH", "None");
+var stolarz_anthony = new Player("Anthony Stolarz", formatMoney(2500000), formatMoney(0), 2, "UFA", "G", stolarz_anthony_age, "LH", "None");
 
 
 //Step 4 of 5
@@ -469,22 +477,33 @@ var bonuses_raw = document.getElementById("bonuses");
 var cap_space_raw = document.getElementById("cap_space");
 
 const roster_size = Number(roster_size_raw.innerHTML);
-const cap_ceiling = Number(cap_ceiling_raw.innerHTML);
-const cap_hit = Number(cap_hit_raw.innerHTML);
-const overages = Number(overages_raw.innerHTML);
-const bonuses = Number(bonuses_raw.innerHTML);
-const cap_space = Number(cap_space_raw.innerHTML);
+const cap_ceiling = Number(parseMoneyToString(cap_ceiling_raw.innerHTML));
+const cap_hit = Number(parseMoneyToString(cap_ceiling_raw.innerHTML));
+const overages = Number(parseMoneyToString(overages_raw.innerHTML));
+const bonuses = Number(parseMoneyToString(cap_ceiling_raw.innerHTML));
+const cap_space = Number(parseMoneyToString(cap_ceiling_raw.innerHTML));
 
-cap_space_raw.textContent = cap_ceiling - overages;
+cap_space_raw.textContent = formatMoney(cap_ceiling - overages);
+overages_raw.textContent = formatMoney(overages);
+
 
 function calculate_cap_space() {
-
     const cap_hit = document.getElementById("cap_hit").innerHTML;
-    const number_cap_hit = Number(cap_hit);
+    const number_cap_hit = Number(parseMoneyToString(cap_hit));
 
-    const new_cap_space = cap_ceiling - number_cap_hit;
-    document.getElementById("cap_space").textContent = new_cap_space;
+    const cap_ceiling = document.getElementById("cap_ceiling").innerHTML;
+    const overages = document.getElementById("overages").innerHTML;
+
+    const number_cap_ceiling = Number(parseMoneyToString(cap_ceiling));
+    const number_overages = Number(parseMoneyToString(overages));
+
+    const adjusted_cap_ceiling = number_cap_ceiling - number_overages;
+
+    const new_cap_space = adjusted_cap_ceiling - number_cap_hit;
+    document.getElementById("cap_space").textContent = formatMoney(new_cap_space);
 }
+
+
 
 //------------------------------ LW1 --------------------------------------
 
@@ -506,12 +525,6 @@ function update_lw1() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("lw1_player_age").textContent = "Age"
-        document.getElementById("lw1_player_position").textContent = "Position";
-        document.getElementById("lw1_player_handedness").textContent = "Handedness";
-        document.getElementById("lw1_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("lw1_player_term").textContent = "Expiry (Term)";
-        document.getElementById("lw1_player_clause").textContent = "Clause";
 
         if (lw1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -523,12 +536,12 @@ function update_lw1() {
         if (lw1_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(lw1_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw1_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(lw1_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw1_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -550,7 +563,7 @@ function update_lw1() {
         document.getElementById("lw1_player_age").textContent = "Age " + age;
         document.getElementById("lw1_player_position").textContent = position;
         document.getElementById("lw1_player_handedness").textContent = handed;
-        document.getElementById("lw1_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("lw1_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("lw1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("lw1_player_clause").textContent = clause;
 
@@ -566,12 +579,12 @@ function update_lw1() {
 
         if (lw1_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -580,12 +593,12 @@ function update_lw1() {
 
         if (lw1_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(lw1_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(lw1_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -594,7 +607,7 @@ function update_lw1() {
     }
 }
 
-//------------------------------ C1 --------------------------------------
+//---------------------------------- C1 --------------------------------------
 
 document.getElementById("c1");
 
@@ -614,12 +627,6 @@ function update_c1() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("c1_player_age").textContent = "Age"
-        document.getElementById("c1_player_position").textContent = "Position";
-        document.getElementById("c1_player_handedness").textContent = "Handedness";
-        document.getElementById("c1_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("c1_player_term").textContent = "Expiry (Term)";
-        document.getElementById("c1_player_clause").textContent = "Clause";
 
         if (c1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -631,12 +638,12 @@ function update_c1() {
         if (c1_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(c1_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c1_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(c1_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c1_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -658,7 +665,7 @@ function update_c1() {
         document.getElementById("c1_player_age").textContent = "Age " + age;
         document.getElementById("c1_player_position").textContent = position;
         document.getElementById("c1_player_handedness").textContent = handed;
-        document.getElementById("c1_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("c1_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("c1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("c1_player_clause").textContent = clause;
 
@@ -674,12 +681,12 @@ function update_c1() {
 
         if (c1_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -688,12 +695,12 @@ function update_c1() {
 
         if (c1_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(c1_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(c1_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -702,7 +709,8 @@ function update_c1() {
     }
 }
 
-//------------------------------ RW1 --------------------------------------
+
+//---------------------------------- RW1 --------------------------------------
 
 document.getElementById("rw1");
 
@@ -722,12 +730,6 @@ function update_rw1() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("rw1_player_age").textContent = "Age"
-        document.getElementById("rw1_player_position").textContent = "Position";
-        document.getElementById("rw1_player_handedness").textContent = "Handedness";
-        document.getElementById("rw1_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("rw1_player_term").textContent = "Expiry (Term)";
-        document.getElementById("rw1_player_clause").textContent = "Clause";
 
         if (rw1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -739,12 +741,12 @@ function update_rw1() {
         if (rw1_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rw1_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw1_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rw1_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw1_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -766,7 +768,7 @@ function update_rw1() {
         document.getElementById("rw1_player_age").textContent = "Age " + age;
         document.getElementById("rw1_player_position").textContent = position;
         document.getElementById("rw1_player_handedness").textContent = handed;
-        document.getElementById("rw1_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("rw1_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("rw1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rw1_player_clause").textContent = clause;
 
@@ -782,12 +784,12 @@ function update_rw1() {
 
         if (rw1_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -796,12 +798,12 @@ function update_rw1() {
 
         if (rw1_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rw1_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rw1_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -810,7 +812,8 @@ function update_rw1() {
     }
 }
 
-//------------------------------ LW2 --------------------------------------
+
+//---------------------------------- LW2 --------------------------------------
 
 document.getElementById("lw2");
 
@@ -830,12 +833,6 @@ function update_lw2() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("lw2_player_age").textContent = "Age"
-        document.getElementById("lw2_player_position").textContent = "Position";
-        document.getElementById("lw2_player_handedness").textContent = "Handedness";
-        document.getElementById("lw2_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("lw2_player_term").textContent = "Expiry (Term)";
-        document.getElementById("lw2_player_clause").textContent = "Clause";
 
         if (lw2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -847,12 +844,12 @@ function update_lw2() {
         if (lw2_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(lw2_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw2_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(lw2_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw2_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -874,7 +871,7 @@ function update_lw2() {
         document.getElementById("lw2_player_age").textContent = "Age " + age;
         document.getElementById("lw2_player_position").textContent = position;
         document.getElementById("lw2_player_handedness").textContent = handed;
-        document.getElementById("lw2_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("lw2_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("lw2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("lw2_player_clause").textContent = clause;
 
@@ -890,12 +887,12 @@ function update_lw2() {
 
         if (lw2_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -904,12 +901,12 @@ function update_lw2() {
 
         if (lw2_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(lw2_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(lw2_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -918,7 +915,8 @@ function update_lw2() {
     }
 }
 
-//------------------------------ C2 --------------------------------------
+
+//---------------------------------- C2 --------------------------------------
 
 document.getElementById("c2");
 
@@ -938,12 +936,6 @@ function update_c2() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("c2_player_age").textContent = "Age"
-        document.getElementById("c2_player_position").textContent = "Position";
-        document.getElementById("c2_player_handedness").textContent = "Handedness";
-        document.getElementById("c2_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("c2_player_term").textContent = "Expiry (Term)";
-        document.getElementById("c2_player_clause").textContent = "Clause";
 
         if (c2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -955,12 +947,12 @@ function update_c2() {
         if (c2_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(c2_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c2_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(c2_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c2_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -982,7 +974,7 @@ function update_c2() {
         document.getElementById("c2_player_age").textContent = "Age " + age;
         document.getElementById("c2_player_position").textContent = position;
         document.getElementById("c2_player_handedness").textContent = handed;
-        document.getElementById("c2_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("c2_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("c2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("c2_player_clause").textContent = clause;
 
@@ -998,12 +990,12 @@ function update_c2() {
 
         if (c2_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1012,12 +1004,12 @@ function update_c2() {
 
         if (c2_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(c2_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(c2_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1026,7 +1018,8 @@ function update_c2() {
     }
 }
 
-//------------------------------ RW2 --------------------------------------
+
+//---------------------------------- RW2 --------------------------------------
 
 document.getElementById("rw2");
 
@@ -1046,12 +1039,6 @@ function update_rw2() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("rw2_player_age").textContent = "Age"
-        document.getElementById("rw2_player_position").textContent = "Position";
-        document.getElementById("rw2_player_handedness").textContent = "Handedness";
-        document.getElementById("rw2_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("rw2_player_term").textContent = "Expiry (Term)";
-        document.getElementById("rw2_player_clause").textContent = "Clause";
 
         if (rw2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1063,12 +1050,12 @@ function update_rw2() {
         if (rw2_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - rw2_last_player.get_salary();
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw2_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - rw2_last_player.get_bonus();
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw2_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1090,7 +1077,7 @@ function update_rw2() {
         document.getElementById("rw2_player_age").textContent = "Age " + age;
         document.getElementById("rw2_player_position").textContent = position;
         document.getElementById("rw2_player_handedness").textContent = handed;
-        document.getElementById("rw2_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("rw2_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("rw2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rw2_player_clause").textContent = clause;
 
@@ -1106,12 +1093,12 @@ function update_rw2() {
 
         if (rw2_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1120,12 +1107,12 @@ function update_rw2() {
 
         if (rw2_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rw2_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rw2_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1134,7 +1121,8 @@ function update_rw2() {
     }
 }
 
-//------------------------------ LW3 --------------------------------------
+
+//---------------------------------- LW3 --------------------------------------
 
 document.getElementById("lw3");
 
@@ -1154,12 +1142,6 @@ function update_lw3() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("lw3_player_age").textContent = "Age"
-        document.getElementById("lw3_player_position").textContent = "Position";
-        document.getElementById("lw3_player_handedness").textContent = "Handedness";
-        document.getElementById("lw3_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("lw3_player_term").textContent = "Expiry (Term)";
-        document.getElementById("lw3_player_clause").textContent = "Clause";
 
         if (lw3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1171,12 +1153,12 @@ function update_lw3() {
         if (lw3_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(lw3_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw3_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(lw3_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw3_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1198,7 +1180,7 @@ function update_lw3() {
         document.getElementById("lw3_player_age").textContent = "Age " + age;
         document.getElementById("lw3_player_position").textContent = position;
         document.getElementById("lw3_player_handedness").textContent = handed;
-        document.getElementById("lw3_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("lw3_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("lw3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("lw3_player_clause").textContent = clause;
 
@@ -1214,12 +1196,12 @@ function update_lw3() {
 
         if (lw3_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1228,12 +1210,12 @@ function update_lw3() {
 
         if (lw3_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(lw3_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(lw3_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1242,7 +1224,8 @@ function update_lw3() {
     }
 }
 
-//------------------------------ C3 --------------------------------------
+
+//---------------------------------- C3 --------------------------------------
 
 document.getElementById("c3");
 
@@ -1262,12 +1245,6 @@ function update_c3() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("c3_player_age").textContent = "Age"
-        document.getElementById("c3_player_position").textContent = "Position";
-        document.getElementById("c3_player_handedness").textContent = "Handedness";
-        document.getElementById("c3_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("c3_player_term").textContent = "Expiry (Term)";
-        document.getElementById("c3_player_clause").textContent = "Clause";
 
         if (c3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1279,12 +1256,12 @@ function update_c3() {
         if (c3_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(c3_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c3_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(c3_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c3_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1306,7 +1283,7 @@ function update_c3() {
         document.getElementById("c3_player_age").textContent = "Age " + age;
         document.getElementById("c3_player_position").textContent = position;
         document.getElementById("c3_player_handedness").textContent = handed;
-        document.getElementById("c3_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("c3_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("c3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("c3_player_clause").textContent = clause;
 
@@ -1322,12 +1299,12 @@ function update_c3() {
 
         if (c3_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1336,12 +1313,12 @@ function update_c3() {
 
         if (c3_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(c3_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(c3_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1350,7 +1327,8 @@ function update_c3() {
     }
 }
 
-//------------------------------ RW3 --------------------------------------
+
+//---------------------------------- RW3 --------------------------------------
 
 document.getElementById("rw3");
 
@@ -1370,12 +1348,6 @@ function update_rw3() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("rw3_player_age").textContent = "Age"
-        document.getElementById("rw3_player_position").textContent = "Position";
-        document.getElementById("rw3_player_handedness").textContent = "Handedness";
-        document.getElementById("rw3_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("rw3_player_term").textContent = "Expiry (Term)";
-        document.getElementById("rw3_player_clause").textContent = "Clause";
 
         if (rw3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1387,12 +1359,12 @@ function update_rw3() {
         if (rw3_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rw3_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw3_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rw3_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw3_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1414,7 +1386,7 @@ function update_rw3() {
         document.getElementById("rw3_player_age").textContent = "Age " + age;
         document.getElementById("rw3_player_position").textContent = position;
         document.getElementById("rw3_player_handedness").textContent = handed;
-        document.getElementById("rw3_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("rw3_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("rw3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rw3_player_clause").textContent = clause;
 
@@ -1430,12 +1402,12 @@ function update_rw3() {
 
         if (rw3_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1444,12 +1416,12 @@ function update_rw3() {
 
         if (rw3_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rw3_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rw3_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1458,7 +1430,8 @@ function update_rw3() {
     }
 }
 
-//------------------------------ LW4 --------------------------------------
+
+//---------------------------------- LW4 --------------------------------------
 
 document.getElementById("lw4");
 
@@ -1478,12 +1451,6 @@ function update_lw4() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("lw4_player_age").textContent = "Age"
-        document.getElementById("lw4_player_position").textContent = "Position";
-        document.getElementById("lw4_player_handedness").textContent = "Handedness";
-        document.getElementById("lw4_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("lw4_player_term").textContent = "Expiry (Term)";
-        document.getElementById("lw4_player_clause").textContent = "Clause";
 
         if (lw4_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1495,12 +1462,12 @@ function update_lw4() {
         if (lw4_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(lw4_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw4_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(lw4_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw4_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1522,7 +1489,7 @@ function update_lw4() {
         document.getElementById("lw4_player_age").textContent = "Age " + age;
         document.getElementById("lw4_player_position").textContent = position;
         document.getElementById("lw4_player_handedness").textContent = handed;
-        document.getElementById("lw4_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("lw4_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("lw4_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("lw4_player_clause").textContent = clause;
 
@@ -1538,12 +1505,12 @@ function update_lw4() {
 
         if (lw4_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1552,12 +1519,12 @@ function update_lw4() {
 
         if (lw4_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(lw4_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw4_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(lw4_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw4_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1566,7 +1533,8 @@ function update_lw4() {
     }
 }
 
-//------------------------------ C4 --------------------------------------
+
+//---------------------------------- C4 --------------------------------------
 
 document.getElementById("c4");
 
@@ -1586,12 +1554,6 @@ function update_c4() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("c4_player_age").textContent = "Age"
-        document.getElementById("c4_player_position").textContent = "Position";
-        document.getElementById("c4_player_handedness").textContent = "Handedness";
-        document.getElementById("c4_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("c4_player_term").textContent = "Expiry (Term)";
-        document.getElementById("c4_player_clause").textContent = "Clause";
 
         if (c4_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1603,12 +1565,12 @@ function update_c4() {
         if (c4_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(c4_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c4_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(c4_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c4_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1630,7 +1592,7 @@ function update_c4() {
         document.getElementById("c4_player_age").textContent = "Age " + age;
         document.getElementById("c4_player_position").textContent = position;
         document.getElementById("c4_player_handedness").textContent = handed;
-        document.getElementById("c4_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("c4_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("c4_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("c4_player_clause").textContent = clause;
 
@@ -1646,12 +1608,12 @@ function update_c4() {
 
         if (c4_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1660,12 +1622,12 @@ function update_c4() {
 
         if (c4_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(c4_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c4_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(c4_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c4_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1674,7 +1636,8 @@ function update_c4() {
     }
 }
 
-//------------------------------ RW4 --------------------------------------
+
+//---------------------------------- RW4 --------------------------------------
 
 document.getElementById("rw4");
 
@@ -1694,12 +1657,6 @@ function update_rw4() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("rw4_player_age").textContent = "Age"
-        document.getElementById("rw4_player_position").textContent = "Position";
-        document.getElementById("rw4_player_handedness").textContent = "Handedness";
-        document.getElementById("rw4_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("rw4_player_term").textContent = "Expiry (Term)";
-        document.getElementById("rw4_player_clause").textContent = "Clause";
 
         if (rw4_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1711,12 +1668,12 @@ function update_rw4() {
         if (rw4_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rw4_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw4_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rw4_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw4_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1738,7 +1695,7 @@ function update_rw4() {
         document.getElementById("rw4_player_age").textContent = "Age " + age;
         document.getElementById("rw4_player_position").textContent = position;
         document.getElementById("rw4_player_handedness").textContent = handed;
-        document.getElementById("rw4_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("rw4_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("rw4_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rw4_player_clause").textContent = clause;
 
@@ -1754,12 +1711,12 @@ function update_rw4() {
 
         if (rw4_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1768,12 +1725,12 @@ function update_rw4() {
 
         if (rw4_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rw4_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw4_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rw4_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw4_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1782,7 +1739,8 @@ function update_rw4() {
     }
 }
 
-//------------------------------ LD1 --------------------------------------
+
+//---------------------------------- LD1 --------------------------------------
 
 document.getElementById("ld1");
 
@@ -1802,12 +1760,6 @@ function update_ld1() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("ld1_player_age").textContent = "Age"
-        document.getElementById("ld1_player_position").textContent = "Position";
-        document.getElementById("ld1_player_handedness").textContent = "Handedness";
-        document.getElementById("ld1_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("ld1_player_term").textContent = "Expiry (Term)";
-        document.getElementById("ld1_player_clause").textContent = "Clause";
 
         if (ld1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1819,12 +1771,12 @@ function update_ld1() {
         if (ld1_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(ld1_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld1_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(ld1_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld1_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1846,7 +1798,7 @@ function update_ld1() {
         document.getElementById("ld1_player_age").textContent = "Age " + age;
         document.getElementById("ld1_player_position").textContent = position;
         document.getElementById("ld1_player_handedness").textContent = handed;
-        document.getElementById("ld1_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("ld1_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("ld1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("ld1_player_clause").textContent = clause;
 
@@ -1862,12 +1814,12 @@ function update_ld1() {
 
         if (ld1_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1876,12 +1828,12 @@ function update_ld1() {
 
         if (ld1_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(ld1_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(ld1_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1890,7 +1842,8 @@ function update_ld1() {
     }
 }
 
-//------------------------------ RD1 --------------------------------------
+
+//---------------------------------- RD1 --------------------------------------
 
 document.getElementById("rd1");
 
@@ -1910,12 +1863,6 @@ function update_rd1() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("rd1_player_age").textContent = "Age"
-        document.getElementById("rd1_player_position").textContent = "Position";
-        document.getElementById("rd1_player_handedness").textContent = "Handedness";
-        document.getElementById("rd1_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("rd1_player_term").textContent = "Expiry (Term)";
-        document.getElementById("rd1_player_clause").textContent = "Clause";
 
         if (rd1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1927,12 +1874,12 @@ function update_rd1() {
         if (rd1_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rd1_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd1_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rd1_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd1_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1954,7 +1901,7 @@ function update_rd1() {
         document.getElementById("rd1_player_age").textContent = "Age " + age;
         document.getElementById("rd1_player_position").textContent = position;
         document.getElementById("rd1_player_handedness").textContent = handed;
-        document.getElementById("rd1_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("rd1_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("rd1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rd1_player_clause").textContent = clause;
 
@@ -1970,12 +1917,12 @@ function update_rd1() {
 
         if (rd1_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1984,12 +1931,12 @@ function update_rd1() {
 
         if (rd1_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rd1_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rd1_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -1998,7 +1945,8 @@ function update_rd1() {
     }
 }
 
-//------------------------------ LD2 --------------------------------------
+
+//---------------------------------- LD2 --------------------------------------
 
 document.getElementById("ld2");
 
@@ -2018,12 +1966,6 @@ function update_ld2() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("ld2_player_age").textContent = "Age"
-        document.getElementById("ld2_player_position").textContent = "Position";
-        document.getElementById("ld2_player_handedness").textContent = "Handedness";
-        document.getElementById("ld2_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("ld2_player_term").textContent = "Expiry (Term)";
-        document.getElementById("ld2_player_clause").textContent = "Clause";
 
         if (ld2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2035,12 +1977,12 @@ function update_ld2() {
         if (ld2_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(ld2_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld2_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(ld2_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld2_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2062,7 +2004,7 @@ function update_ld2() {
         document.getElementById("ld2_player_age").textContent = "Age " + age;
         document.getElementById("ld2_player_position").textContent = position;
         document.getElementById("ld2_player_handedness").textContent = handed;
-        document.getElementById("ld2_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("ld2_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("ld2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("ld2_player_clause").textContent = clause;
 
@@ -2078,12 +2020,12 @@ function update_ld2() {
 
         if (ld2_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2092,12 +2034,12 @@ function update_ld2() {
 
         if (ld2_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(ld2_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(ld2_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2106,7 +2048,8 @@ function update_ld2() {
     }
 }
 
-//------------------------------ RD2 --------------------------------------
+
+//---------------------------------- RD2 --------------------------------------
 
 document.getElementById("rd2");
 
@@ -2126,12 +2069,6 @@ function update_rd2() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("rd2_player_age").textContent = "Age"
-        document.getElementById("rd2_player_position").textContent = "Position";
-        document.getElementById("rd2_player_handedness").textContent = "Handedness";
-        document.getElementById("rd2_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("rd2_player_term").textContent = "Expiry (Term)";
-        document.getElementById("rd2_player_clause").textContent = "Clause";
 
         if (rd2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2143,12 +2080,12 @@ function update_rd2() {
         if (rd2_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rd2_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd2_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rd2_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd2_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2170,7 +2107,7 @@ function update_rd2() {
         document.getElementById("rd2_player_age").textContent = "Age " + age;
         document.getElementById("rd2_player_position").textContent = position;
         document.getElementById("rd2_player_handedness").textContent = handed;
-        document.getElementById("rd2_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("rd2_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("rd2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rd2_player_clause").textContent = clause;
 
@@ -2186,12 +2123,12 @@ function update_rd2() {
 
         if (rd2_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2200,12 +2137,12 @@ function update_rd2() {
 
         if (rd2_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rd2_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rd2_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2214,7 +2151,8 @@ function update_rd2() {
     }
 }
 
-//------------------------------ LD3 --------------------------------------
+
+//---------------------------------- LD3 --------------------------------------
 
 document.getElementById("ld3");
 
@@ -2234,12 +2172,6 @@ function update_ld3() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("ld3_player_age").textContent = "Age"
-        document.getElementById("ld3_player_position").textContent = "Position";
-        document.getElementById("ld3_player_handedness").textContent = "Handedness";
-        document.getElementById("ld3_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("ld3_player_term").textContent = "Expiry (Term)";
-        document.getElementById("ld3_player_clause").textContent = "Clause";
 
         if (ld3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2251,12 +2183,12 @@ function update_ld3() {
         if (ld3_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(ld3_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld3_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(ld3_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld3_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2278,7 +2210,7 @@ function update_ld3() {
         document.getElementById("ld3_player_age").textContent = "Age " + age;
         document.getElementById("ld3_player_position").textContent = position;
         document.getElementById("ld3_player_handedness").textContent = handed;
-        document.getElementById("ld3_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("ld3_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("ld3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("ld3_player_clause").textContent = clause;
 
@@ -2294,12 +2226,12 @@ function update_ld3() {
 
         if (ld3_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2308,12 +2240,12 @@ function update_ld3() {
 
         if (ld3_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(ld3_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(ld3_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2322,7 +2254,8 @@ function update_ld3() {
     }
 }
 
-//------------------------------ RD3 --------------------------------------
+
+//---------------------------------- RD3 --------------------------------------
 
 document.getElementById("rd3");
 
@@ -2342,12 +2275,6 @@ function update_rd3() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("rd3_player_age").textContent = "Age"
-        document.getElementById("rd3_player_position").textContent = "Position";
-        document.getElementById("rd3_player_handedness").textContent = "Handedness";
-        document.getElementById("rd3_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("rd3_player_term").textContent = "Expiry (Term)";
-        document.getElementById("rd3_player_clause").textContent = "Clause";
 
         if (rd3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2359,12 +2286,12 @@ function update_rd3() {
         if (rd3_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rd3_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd3_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rd3_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd3_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2386,7 +2313,7 @@ function update_rd3() {
         document.getElementById("rd3_player_age").textContent = "Age " + age;
         document.getElementById("rd3_player_position").textContent = position;
         document.getElementById("rd3_player_handedness").textContent = handed;
-        document.getElementById("rd3_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("rd3_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("rd3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rd3_player_clause").textContent = clause;
 
@@ -2402,12 +2329,12 @@ function update_rd3() {
 
         if (rd3_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2416,12 +2343,12 @@ function update_rd3() {
 
         if (rd3_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(rd3_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(rd3_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2430,7 +2357,8 @@ function update_rd3() {
     }
 }
 
-//------------------------------ G1 --------------------------------------
+
+//---------------------------------- G1 --------------------------------------
 
 document.getElementById("g1");
 
@@ -2450,12 +2378,6 @@ function update_g1() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("g1_player_age").textContent = "Age"
-        document.getElementById("g1_player_position").textContent = "Position";
-        document.getElementById("g1_player_handedness").textContent = "Handedness";
-        document.getElementById("g1_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("g1_player_term").textContent = "Expiry (Term)";
-        document.getElementById("g1_player_clause").textContent = "Clause";
 
         if (g1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2467,12 +2389,12 @@ function update_g1() {
         if (g1_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(g1_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(g1_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(g1_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(g1_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2494,7 +2416,7 @@ function update_g1() {
         document.getElementById("g1_player_age").textContent = "Age " + age;
         document.getElementById("g1_player_position").textContent = position;
         document.getElementById("g1_player_handedness").textContent = handed;
-        document.getElementById("g1_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("g1_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("g1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("g1_player_clause").textContent = clause;
 
@@ -2510,12 +2432,12 @@ function update_g1() {
 
         if (g1_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2524,12 +2446,12 @@ function update_g1() {
 
         if (g1_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(g1_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(g1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(g1_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(g1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2538,7 +2460,8 @@ function update_g1() {
     }
 }
 
-//------------------------------ G2 --------------------------------------
+
+//---------------------------------- G2 --------------------------------------
 
 document.getElementById("g2");
 
@@ -2558,12 +2481,6 @@ function update_g2() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("g2_player_age").textContent = "Age"
-        document.getElementById("g2_player_position").textContent = "Position";
-        document.getElementById("g2_player_handedness").textContent = "Handedness";
-        document.getElementById("g2_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("g2_player_term").textContent = "Expiry (Term)";
-        document.getElementById("g2_player_clause").textContent = "Clause";
 
         if (g2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2575,12 +2492,12 @@ function update_g2() {
         if (g2_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(g2_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(g2_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(g2_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(g2_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2602,7 +2519,7 @@ function update_g2() {
         document.getElementById("g2_player_age").textContent = "Age " + age;
         document.getElementById("g2_player_position").textContent = position;
         document.getElementById("g2_player_handedness").textContent = handed;
-        document.getElementById("g2_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("g2_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("g2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("g2_player_clause").textContent = clause;
 
@@ -2618,12 +2535,12 @@ function update_g2() {
 
         if (g2_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2632,12 +2549,12 @@ function update_g2() {
 
         if (g2_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(g2_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(g2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(g2_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(g2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2646,7 +2563,8 @@ function update_g2() {
     }
 }
 
-//------------------------------ S1 --------------------------------------
+
+//---------------------------------- S1 --------------------------------------
 
 document.getElementById("s1");
 
@@ -2666,12 +2584,6 @@ function update_s1() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("s1_player_age").textContent = "Age"
-        document.getElementById("s1_player_position").textContent = "Position";
-        document.getElementById("s1_player_handedness").textContent = "Handedness";
-        document.getElementById("s1_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("s1_player_term").textContent = "Expiry (Term)";
-        document.getElementById("s1_player_clause").textContent = "Clause";
 
         if (s1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2683,12 +2595,12 @@ function update_s1() {
         if (s1_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(s1_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s1_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(s1_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s1_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2710,7 +2622,7 @@ function update_s1() {
         document.getElementById("s1_player_age").textContent = "Age " + age;
         document.getElementById("s1_player_position").textContent = position;
         document.getElementById("s1_player_handedness").textContent = handed;
-        document.getElementById("s1_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("s1_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("s1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("s1_player_clause").textContent = clause;
 
@@ -2726,12 +2638,12 @@ function update_s1() {
 
         if (s1_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2740,12 +2652,12 @@ function update_s1() {
 
         if (s1_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(s1_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(s1_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2754,7 +2666,8 @@ function update_s1() {
     }
 }
 
-//------------------------------ S2 --------------------------------------
+
+//---------------------------------- S2 --------------------------------------
 
 document.getElementById("s2");
 
@@ -2774,12 +2687,6 @@ function update_s2() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("s2_player_age").textContent = "Age"
-        document.getElementById("s2_player_position").textContent = "Position";
-        document.getElementById("s2_player_handedness").textContent = "Handedness";
-        document.getElementById("s2_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("s2_player_term").textContent = "Expiry (Term)";
-        document.getElementById("s2_player_clause").textContent = "Clause";
 
         if (s2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2791,12 +2698,12 @@ function update_s2() {
         if (s2_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(s2_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s2_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(s2_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s2_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2818,7 +2725,7 @@ function update_s2() {
         document.getElementById("s2_player_age").textContent = "Age " + age;
         document.getElementById("s2_player_position").textContent = position;
         document.getElementById("s2_player_handedness").textContent = handed;
-        document.getElementById("s2_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("s2_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("s2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("s2_player_clause").textContent = clause;
 
@@ -2834,12 +2741,12 @@ function update_s2() {
 
         if (s2_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2848,12 +2755,12 @@ function update_s2() {
 
         if (s2_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(s2_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(s2_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2861,7 +2768,8 @@ function update_s2() {
         }
     }
 }
-//------------------------------ S3 --------------------------------------
+
+//---------------------------------- S3 --------------------------------------
 
 document.getElementById("s3");
 
@@ -2881,12 +2789,6 @@ function update_s3() {
     }
 
     if (selected_player_key == "Select") {
-        document.getElementById("s3_player_age").textContent = "Age"
-        document.getElementById("s3_player_position").textContent = "Position";
-        document.getElementById("s3_player_handedness").textContent = "Handedness";
-        document.getElementById("s3_player_salary").textContent = "Salary (Bonus)"
-        document.getElementById("s3_player_term").textContent = "Expiry (Term)";
-        document.getElementById("s3_player_clause").textContent = "Clause";
 
         if (s3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2898,12 +2800,12 @@ function update_s3() {
         if (s3_last_player != null) {
 
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(s3_last_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s3_last_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(s3_last_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s3_last_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2925,7 +2827,7 @@ function update_s3() {
         document.getElementById("s3_player_age").textContent = "Age " + age;
         document.getElementById("s3_player_position").textContent = position;
         document.getElementById("s3_player_handedness").textContent = handed;
-        document.getElementById("s3_player_salary").textContent = "$" + salary + " ($" + bonus + ")";
+        document.getElementById("s3_player_salary").textContent = salary + " (" + bonus + ")";
         document.getElementById("s3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("s3_player_clause").textContent = clause;
 
@@ -2941,12 +2843,12 @@ function update_s3() {
 
         if (s3_last_player == null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2955,12 +2857,12 @@ function update_s3() {
 
         if (s3_last_player != null) {
             const cap_hit = document.getElementById("cap_hit").innerHTML;
-            const new_cap_hit = Number(cap_hit) - Number(s3_last_player.get_salary()) + Number(selected_player.get_salary());
-            document.getElementById("cap_hit").textContent = new_cap_hit;
+            const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
+            document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(bonuses) - Number(s3_last_player.get_bonus()) + Number(selected_player.get_bonus());
-            document.getElementById("bonuses").textContent = new_bonuses;
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
@@ -2968,6 +2870,7 @@ function update_s3() {
         }
     }
 }
+
 
 
 
@@ -2994,11 +2897,10 @@ function create_player() {
 
 
 
-    var new_player = new Player(create_name, create_salary, create_bonus, create_term, create_expiry, create_position, create_age, create_handed, create_clause);
+    var new_player = new Player(create_name, formatMoney(create_salary), formatMoney(create_bonus), create_term, create_expiry, create_position, create_age, create_handed, create_clause);
 
     player_list.push(new_player);
 
-    console.log(new_player);
 }
 
 function create_player_2() {
@@ -3193,13 +3095,14 @@ function set_selected() {
     document.getElementById('g2').value = "Anthony Stolarz";
     update_g2();
     //
-    document.getElementById('s1').value = "Select";
-    update_s1();
-    document.getElementById('s2').value = "Select";
-    update_s2();
-    document.getElementById('s3').value = "Select";
-    update_s3();
+    // document.getElementById('s1').value = "Philippe Myers";
+    // update_s1();
+    // document.getElementById('s2').value = "Conor Timmins";
+    // update_s2();
+    // document.getElementById('s3').value = "Matt Murray";
+    // update_s3();
 }
+
 
 
 
