@@ -526,6 +526,13 @@ function update_lw1() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("lw1_player_age").textContent = "Age"
+        document.getElementById("lw1_player_position").textContent = "Position";
+        document.getElementById("lw1_player_handedness").textContent = "Handedness";
+        document.getElementById("lw1_player_salary").textContent = "Salary (Bonus)"
+        document.getElementById("lw1_player_term").textContent = "Expiry (Term)";
+        document.getElementById("lw1_player_clause").textContent = "Clause";
+
         if (lw1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -627,6 +634,14 @@ function update_c1() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("c1_player_age").textContent = "Age";
+        document.getElementById("c1_player_position").textContent = "Position";
+        document.getElementById("c1_player_handedness").textContent = "Handedness";
+        document.getElementById("c1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("c1_player_term").textContent = "Expiry (Term)";
+        document.getElementById("c1_player_clause").textContent = "Clause";
+
 
         if (c1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -731,6 +746,14 @@ function update_rw1() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("rw1_player_age").textContent = "Age";
+        document.getElementById("rw1_player_position").textContent = "Position";
+        document.getElementById("rw1_player_handedness").textContent = "Handedness";
+        document.getElementById("rw1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rw1_player_term").textContent = "Expiry (Term)";
+        document.getElementById("rw1_player_clause").textContent = "Clause";
+
+
         if (rw1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -833,6 +856,14 @@ function update_lw2() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("lw2_player_age").textContent = "Age";
+        document.getElementById("lw2_player_position").textContent = "Position";
+        document.getElementById("lw2_player_handedness").textContent = "Handedness";
+        document.getElementById("lw2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("lw2_player_term").textContent = "Expiry (Term)";
+        document.getElementById("lw2_player_clause").textContent = "Clause";
+
 
         if (lw2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -937,6 +968,14 @@ function update_c2() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("c2_player_age").textContent = "Age";
+        document.getElementById("c2_player_position").textContent = "Position";
+        document.getElementById("c2_player_handedness").textContent = "Handedness";
+        document.getElementById("c2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("c2_player_term").textContent = "Expiry (Term)";
+        document.getElementById("c2_player_clause").textContent = "Clause";
+
+
         if (c2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -1039,6 +1078,14 @@ function update_rw2() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("rw2_player_age").textContent = "Age";
+        document.getElementById("rw2_player_position").textContent = "Position";
+        document.getElementById("rw2_player_handedness").textContent = "Handedness";
+        document.getElementById("rw2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rw2_player_term").textContent = "Expiry (Term)";
+        document.getElementById("rw2_player_clause").textContent = "Clause";
+
 
         if (rw2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1143,6 +1190,14 @@ function update_lw3() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("lw3_player_age").textContent = "Age";
+        document.getElementById("lw3_player_position").textContent = "Position";
+        document.getElementById("lw3_player_handedness").textContent = "Handedness";
+        document.getElementById("lw3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("lw3_player_term").textContent = "Expiry (Term)";
+        document.getElementById("lw3_player_clause").textContent = "Clause";
+
+
         if (lw3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -1245,6 +1300,14 @@ function update_c3() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("c3_player_age").textContent = "Age";
+        document.getElementById("c3_player_position").textContent = "Position";
+        document.getElementById("c3_player_handedness").textContent = "Handedness";
+        document.getElementById("c3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("c3_player_term").textContent = "Expiry (Term)";
+        document.getElementById("c3_player_clause").textContent = "Clause";
+
 
         if (c3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1349,6 +1412,14 @@ function update_rw3() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("rw3_player_age").textContent = "Age";
+        document.getElementById("rw3_player_position").textContent = "Position";
+        document.getElementById("rw3_player_handedness").textContent = "Handedness";
+        document.getElementById("rw3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rw3_player_term").textContent = "Expiry (Term)";
+        document.getElementById("rw3_player_clause").textContent = "Clause";
+
+
         if (rw3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -1451,6 +1522,14 @@ function update_lw4() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("lw4_player_age").textContent = "Age";
+        document.getElementById("lw4_player_position").textContent = "Position";
+        document.getElementById("lw4_player_handedness").textContent = "Handedness";
+        document.getElementById("lw4_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("lw4_player_term").textContent = "Expiry (Term)";
+        document.getElementById("lw4_player_clause").textContent = "Clause";
+
 
         if (lw4_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1555,6 +1634,14 @@ function update_c4() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("c4_player_age").textContent = "Age";
+        document.getElementById("c4_player_position").textContent = "Position";
+        document.getElementById("c4_player_handedness").textContent = "Handedness";
+        document.getElementById("c4_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("c4_player_term").textContent = "Expiry (Term)";
+        document.getElementById("c4_player_clause").textContent = "Clause";
+
+
         if (c4_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -1657,6 +1744,14 @@ function update_rw4() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("rw4_player_age").textContent = "Age";
+        document.getElementById("rw4_player_position").textContent = "Position";
+        document.getElementById("rw4_player_handedness").textContent = "Handedness";
+        document.getElementById("rw4_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rw4_player_term").textContent = "Expiry (Term)";
+        document.getElementById("rw4_player_clause").textContent = "Clause";
+
 
         if (rw4_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1761,6 +1856,14 @@ function update_ld1() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("ld1_player_age").textContent = "Age";
+        document.getElementById("ld1_player_position").textContent = "Position";
+        document.getElementById("ld1_player_handedness").textContent = "Handedness";
+        document.getElementById("ld1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("ld1_player_term").textContent = "Expiry (Term)";
+        document.getElementById("ld1_player_clause").textContent = "Clause";
+
+
         if (ld1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -1863,6 +1966,14 @@ function update_rd1() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("rd1_player_age").textContent = "Age";
+        document.getElementById("rd1_player_position").textContent = "Position";
+        document.getElementById("rd1_player_handedness").textContent = "Handedness";
+        document.getElementById("rd1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rd1_player_term").textContent = "Expiry (Term)";
+        document.getElementById("rd1_player_clause").textContent = "Clause";
+
 
         if (rd1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -1967,6 +2078,14 @@ function update_ld2() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("ld2_player_age").textContent = "Age";
+        document.getElementById("ld2_player_position").textContent = "Position";
+        document.getElementById("ld2_player_handedness").textContent = "Handedness";
+        document.getElementById("ld2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("ld2_player_term").textContent = "Expiry (Term)";
+        document.getElementById("ld2_player_clause").textContent = "Clause";
+
+
         if (ld2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -2069,6 +2188,14 @@ function update_rd2() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("rd2_player_age").textContent = "Age";
+        document.getElementById("rd2_player_position").textContent = "Position";
+        document.getElementById("rd2_player_handedness").textContent = "Handedness";
+        document.getElementById("rd2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rd2_player_term").textContent = "Expiry (Term)";
+        document.getElementById("rd2_player_clause").textContent = "Clause";
+
 
         if (rd2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2173,6 +2300,14 @@ function update_ld3() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("ld3_player_age").textContent = "Age";
+        document.getElementById("ld3_player_position").textContent = "Position";
+        document.getElementById("ld3_player_handedness").textContent = "Handedness";
+        document.getElementById("ld3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("ld3_player_term").textContent = "Expiry (Term)";
+        document.getElementById("ld3_player_clause").textContent = "Clause";
+
+
         if (ld3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -2275,6 +2410,14 @@ function update_rd3() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("rd3_player_age").textContent = "Age";
+        document.getElementById("rd3_player_position").textContent = "Position";
+        document.getElementById("rd3_player_handedness").textContent = "Handedness";
+        document.getElementById("rd3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rd3_player_term").textContent = "Expiry (Term)";
+        document.getElementById("rd3_player_clause").textContent = "Clause";
+
 
         if (rd3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2379,6 +2522,14 @@ function update_g1() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("g1_player_age").textContent = "Age";
+        document.getElementById("g1_player_position").textContent = "Position";
+        document.getElementById("g1_player_handedness").textContent = "Handedness";
+        document.getElementById("g1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("g1_player_term").textContent = "Expiry (Term)";
+        document.getElementById("g1_player_clause").textContent = "Clause";
+
+
         if (g1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -2481,6 +2632,14 @@ function update_g2() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("g2_player_age").textContent = "Age";
+        document.getElementById("g2_player_position").textContent = "Position";
+        document.getElementById("g2_player_handedness").textContent = "Handedness";
+        document.getElementById("g2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("g2_player_term").textContent = "Expiry (Term)";
+        document.getElementById("g2_player_clause").textContent = "Clause";
+
 
         if (g2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
@@ -2585,6 +2744,14 @@ function update_s1() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("s1_player_age").textContent = "Age";
+        document.getElementById("s1_player_position").textContent = "Position";
+        document.getElementById("s1_player_handedness").textContent = "Handedness";
+        document.getElementById("s1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("s1_player_term").textContent = "Expiry (Term)";
+        document.getElementById("s1_player_clause").textContent = "Clause";
+
+
         if (s1_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -2688,6 +2855,14 @@ function update_s2() {
 
     if (selected_player_key == "Select") {
 
+        document.getElementById("s2_player_age").textContent = "Age";
+        document.getElementById("s2_player_position").textContent = "Position";
+        document.getElementById("s2_player_handedness").textContent = "Handedness";
+        document.getElementById("s2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("s2_player_term").textContent = "Expiry (Term)";
+        document.getElementById("s2_player_clause").textContent = "Clause";
+
+
         if (s2_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
@@ -2789,6 +2964,14 @@ function update_s3() {
     }
 
     if (selected_player_key == "Select") {
+
+        document.getElementById("s3_player_age").textContent = "Age";
+        document.getElementById("s3_player_position").textContent = "Position";
+        document.getElementById("s3_player_handedness").textContent = "Handedness";
+        document.getElementById("s3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("s3_player_term").textContent = "Expiry (Term)";
+        document.getElementById("s3_player_clause").textContent = "Clause";
+
 
         if (s3_flag == true) {
             const roster_size = document.getElementById("roster_size").innerHTML;
