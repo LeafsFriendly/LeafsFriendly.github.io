@@ -8,40 +8,110 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 275%;
+    font-size: 3em;
 }
 
 h3 {
     text-align: center;
-    font-size: 100%;
+    font-size: 1em;
     color: rgb(140, 140, 140);
-}
-
-.a_button {
-    display: inline-block;
-    padding: 1.25% 1.5%;
-    color: #00205b;
-    font-size: calc();
-    background-color: white;
-    text-align: center;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 85%;
-
 }
 
 #years {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.a_button {
+    padding: 25px 30px;
+    margin: 20px;
+    color: white;
+    background-color: #003089;
+    border: 5px white solid;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.a_button:hover{
+    background-color: #0047cc;
+    transform: translateY(-3px);
+}
+
+.a_button:active {
+    background-color: #1869ff;
 }
 
 #about {
     color: white;
+    color: rgb(140, 140, 140);
 }
 
 #credits {
     display: flex;
-    justify-content: space-evenly;
-    font-size: 5%;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1em;
+    color: rgb(140, 140, 140);
 }
+
+
+
+@media (max-width: 670px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+    .a_button {
+        padding: 10px 20px;
+        margin: 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 612px) {
+    h1 {
+        font-size: 2.3em;
+    }
+    h3 {
+        font-size: 1.1em;
+    }
+    .a_button {
+        padding: 10px 18px;
+        margin: 12px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 535px) {
+    h1 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1em;
+    }
+    .a_button {
+        padding: 8px 15px;
+        margin: 10px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 460px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    h3 {
+        font-size: 0.9em;
+    }
+    .a_button {
+        padding: 8px 12px;
+        margin: 8px;
+        font-size: 0.75em;
+    }
+}
+
 
