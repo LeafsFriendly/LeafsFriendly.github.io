@@ -3370,16 +3370,13 @@ function set_selected() {
     update_g1();
     document.getElementById('g2').value = "Anthony Stolarz";
     update_g2();
-    
+    //
     document.getElementById('s1').value = "Select";
     update_s1();
-    // s1.style.backgroundColor = '#fbcece';
     document.getElementById('s2').value = "Select";
     update_s2();
-    // s2.style.backgroundColor = '#fbcece';
     document.getElementById('s3').value = "Select";
     update_s3();
-    // s3.style.backgroundColor = '#fbcece';
 }
 
 
