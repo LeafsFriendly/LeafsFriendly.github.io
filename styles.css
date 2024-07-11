@@ -80,6 +80,8 @@ ul {
     width: 200px;
     justify-content: space-evenly;
     height: 50px;
+
+    font-weight: bold;
 }
 
 .info_box li {
