@@ -555,6 +555,8 @@ function update_lw1() {
             lw1_last_player = null;
         }
 
+        lw1.style.backgroundColor = '#fbcece';
+
     } else {
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
@@ -611,6 +613,8 @@ function update_lw1() {
 
             lw1_last_player = selected_player;
         }
+
+        lw1.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -664,6 +668,8 @@ function update_c1() {
 
             c1_last_player = null;
         }
+
+        c1.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -721,6 +727,8 @@ function update_c1() {
 
             c1_last_player = selected_player;
         }
+
+        c1.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -775,6 +783,8 @@ function update_rw1() {
 
             rw1_last_player = null;
         }
+
+        rw1.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -832,6 +842,8 @@ function update_rw1() {
 
             rw1_last_player = selected_player;
         }
+
+        rw1.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -886,6 +898,8 @@ function update_lw2() {
 
             lw2_last_player = null;
         }
+
+        lw2.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -943,6 +957,8 @@ function update_lw2() {
 
             lw2_last_player = selected_player;
         }
+        
+        lw2.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -997,6 +1013,8 @@ function update_c2() {
 
             c2_last_player = null;
         }
+
+        c2.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1054,6 +1072,8 @@ function update_c2() {
 
             c2_last_player = selected_player;
         }
+
+        c2.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1108,6 +1128,8 @@ function update_rw2() {
 
             rw2_last_player = null;
         }
+
+        rw2.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1165,6 +1187,8 @@ function update_rw2() {
 
             rw2_last_player = selected_player;
         }
+
+        rw2.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1219,6 +1243,8 @@ function update_lw3() {
 
             lw3_last_player = null;
         }
+
+        lw3.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1276,6 +1302,8 @@ function update_lw3() {
 
             lw3_last_player = selected_player;
         }
+
+        lw3.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1330,6 +1358,8 @@ function update_c3() {
 
             c3_last_player = null;
         }
+
+        c3.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1387,6 +1417,8 @@ function update_c3() {
 
             c3_last_player = selected_player;
         }
+
+        c3.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1441,6 +1473,8 @@ function update_rw3() {
 
             rw3_last_player = null;
         }
+
+        rw3.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1498,6 +1532,8 @@ function update_rw3() {
 
             rw3_last_player = selected_player;
         }
+
+        rw3.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1552,6 +1588,8 @@ function update_lw4() {
 
             lw4_last_player = null;
         }
+
+        lw4.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1609,6 +1647,8 @@ function update_lw4() {
 
             lw4_last_player = selected_player;
         }
+
+        lw4.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1663,6 +1703,8 @@ function update_c4() {
 
             c4_last_player = null;
         }
+
+        c4.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1720,6 +1762,8 @@ function update_c4() {
 
             c4_last_player = selected_player;
         }
+
+        c4.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1774,6 +1818,8 @@ function update_rw4() {
 
             rw4_last_player = null;
         }
+
+        rw4.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1831,6 +1877,8 @@ function update_rw4() {
 
             rw4_last_player = selected_player;
         }
+
+        rw4.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1885,6 +1933,8 @@ function update_ld1() {
 
             ld1_last_player = null;
         }
+
+        ld1.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -1942,6 +1992,8 @@ function update_ld1() {
 
             ld1_last_player = selected_player;
         }
+
+        ld1.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -1996,6 +2048,8 @@ function update_rd1() {
 
             rd1_last_player = null;
         }
+
+        rd1.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2053,6 +2107,8 @@ function update_rd1() {
 
             rd1_last_player = selected_player;
         }
+
+        rd1.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -2107,6 +2163,8 @@ function update_ld2() {
 
             ld2_last_player = null;
         }
+
+        ld2.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2164,6 +2222,8 @@ function update_ld2() {
 
             ld2_last_player = selected_player;
         }
+
+        ld2.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -2218,6 +2278,8 @@ function update_rd2() {
 
             rd2_last_player = null;
         }
+
+        rd2.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2275,6 +2337,8 @@ function update_rd2() {
 
             rd2_last_player = selected_player;
         }
+
+        rd2.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -2329,6 +2393,8 @@ function update_ld3() {
 
             ld3_last_player = null;
         }
+
+        ld3.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2386,6 +2452,8 @@ function update_ld3() {
 
             ld3_last_player = selected_player;
         }
+
+        ld3.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -2440,6 +2508,8 @@ function update_rd3() {
 
             rd3_last_player = null;
         }
+
+        rd3.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2497,6 +2567,8 @@ function update_rd3() {
 
             rd3_last_player = selected_player;
         }
+
+        rd3.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -2551,6 +2623,8 @@ function update_g1() {
 
             g1_last_player = null;
         }
+
+        g1.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2608,7 +2682,10 @@ function update_g1() {
 
             g1_last_player = selected_player;
         }
+
+        g1.style.backgroundColor = '#FFFFFF';
     }
+    
 }
 
 
@@ -2662,6 +2739,8 @@ function update_g2() {
 
             g2_last_player = null;
         }
+
+        g2.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2719,6 +2798,8 @@ function update_g2() {
 
             g2_last_player = selected_player;
         }
+
+        g2.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -2773,6 +2854,8 @@ function update_s1() {
 
             s1_last_player = null;
         }
+
+        s1.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2830,6 +2913,8 @@ function update_s1() {
 
             s1_last_player = selected_player;
         }
+
+        s1.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -2884,6 +2969,8 @@ function update_s2() {
 
             s2_last_player = null;
         }
+
+        s2.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -2941,6 +3028,8 @@ function update_s2() {
 
             s2_last_player = selected_player;
         }
+
+        s2.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -2994,6 +3083,8 @@ function update_s3() {
 
             s3_last_player = null;
         }
+
+        s3.style.backgroundColor = '#fbcece';
 
     } else {
         var salary = selected_player.get_salary();
@@ -3051,6 +3142,8 @@ function update_s3() {
 
             s3_last_player = selected_player;
         }
+
+        s3.style.backgroundColor = '#FFFFFF';
     }
 }
 
@@ -3277,13 +3370,16 @@ function set_selected() {
     update_g1();
     document.getElementById('g2').value = "Anthony Stolarz";
     update_g2();
-    //
-    // document.getElementById('s1').value = "Philippe Myers";
-    // update_s1();
-    // document.getElementById('s2').value = "Conor Timmins";
-    // update_s2();
-    // document.getElementById('s3').value = "Matt Murray";
-    // update_s3();
+    
+    document.getElementById('s1').value = "Select";
+    update_s1();
+    // s1.style.backgroundColor = '#fbcece';
+    document.getElementById('s2').value = "Select";
+    update_s2();
+    // s2.style.backgroundColor = '#fbcece';
+    document.getElementById('s3').value = "Select";
+    update_s3();
+    // s3.style.backgroundColor = '#fbcece';
 }
 
 
