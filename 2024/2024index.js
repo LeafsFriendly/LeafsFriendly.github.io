@@ -408,7 +408,7 @@ has_headshot = ["Matthew Knies", "Auston Matthews", "Mitchell Marner", "Bobby Mc
                 "David Kampf", "Ryan Reaves", "Morgan Rielly", "Christopher Tanev", "Oliver Ekman-Larsson",
                 "Jake McCabe", "Simon Benoit", "Timothy Liljegren", "Joseph Woll", "Anthony Stolarz", 
                 "Nick Abruzzese", "Fraser Minten", "Jani Hakanpaa", "Conor Timmins", "Topi Niemela",
-                "Matt Murray", "Nicholas Robertson", "Connor Dewar", "Alex Steeves"];
+                "Matt Murray", "Nicholas Robertson", "Connor Dewar", "Alex Steeves", "Dennis Hildeby"];
 
 
 //--------------------------------Prefill RFA or Reserve Player----------------------------------
