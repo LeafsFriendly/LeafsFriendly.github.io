@@ -178,7 +178,7 @@ button:active {
 .position_heading {
     text-align: center;
     font-weight: bold;
-    color: rgb(255, 141, 47);
+    color: rgba(255, 255, 255, 0.717);
 }
 
 #credits {
