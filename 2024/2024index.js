@@ -124,6 +124,32 @@ function parseMoneyToString(moneyStr) {
     return moneyStr.replace(/[$,]/g, '');
 }
 
+function formatBonus(num) {
+    if (num >= 1e6) {
+        return (num / 1e6).toFixed(1) + 'M';
+    } else if (num >= 1e3) {
+        return (num / 1e3).toFixed(1) + 'k';
+    } else {
+        return num.toString();
+    }
+}
+
+
+function parseBonusToString(str) {
+
+    let numericValue = parseFloat(str);
+
+    if (str.includes('M')) {
+        numericValue *= 1e6;
+    } else if (str.includes('k')) {
+        numericValue *= 1e3;
+    }
+
+    return Math.round(numericValue).toString();
+}
+
+
+
 
 //-----------------------------------------------------------------------------------
 
@@ -180,53 +206,53 @@ var stolarz_anthony_age = calculateAge(stolarz_anthony_birthday);
 
 //Step 3 of 5
 
-var matthews_auston = new Player("Auston Matthews", formatMoney(13250000), formatMoney(0), 4, "UFA", "C", matthews_auston_age, "LH", "NMC");
-var tavares_john = new Player("John Tavares", formatMoney(11000000), formatMoney(0), 1, "UFA", "C", tavares_john_age, "LH", "NMC");
-var nylander_william = new Player("William Nylander", formatMoney(11500000), formatMoney(0), 8, "UFA", "RW", nylander_william_age, "RH", "NMC");
-var marner_mitchell = new Player("Mitchell Marner", formatMoney(10903000), formatMoney(0), 1, "UFA", "RW", marner_mitch_age, "RH", "NMC");
-var kampf_david = new Player("David Kampf", formatMoney(2400000), formatMoney(0), 3, "UFA", "C", kampf_david_age, "LH", "M-NTC");
-var jarnkrok_calle = new Player("Calle Jarnkrok", formatMoney(2100000), formatMoney(0), 2, "UFA", "RW", jarnkrok_calle_age, "RH", "M-NTC");
-var reaves_ryan = new Player("Ryan Reaves", formatMoney(1350000), formatMoney(0), 2, "UFA", "RW", reaves_ryan_age, "RH", "None");
-var mcmann_bobby = new Player("Bobby McMann", formatMoney(1350000), formatMoney(0), 2, "UFA", "LW", mcmann_bobby_age, "LH", "None");
-var knies_matthew = new Player("Matthew Knies", formatMoney(925000), formatMoney(0), 1, "RFA", "LW", knies_matthew_age, "LH", "None");
-var holmberg_pontus = new Player("Pontus Holmberg", formatMoney(800000), formatMoney(0), 1, "RFA (Arb)", "C", holmberg_pontus_age, "LH", "None");
-var cowan_easton = new Player("Easton Cowan", formatMoney(904667), formatMoney(0), 3, "RFA", "LW", cowan_easton_age, "LH", "None");
-var minten_fraser = new Player("Fraser Minten", formatMoney(816667), formatMoney(0), 3, "RFA", "C", minten_fraser_age, "LH", "None");
+var matthews_auston = new Player("Auston Matthews", formatMoney(13250000), formatBonus(0), 4, "UFA", "C", matthews_auston_age, "LH", "NMC");
+var tavares_john = new Player("John Tavares", formatMoney(11000000), formatBonus(0), 1, "UFA", "C", tavares_john_age, "LH", "NMC");
+var nylander_william = new Player("William Nylander", formatMoney(11500000), formatBonus(0), 8, "UFA", "RW", nylander_william_age, "RH", "NMC");
+var marner_mitchell = new Player("Mitchell Marner", formatMoney(10903000), formatBonus(0), 1, "UFA", "RW", marner_mitch_age, "RH", "NMC");
+var kampf_david = new Player("David Kampf", formatMoney(2400000), formatBonus(0), 3, "UFA", "C", kampf_david_age, "LH", "M-NTC");
+var jarnkrok_calle = new Player("Calle Jarnkrok", formatMoney(2100000), formatBonus(0), 2, "UFA", "RW", jarnkrok_calle_age, "RH", "M-NTC");
+var reaves_ryan = new Player("Ryan Reaves", formatMoney(1350000), formatBonus(0), 2, "UFA", "RW", reaves_ryan_age, "RH", "None");
+var mcmann_bobby = new Player("Bobby McMann", formatMoney(1350000), formatBonus(0), 2, "UFA", "LW", mcmann_bobby_age, "LH", "None");
+var knies_matthew = new Player("Matthew Knies", formatMoney(925000), formatBonus(0), 1, "RFA", "LW", knies_matthew_age, "LH", "None");
+var holmberg_pontus = new Player("Pontus Holmberg", formatMoney(800000), formatBonus(0), 1, "RFA (Arb)", "C", holmberg_pontus_age, "LH", "None");
+var cowan_easton = new Player("Easton Cowan", formatMoney(904667), formatBonus(0), 3, "RFA", "LW", cowan_easton_age, "LH", "None");
+var minten_fraser = new Player("Fraser Minten", formatMoney(816667), formatBonus(0), 3, "RFA", "C", minten_fraser_age, "LH", "None");
 var grebyonkin_nikita = new Player("Nikita Grebyonkin", formatMoney(875000), formatMoney(0), 2, "10.2c", "RW", grebyonkin_nikita_age, "LH", "None");
-var hirvonen_roni = new Player("Roni Hirvonen", formatMoney(856667), formatMoney(0), 1, "RFA", "LW", hirvonen_roni_age, "LH", "None");
-var quillan_jacob = new Player("Jacob Quillan", formatMoney(875000), formatMoney(0), 2, "RFA", "C", quillan_jacob_age, "LH", "None");
-var tverberg_ryan = new Player("Ryan Tverberg", formatMoney(851667), formatMoney(0), 2, "RFA", "RW", tverberg_ryan_age, "RH", "None");
-var kressler_braeden = new Player("Braeden Kressler", formatMoney(800556), formatMoney(0), 2, "RFA", "C", kressler_braeden_age, "RH", "None");
-var voit_ty = new Player("Ty Voit", formatMoney(800556), formatMoney(0), 2, "RFA", "LW", voit_ty_age, "RH", "None");
-var abruzzese_nick = new Player("Nick Abruzzese", formatMoney(775000), formatMoney(0), 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
-var domi_max = new Player("Max Domi", formatMoney(3750000), formatMoney(0), 4, "UFA", "C", domi_max_age, "LH", "M-NTC");
-var pare_cedric = new Player("Cedric Pare", formatMoney(775000), formatMoney(0), 1, "RFA", "C", pare_cedric_age, "LH", "None");
+var hirvonen_roni = new Player("Roni Hirvonen", formatMoney(856667), formatBonus(0), 1, "RFA", "LW", hirvonen_roni_age, "LH", "None");
+var quillan_jacob = new Player("Jacob Quillan", formatMoney(875000), formatBonus(0), 2, "RFA", "C", quillan_jacob_age, "LH", "None");
+var tverberg_ryan = new Player("Ryan Tverberg", formatMoney(851667), formatBonus(0), 2, "RFA", "RW", tverberg_ryan_age, "RH", "None");
+var kressler_braeden = new Player("Braeden Kressler", formatMoney(800556), formatBonus(0), 2, "RFA", "C", kressler_braeden_age, "RH", "None");
+var voit_ty = new Player("Ty Voit", formatMoney(800556), formatBonus(0), 2, "RFA", "LW", voit_ty_age, "RH", "None");
+var abruzzese_nick = new Player("Nick Abruzzese", formatMoney(775000), formatBonus(0), 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
+var domi_max = new Player("Max Domi", formatMoney(3750000), formatBonus(0), 4, "UFA", "C", domi_max_age, "LH", "M-NTC");
+var pare_cedric = new Player("Cedric Pare", formatMoney(775000), formatBonus(0), 1, "RFA", "C", pare_cedric_age, "LH", "None");
 
-var rielly_morgan = new Player("Morgan Rielly", formatMoney(7500000), formatMoney(0), 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
-var mccabe_jake = new Player("Jake McCabe", formatMoney(2000000), formatMoney(0), 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
-var benoit_simon = new Player("Simon Benoit", formatMoney(1350000), formatMoney(0), 3, "UFA", "LD", benoit_simon_age, "LH", "None");
-var timmins_conor = new Player("Conor Timmins", formatMoney(1100000), formatMoney(0), 1, "RFA (Arb)", "RD", timmins_conor_age, "RH", "None");
-var webber_cade = new Player("Cade Webber", formatMoney(875000), formatMoney(0), 1, "10.2c", "LD", webber_cade_age, "LH", "None");
-var niemela_topi = new Player("Topi Niemela", formatMoney(856667), formatMoney(0), 1, "RFA", "RD", niemela_topi_age, "RH", "None");
-var rifai_marshall = new Player("Marshall Rifai", formatMoney(775000), formatMoney(0), 1, "UFA", "LD", rifai_marshall_age, "LH", "None");
-var mattinen_nicolas = new Player("Nicolas Mattinen", formatMoney(775000), formatMoney(0), 1, "UFA", "RD", mattinen_nicolas_age, "RH", "None");
-var villeneuve_william = new Player("William Villeneuve", formatMoney(817778), formatMoney(0), 1, "RFA", "RD", villeneuve_william_age, "RH", "None");
-var kokkonen_mikko = new Player("Mikko Kokkonen", formatMoney(846667), formatMoney(0), 1, "RFA", "LD", kokkonen_mikko_age, "LH", "None");
-var chadwick_noah = new Player("Noah Chadwick", formatMoney(826111), formatMoney(0), 3, "RFA", "LD", chadwick_noah_age, "LH", "None");
-var liljegren_timothy = new Player("Timothy Liljegren", formatMoney(3000000), formatMoney(0), 2, "UFA", "RD", liljegren_timothy_age, "RH", "None");
-var ekman_larsson_oliver = new Player("Oliver Ekman-Larsson", formatMoney(3500000), formatMoney(0), 4, "UFA", "LD", ekman_larsson_oliver_age, "LH", "M-NTC");
-var tanev_christopher = new Player("Christopher Tanev", formatMoney(4500000), formatMoney(0), 6, "UFA", "RD", tanev_christopher_age, "RH", "NMC");
-var hakanpaa_jani = new Player("Jani Hakanpaa", formatMoney(1500000), formatMoney(0), 2, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
-var mermis_dakota = new Player("Dakota Mermis", formatMoney(775000), formatMoney(0), 1, "UFA", "LD", mermis_dakota_age, "LH", "None");
-var myers_philippe = new Player("Philippe Myers", formatMoney(775000), formatMoney(0), 1, "UFA", "RD", myers_philippe_age, "RH", "None");
+var rielly_morgan = new Player("Morgan Rielly", formatMoney(7500000), formatBonus(0), 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
+var mccabe_jake = new Player("Jake McCabe", formatMoney(2000000), formatBonus(0), 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
+var benoit_simon = new Player("Simon Benoit", formatMoney(1350000), formatBonus(0), 3, "UFA", "LD", benoit_simon_age, "LH", "None");
+var timmins_conor = new Player("Conor Timmins", formatMoney(1100000), formatBonus(0), 1, "RFA (Arb)", "RD", timmins_conor_age, "RH", "None");
+var webber_cade = new Player("Cade Webber", formatMoney(875000), formatBonus(0), 1, "10.2c", "LD", webber_cade_age, "LH", "None");
+var niemela_topi = new Player("Topi Niemela", formatMoney(856667), formatBonus(0), 1, "RFA", "RD", niemela_topi_age, "RH", "None");
+var rifai_marshall = new Player("Marshall Rifai", formatMoney(775000), formatBonus(0), 1, "UFA", "LD", rifai_marshall_age, "LH", "None");
+var mattinen_nicolas = new Player("Nicolas Mattinen", formatMoney(775000), formatBonus(0), 1, "UFA", "RD", mattinen_nicolas_age, "RH", "None");
+var villeneuve_william = new Player("William Villeneuve", formatMoney(817778), formatBonus(0), 1, "RFA", "RD", villeneuve_william_age, "RH", "None");
+var kokkonen_mikko = new Player("Mikko Kokkonen", formatMoney(846667), formatBonus(0), 1, "RFA", "LD", kokkonen_mikko_age, "LH", "None");
+var chadwick_noah = new Player("Noah Chadwick", formatMoney(826111), formatBonus(0), 3, "RFA", "LD", chadwick_noah_age, "LH", "None");
+var liljegren_timothy = new Player("Timothy Liljegren", formatMoney(3000000), formatBonus(0), 2, "UFA", "RD", liljegren_timothy_age, "RH", "None");
+var ekman_larsson_oliver = new Player("Oliver Ekman-Larsson", formatMoney(3500000), formatBonus(0), 4, "UFA", "LD", ekman_larsson_oliver_age, "LH", "M-NTC");
+var tanev_christopher = new Player("Christopher Tanev", formatMoney(4500000), formatBonus(0), 6, "UFA", "RD", tanev_christopher_age, "RH", "NMC");
+var hakanpaa_jani = new Player("Jani Hakanpaa", formatMoney(1500000), formatBonus(0), 2, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
+var mermis_dakota = new Player("Dakota Mermis", formatMoney(775000), formatBonus(0), 1, "UFA", "LD", mermis_dakota_age, "LH", "None");
+var myers_philippe = new Player("Philippe Myers", formatMoney(775000), formatBonus(0), 1, "UFA", "RD", myers_philippe_age, "RH", "None");
 
 
-var woll_joseph = new Player("Joseph Woll", formatMoney(766667), formatMoney(0), 4, "UFA", "G", woll_joseph_age, "LH", "None");
-var hildeby_dennis = new Player("Dennis Hildeby", formatMoney(843333), formatMoney(0), 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
-var akhtiamov_artur = new Player("Artur Akhtiamov", formatMoney(851667), formatMoney(0), 2, "RFA", "G", akhtiamov_artur_age, "LH", "None");
-var peksa_vyacheslav = new Player("Vyacheslav Peksa", formatMoney(851667), formatMoney(0), 2, "RFA", "G", peksa_vyacheslav_age, "LH", "None");
-var murray_matt = new Player("Matt Murray", formatMoney(875000), formatMoney(0), 1, "UFA", "G", murray_matt_age, "LH", "None");
-var stolarz_anthony = new Player("Anthony Stolarz", formatMoney(2500000), formatMoney(0), 2, "UFA", "G", stolarz_anthony_age, "LH", "None");
+var woll_joseph = new Player("Joseph Woll", formatMoney(766667), formatBonus(0), 4, "UFA", "G", woll_joseph_age, "LH", "None");
+var hildeby_dennis = new Player("Dennis Hildeby", formatMoney(843333), formatBonus(0), 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
+var akhtiamov_artur = new Player("Artur Akhtiamov", formatMoney(851667), formatBonus(0), 2, "RFA", "G", akhtiamov_artur_age, "LH", "None");
+var peksa_vyacheslav = new Player("Vyacheslav Peksa", formatMoney(851667), formatBonus(0), 2, "RFA", "G", peksa_vyacheslav_age, "LH", "None");
+var murray_matt = new Player("Matt Murray", formatMoney(875000), formatBonus(0), 1, "UFA", "G", murray_matt_age, "LH", "None");
+var stolarz_anthony = new Player("Anthony Stolarz", formatMoney(2500000), formatBonus(0), 2, "UFA", "G", stolarz_anthony_age, "LH", "None");
 
 
 //Step 4 of 5
@@ -374,6 +400,17 @@ populateSelects("s1_populate");
 populateSelects("s2_populate");
 populateSelects("s3_populate");
 
+
+//---------------------------------Has Headshot------------------------------------------------
+
+has_headshot = ["Matthew Knies", "Auston Matthews", "Mitchell Marner", "Bobby McMann", "John Tavares",
+                "William Nylander", "Easton Cowan", "Max Domi", "Calle Jarnkrok", "Pontus Holmberg",
+                "David Kampf", "Ryan Reaves", "Morgan Rielly", "Christopher Tanev", "Oliver Ekman-Larsson",
+                "Jake McCabe", "Simon Benoit", "Timothy Liljegren", "Joseph Woll", "Anthony Stolarz", 
+                "Nick Abruzzese", "Fraser Minten", "Jani Hakanpaa", "Conor Timmins", "Topi Niemela",
+                "Matt Murray", "Nicholas Robertson", "Connor Dewar", "Alex Steeves"];
+
+
 //--------------------------------Prefill RFA or Reserve Player----------------------------------
 
 
@@ -480,7 +517,6 @@ const roster_size = Number(roster_size_raw.innerHTML);
 const cap_ceiling = Number(parseMoneyToString(cap_ceiling_raw.innerHTML));
 const cap_hit = Number(parseMoneyToString(cap_ceiling_raw.innerHTML));
 const overages = Number(parseMoneyToString(overages_raw.innerHTML));
-const bonuses = Number(parseMoneyToString(cap_ceiling_raw.innerHTML));
 const cap_space = Number(parseMoneyToString(cap_ceiling_raw.innerHTML));
 
 cap_space_raw.textContent = formatMoney(cap_ceiling - overages);
@@ -505,20 +541,22 @@ function calculate_cap_space() {
 
 
 
+
+
 //------------------------------ LW1 --------------------------------------
 
 document.getElementById("lw1");
 
-lw1.addEventListener('change', update_lw1);
+lw1.addEventListener('change', update_lw1); //Listens for Changes in Select
 
-lw1_flag = false;
-lw1_last_player = null;
+lw1_flag = false; //Used to keep track of roster size
+lw1_last_player = null; //Used to check what the previous selection was
 
 function update_lw1() {
     var selected_player_key = lw1.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -526,28 +564,28 @@ function update_lw1() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("lw1_player_age").textContent = "Age"
+        document.getElementById("lw1_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("lw1_player_position").textContent = "Position";
-        document.getElementById("lw1_player_handedness").textContent = "Handedness";
+        document.getElementById("lw1_player_handedness").textContent = "Handed";
         document.getElementById("lw1_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("lw1_player_term").textContent = "Expiry (Term)";
         document.getElementById("lw1_player_clause").textContent = "Clause";
 
-        if (lw1_flag == true) {
+        if (lw1_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             lw1_flag = false;
         }
 
-        if (lw1_last_player != null) {
+        if (lw1_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw1_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw1_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(lw1_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -555,9 +593,11 @@ function update_lw1() {
             lw1_last_player = null;
         }
 
-        lw1.style.backgroundColor = '#fbcece';
+        lw1.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("lw1_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -572,12 +612,12 @@ function update_lw1() {
         document.getElementById("lw1_player_age").textContent = "Age " + age;
         document.getElementById("lw1_player_position").textContent = position;
         document.getElementById("lw1_player_handedness").textContent = handed;
-        document.getElementById("lw1_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("lw1_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("lw1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("lw1_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (lw1_flag == false) {
+        if (lw1_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -586,27 +626,27 @@ function update_lw1() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (lw1_last_player == null) {
+        if (lw1_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             lw1_last_player = selected_player;
         }
-
-        if (lw1_last_player != null) {
+ 
+        if (lw1_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(lw1_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -614,24 +654,32 @@ function update_lw1() {
             lw1_last_player = selected_player;
         }
 
-        lw1.style.backgroundColor = '#FFFFFF';
+        lw1.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("lw1_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("lw1_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
-//---------------------------------- C1 --------------------------------------
+//------------------------------ C1 --------------------------------------
 
 document.getElementById("c1");
 
-c1.addEventListener('change', update_c1);
+c1.addEventListener('change', update_c1); //Listens for Changes in Select
 
-c1_flag = false;
-c1_last_player = null;
+c1_flag = false; //Used to keep track of roster size
+c1_last_player = null; //Used to check what the previous selection was
 
 function update_c1() {
     var selected_player_key = c1.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -639,29 +687,28 @@ function update_c1() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("c1_player_age").textContent = "Age";
+        document.getElementById("c1_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("c1_player_position").textContent = "Position";
-        document.getElementById("c1_player_handedness").textContent = "Handedness";
-        document.getElementById("c1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("c1_player_handedness").textContent = "Handed";
+        document.getElementById("c1_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("c1_player_term").textContent = "Expiry (Term)";
         document.getElementById("c1_player_clause").textContent = "Clause";
 
-
-        if (c1_flag == true) {
+        if (c1_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             c1_flag = false;
         }
 
-        if (c1_last_player != null) {
+        if (c1_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c1_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c1_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(c1_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -669,9 +716,11 @@ function update_c1() {
             c1_last_player = null;
         }
 
-        c1.style.backgroundColor = '#fbcece';
+        c1.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("c1_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -686,12 +735,12 @@ function update_c1() {
         document.getElementById("c1_player_age").textContent = "Age " + age;
         document.getElementById("c1_player_position").textContent = position;
         document.getElementById("c1_player_handedness").textContent = handed;
-        document.getElementById("c1_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("c1_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("c1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("c1_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (c1_flag == false) {
+        if (c1_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -700,27 +749,27 @@ function update_c1() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (c1_last_player == null) {
+        if (c1_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             c1_last_player = selected_player;
         }
-
-        if (c1_last_player != null) {
+ 
+        if (c1_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(c1_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -728,25 +777,34 @@ function update_c1() {
             c1_last_player = selected_player;
         }
 
-        c1.style.backgroundColor = '#FFFFFF';
+        c1.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("c1_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("c1_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- RW1 --------------------------------------
+
+//------------------------------ RW1 --------------------------------------
 
 document.getElementById("rw1");
 
-rw1.addEventListener('change', update_rw1);
+rw1.addEventListener('change', update_rw1); //Listens for Changes in Select
 
-rw1_flag = false;
-rw1_last_player = null;
+rw1_flag = false; //Used to keep track of roster size
+rw1_last_player = null; //Used to check what the previous selection was
 
 function update_rw1() {
     var selected_player_key = rw1.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -754,29 +812,28 @@ function update_rw1() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("rw1_player_age").textContent = "Age";
+        document.getElementById("rw1_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("rw1_player_position").textContent = "Position";
-        document.getElementById("rw1_player_handedness").textContent = "Handedness";
-        document.getElementById("rw1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rw1_player_handedness").textContent = "Handed";
+        document.getElementById("rw1_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("rw1_player_term").textContent = "Expiry (Term)";
         document.getElementById("rw1_player_clause").textContent = "Clause";
 
-
-        if (rw1_flag == true) {
+        if (rw1_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             rw1_flag = false;
         }
 
-        if (rw1_last_player != null) {
+        if (rw1_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw1_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw1_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rw1_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -784,9 +841,11 @@ function update_rw1() {
             rw1_last_player = null;
         }
 
-        rw1.style.backgroundColor = '#fbcece';
+        rw1.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("rw1_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -801,12 +860,12 @@ function update_rw1() {
         document.getElementById("rw1_player_age").textContent = "Age " + age;
         document.getElementById("rw1_player_position").textContent = position;
         document.getElementById("rw1_player_handedness").textContent = handed;
-        document.getElementById("rw1_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("rw1_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("rw1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rw1_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (rw1_flag == false) {
+        if (rw1_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -815,27 +874,27 @@ function update_rw1() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (rw1_last_player == null) {
+        if (rw1_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             rw1_last_player = selected_player;
         }
-
-        if (rw1_last_player != null) {
+ 
+        if (rw1_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rw1_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -843,25 +902,34 @@ function update_rw1() {
             rw1_last_player = selected_player;
         }
 
-        rw1.style.backgroundColor = '#FFFFFF';
+        rw1.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("rw1_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("rw1_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- LW2 --------------------------------------
+
+//------------------------------ LW2 --------------------------------------
 
 document.getElementById("lw2");
 
-lw2.addEventListener('change', update_lw2);
+lw2.addEventListener('change', update_lw2); //Listens for Changes in Select
 
-lw2_flag = false;
-lw2_last_player = null;
+lw2_flag = false; //Used to keep track of roster size
+lw2_last_player = null; //Used to check what the previous selection was
 
 function update_lw2() {
     var selected_player_key = lw2.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -869,29 +937,28 @@ function update_lw2() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("lw2_player_age").textContent = "Age";
+        document.getElementById("lw2_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("lw2_player_position").textContent = "Position";
-        document.getElementById("lw2_player_handedness").textContent = "Handedness";
-        document.getElementById("lw2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("lw2_player_handedness").textContent = "Handed";
+        document.getElementById("lw2_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("lw2_player_term").textContent = "Expiry (Term)";
         document.getElementById("lw2_player_clause").textContent = "Clause";
 
-
-        if (lw2_flag == true) {
+        if (lw2_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             lw2_flag = false;
         }
 
-        if (lw2_last_player != null) {
+        if (lw2_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw2_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw2_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(lw2_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -899,9 +966,11 @@ function update_lw2() {
             lw2_last_player = null;
         }
 
-        lw2.style.backgroundColor = '#fbcece';
+        lw2.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("lw2_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -916,12 +985,12 @@ function update_lw2() {
         document.getElementById("lw2_player_age").textContent = "Age " + age;
         document.getElementById("lw2_player_position").textContent = position;
         document.getElementById("lw2_player_handedness").textContent = handed;
-        document.getElementById("lw2_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("lw2_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("lw2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("lw2_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (lw2_flag == false) {
+        if (lw2_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -930,53 +999,62 @@ function update_lw2() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (lw2_last_player == null) {
+        if (lw2_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             lw2_last_player = selected_player;
         }
-
-        if (lw2_last_player != null) {
+ 
+        if (lw2_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(lw2_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             lw2_last_player = selected_player;
         }
-        
-        lw2.style.backgroundColor = '#FFFFFF';
+
+        lw2.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("lw2_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("lw2_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- C2 --------------------------------------
+
+///------------------------------ C2 --------------------------------------
 
 document.getElementById("c2");
 
-c2.addEventListener('change', update_c2);
+c2.addEventListener('change', update_c2); //Listens for Changes in Select
 
-c2_flag = false;
-c2_last_player = null;
+c2_flag = false; //Used to keep track of roster size
+c2_last_player = null; //Used to check what the previous selection was
 
 function update_c2() {
     var selected_player_key = c2.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -984,29 +1062,28 @@ function update_c2() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("c2_player_age").textContent = "Age";
+        document.getElementById("c2_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("c2_player_position").textContent = "Position";
-        document.getElementById("c2_player_handedness").textContent = "Handedness";
-        document.getElementById("c2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("c2_player_handedness").textContent = "Handed";
+        document.getElementById("c2_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("c2_player_term").textContent = "Expiry (Term)";
         document.getElementById("c2_player_clause").textContent = "Clause";
 
-
-        if (c2_flag == true) {
+        if (c2_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             c2_flag = false;
         }
 
-        if (c2_last_player != null) {
+        if (c2_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c2_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c2_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(c2_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1014,9 +1091,11 @@ function update_c2() {
             c2_last_player = null;
         }
 
-        c2.style.backgroundColor = '#fbcece';
+        c2.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("c2_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1031,12 +1110,12 @@ function update_c2() {
         document.getElementById("c2_player_age").textContent = "Age " + age;
         document.getElementById("c2_player_position").textContent = position;
         document.getElementById("c2_player_handedness").textContent = handed;
-        document.getElementById("c2_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("c2_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("c2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("c2_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (c2_flag == false) {
+        if (c2_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1045,27 +1124,27 @@ function update_c2() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (c2_last_player == null) {
+        if (c2_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             c2_last_player = selected_player;
         }
-
-        if (c2_last_player != null) {
+ 
+        if (c2_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(c2_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1073,25 +1152,34 @@ function update_c2() {
             c2_last_player = selected_player;
         }
 
-        c2.style.backgroundColor = '#FFFFFF';
+        c2.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("c2_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("c2_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- RW2 --------------------------------------
+
+//------------------------------ RW2 --------------------------------------
 
 document.getElementById("rw2");
 
-rw2.addEventListener('change', update_rw2);
+rw2.addEventListener('change', update_rw2); //Listens for Changes in Select
 
-rw2_flag = false;
-rw2_last_player = null;
+rw2_flag = false; //Used to keep track of roster size
+rw2_last_player = null; //Used to check what the previous selection was
 
 function update_rw2() {
     var selected_player_key = rw2.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -1099,29 +1187,28 @@ function update_rw2() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("rw2_player_age").textContent = "Age";
+        document.getElementById("rw2_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("rw2_player_position").textContent = "Position";
-        document.getElementById("rw2_player_handedness").textContent = "Handedness";
-        document.getElementById("rw2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rw2_player_handedness").textContent = "Handed";
+        document.getElementById("rw2_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("rw2_player_term").textContent = "Expiry (Term)";
         document.getElementById("rw2_player_clause").textContent = "Clause";
 
-
-        if (rw2_flag == true) {
+        if (rw2_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             rw2_flag = false;
         }
 
-        if (rw2_last_player != null) {
+        if (rw2_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw2_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw2_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rw2_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1129,9 +1216,11 @@ function update_rw2() {
             rw2_last_player = null;
         }
 
-        rw2.style.backgroundColor = '#fbcece';
+        rw2.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("rw2_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1146,12 +1235,12 @@ function update_rw2() {
         document.getElementById("rw2_player_age").textContent = "Age " + age;
         document.getElementById("rw2_player_position").textContent = position;
         document.getElementById("rw2_player_handedness").textContent = handed;
-        document.getElementById("rw2_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("rw2_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("rw2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rw2_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (rw2_flag == false) {
+        if (rw2_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1160,27 +1249,27 @@ function update_rw2() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (rw2_last_player == null) {
+        if (rw2_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             rw2_last_player = selected_player;
         }
-
-        if (rw2_last_player != null) {
+ 
+        if (rw2_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rw2_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1188,25 +1277,34 @@ function update_rw2() {
             rw2_last_player = selected_player;
         }
 
-        rw2.style.backgroundColor = '#FFFFFF';
+        rw2.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("rw2_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("rw2_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- LW3 --------------------------------------
+
+//------------------------------ LW3 --------------------------------------
 
 document.getElementById("lw3");
 
-lw3.addEventListener('change', update_lw3);
+lw3.addEventListener('change', update_lw3); //Listens for Changes in Select
 
-lw3_flag = false;
-lw3_last_player = null;
+lw3_flag = false; //Used to keep track of roster size
+lw3_last_player = null; //Used to check what the previous selection was
 
 function update_lw3() {
     var selected_player_key = lw3.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -1214,29 +1312,28 @@ function update_lw3() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("lw3_player_age").textContent = "Age";
+        document.getElementById("lw3_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("lw3_player_position").textContent = "Position";
-        document.getElementById("lw3_player_handedness").textContent = "Handedness";
-        document.getElementById("lw3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("lw3_player_handedness").textContent = "Handed";
+        document.getElementById("lw3_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("lw3_player_term").textContent = "Expiry (Term)";
         document.getElementById("lw3_player_clause").textContent = "Clause";
 
-
-        if (lw3_flag == true) {
+        if (lw3_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             lw3_flag = false;
         }
 
-        if (lw3_last_player != null) {
+        if (lw3_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw3_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw3_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(lw3_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1244,9 +1341,11 @@ function update_lw3() {
             lw3_last_player = null;
         }
 
-        lw3.style.backgroundColor = '#fbcece';
+        lw3.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("lw3_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1261,12 +1360,12 @@ function update_lw3() {
         document.getElementById("lw3_player_age").textContent = "Age " + age;
         document.getElementById("lw3_player_position").textContent = position;
         document.getElementById("lw3_player_handedness").textContent = handed;
-        document.getElementById("lw3_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("lw3_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("lw3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("lw3_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (lw3_flag == false) {
+        if (lw3_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1275,27 +1374,27 @@ function update_lw3() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (lw3_last_player == null) {
+        if (lw3_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             lw3_last_player = selected_player;
         }
-
-        if (lw3_last_player != null) {
+ 
+        if (lw3_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(lw3_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1303,25 +1402,33 @@ function update_lw3() {
             lw3_last_player = selected_player;
         }
 
-        lw3.style.backgroundColor = '#FFFFFF';
+        lw3.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("lw3_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("lw3_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- C3 --------------------------------------
+//------------------------------ C3 --------------------------------------
 
 document.getElementById("c3");
 
-c3.addEventListener('change', update_c3);
+c3.addEventListener('change', update_c3); //Listens for Changes in Select
 
-c3_flag = false;
-c3_last_player = null;
+c3_flag = false; //Used to keep track of roster size
+c3_last_player = null; //Used to check what the previous selection was
 
 function update_c3() {
     var selected_player_key = c3.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -1329,29 +1436,28 @@ function update_c3() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("c3_player_age").textContent = "Age";
+        document.getElementById("c3_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("c3_player_position").textContent = "Position";
-        document.getElementById("c3_player_handedness").textContent = "Handedness";
-        document.getElementById("c3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("c3_player_handedness").textContent = "Handed";
+        document.getElementById("c3_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("c3_player_term").textContent = "Expiry (Term)";
         document.getElementById("c3_player_clause").textContent = "Clause";
 
-
-        if (c3_flag == true) {
+        if (c3_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             c3_flag = false;
         }
 
-        if (c3_last_player != null) {
+        if (c3_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c3_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c3_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(c3_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1359,9 +1465,11 @@ function update_c3() {
             c3_last_player = null;
         }
 
-        c3.style.backgroundColor = '#fbcece';
+        c3.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("c3_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1376,12 +1484,12 @@ function update_c3() {
         document.getElementById("c3_player_age").textContent = "Age " + age;
         document.getElementById("c3_player_position").textContent = position;
         document.getElementById("c3_player_handedness").textContent = handed;
-        document.getElementById("c3_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("c3_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("c3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("c3_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (c3_flag == false) {
+        if (c3_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1390,27 +1498,27 @@ function update_c3() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (c3_last_player == null) {
+        if (c3_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             c3_last_player = selected_player;
         }
-
-        if (c3_last_player != null) {
+ 
+        if (c3_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(c3_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1418,25 +1526,34 @@ function update_c3() {
             c3_last_player = selected_player;
         }
 
-        c3.style.backgroundColor = '#FFFFFF';
+        c3.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("c3_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("c3_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- RW3 --------------------------------------
+
+//------------------------------ RW3 --------------------------------------
 
 document.getElementById("rw3");
 
-rw3.addEventListener('change', update_rw3);
+rw3.addEventListener('change', update_rw3); //Listens for Changes in Select
 
-rw3_flag = false;
-rw3_last_player = null;
+rw3_flag = false; //Used to keep track of roster size
+rw3_last_player = null; //Used to check what the previous selection was
 
 function update_rw3() {
     var selected_player_key = rw3.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -1444,29 +1561,28 @@ function update_rw3() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("rw3_player_age").textContent = "Age";
+        document.getElementById("rw3_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("rw3_player_position").textContent = "Position";
-        document.getElementById("rw3_player_handedness").textContent = "Handedness";
-        document.getElementById("rw3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rw3_player_handedness").textContent = "Handed";
+        document.getElementById("rw3_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("rw3_player_term").textContent = "Expiry (Term)";
         document.getElementById("rw3_player_clause").textContent = "Clause";
 
-
-        if (rw3_flag == true) {
+        if (rw3_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             rw3_flag = false;
         }
 
-        if (rw3_last_player != null) {
+        if (rw3_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw3_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw3_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rw3_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1474,9 +1590,11 @@ function update_rw3() {
             rw3_last_player = null;
         }
 
-        rw3.style.backgroundColor = '#fbcece';
+        rw3.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("rw3_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1491,12 +1609,12 @@ function update_rw3() {
         document.getElementById("rw3_player_age").textContent = "Age " + age;
         document.getElementById("rw3_player_position").textContent = position;
         document.getElementById("rw3_player_handedness").textContent = handed;
-        document.getElementById("rw3_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("rw3_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("rw3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rw3_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (rw3_flag == false) {
+        if (rw3_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1505,27 +1623,27 @@ function update_rw3() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (rw3_last_player == null) {
+        if (rw3_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             rw3_last_player = selected_player;
         }
-
-        if (rw3_last_player != null) {
+ 
+        if (rw3_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rw3_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1533,25 +1651,34 @@ function update_rw3() {
             rw3_last_player = selected_player;
         }
 
-        rw3.style.backgroundColor = '#FFFFFF';
+        rw3.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("rw3_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("rw3_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- LW4 --------------------------------------
+
+//------------------------------ LW4 --------------------------------------
 
 document.getElementById("lw4");
 
-lw4.addEventListener('change', update_lw4);
+lw4.addEventListener('change', update_lw4); //Listens for Changes in Select
 
-lw4_flag = false;
-lw4_last_player = null;
+lw4_flag = false; //Used to keep track of roster size
+lw4_last_player = null; //Used to check what the previous selection was
 
 function update_lw4() {
     var selected_player_key = lw4.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -1559,29 +1686,28 @@ function update_lw4() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("lw4_player_age").textContent = "Age";
+        document.getElementById("lw4_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("lw4_player_position").textContent = "Position";
-        document.getElementById("lw4_player_handedness").textContent = "Handedness";
-        document.getElementById("lw4_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("lw4_player_handedness").textContent = "Handed";
+        document.getElementById("lw4_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("lw4_player_term").textContent = "Expiry (Term)";
         document.getElementById("lw4_player_clause").textContent = "Clause";
 
-
-        if (lw4_flag == true) {
+        if (lw4_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             lw4_flag = false;
         }
 
-        if (lw4_last_player != null) {
+        if (lw4_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw4_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw4_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(lw4_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1589,9 +1715,11 @@ function update_lw4() {
             lw4_last_player = null;
         }
 
-        lw4.style.backgroundColor = '#fbcece';
+        lw4.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("lw4_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1606,12 +1734,12 @@ function update_lw4() {
         document.getElementById("lw4_player_age").textContent = "Age " + age;
         document.getElementById("lw4_player_position").textContent = position;
         document.getElementById("lw4_player_handedness").textContent = handed;
-        document.getElementById("lw4_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("lw4_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("lw4_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("lw4_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (lw4_flag == false) {
+        if (lw4_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1620,27 +1748,27 @@ function update_lw4() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (lw4_last_player == null) {
+        if (lw4_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             lw4_last_player = selected_player;
         }
-
-        if (lw4_last_player != null) {
+ 
+        if (lw4_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(lw4_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(lw4_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(lw4_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1648,25 +1776,34 @@ function update_lw4() {
             lw4_last_player = selected_player;
         }
 
-        lw4.style.backgroundColor = '#FFFFFF';
+        lw4.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("lw4_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("lw4_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- C4 --------------------------------------
+
+//------------------------------ C4 --------------------------------------
 
 document.getElementById("c4");
 
-c4.addEventListener('change', update_c4);
+c4.addEventListener('change', update_c4); //Listens for Changes in Select
 
-c4_flag = false;
-c4_last_player = null;
+c4_flag = false; //Used to keep track of roster size
+c4_last_player = null; //Used to check what the previous selection was
 
 function update_c4() {
     var selected_player_key = c4.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -1674,29 +1811,28 @@ function update_c4() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("c4_player_age").textContent = "Age";
+        document.getElementById("c4_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("c4_player_position").textContent = "Position";
-        document.getElementById("c4_player_handedness").textContent = "Handedness";
-        document.getElementById("c4_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("c4_player_handedness").textContent = "Handed";
+        document.getElementById("c4_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("c4_player_term").textContent = "Expiry (Term)";
         document.getElementById("c4_player_clause").textContent = "Clause";
 
-
-        if (c4_flag == true) {
+        if (c4_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             c4_flag = false;
         }
 
-        if (c4_last_player != null) {
+        if (c4_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c4_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c4_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(c4_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1704,9 +1840,11 @@ function update_c4() {
             c4_last_player = null;
         }
 
-        c4.style.backgroundColor = '#fbcece';
+        c4.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("c4_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1721,12 +1859,12 @@ function update_c4() {
         document.getElementById("c4_player_age").textContent = "Age " + age;
         document.getElementById("c4_player_position").textContent = position;
         document.getElementById("c4_player_handedness").textContent = handed;
-        document.getElementById("c4_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("c4_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("c4_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("c4_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (c4_flag == false) {
+        if (c4_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1735,27 +1873,27 @@ function update_c4() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (c4_last_player == null) {
+        if (c4_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             c4_last_player = selected_player;
         }
-
-        if (c4_last_player != null) {
+ 
+        if (c4_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(c4_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(c4_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(c4_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1763,25 +1901,34 @@ function update_c4() {
             c4_last_player = selected_player;
         }
 
-        c4.style.backgroundColor = '#FFFFFF';
+        c4.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("c4_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("c4_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- RW4 --------------------------------------
+
+//------------------------------ RW4 --------------------------------------
 
 document.getElementById("rw4");
 
-rw4.addEventListener('change', update_rw4);
+rw4.addEventListener('change', update_rw4); //Listens for Changes in Select
 
-rw4_flag = false;
-rw4_last_player = null;
+rw4_flag = false; //Used to keep track of roster size
+rw4_last_player = null; //Used to check what the previous selection was
 
 function update_rw4() {
     var selected_player_key = rw4.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -1789,29 +1936,28 @@ function update_rw4() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("rw4_player_age").textContent = "Age";
+        document.getElementById("rw4_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("rw4_player_position").textContent = "Position";
-        document.getElementById("rw4_player_handedness").textContent = "Handedness";
-        document.getElementById("rw4_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rw4_player_handedness").textContent = "Handed";
+        document.getElementById("rw4_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("rw4_player_term").textContent = "Expiry (Term)";
         document.getElementById("rw4_player_clause").textContent = "Clause";
 
-
-        if (rw4_flag == true) {
+        if (rw4_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             rw4_flag = false;
         }
 
-        if (rw4_last_player != null) {
+        if (rw4_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw4_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw4_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rw4_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1819,9 +1965,11 @@ function update_rw4() {
             rw4_last_player = null;
         }
 
-        rw4.style.backgroundColor = '#fbcece';
+        rw4.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("rw4_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1836,12 +1984,12 @@ function update_rw4() {
         document.getElementById("rw4_player_age").textContent = "Age " + age;
         document.getElementById("rw4_player_position").textContent = position;
         document.getElementById("rw4_player_handedness").textContent = handed;
-        document.getElementById("rw4_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("rw4_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("rw4_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rw4_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (rw4_flag == false) {
+        if (rw4_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1850,27 +1998,27 @@ function update_rw4() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (rw4_last_player == null) {
+        if (rw4_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             rw4_last_player = selected_player;
         }
-
-        if (rw4_last_player != null) {
+ 
+        if (rw4_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rw4_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rw4_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rw4_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1878,25 +2026,34 @@ function update_rw4() {
             rw4_last_player = selected_player;
         }
 
-        rw4.style.backgroundColor = '#FFFFFF';
+        rw4.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("rw4_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("rw4_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- LD1 --------------------------------------
+
+//------------------------------ LD1 --------------------------------------
 
 document.getElementById("ld1");
 
-ld1.addEventListener('change', update_ld1);
+ld1.addEventListener('change', update_ld1); //Listens for Changes in Select
 
-ld1_flag = false;
-ld1_last_player = null;
+ld1_flag = false; //Used to keep track of roster size
+ld1_last_player = null; //Used to check what the previous selection was
 
 function update_ld1() {
     var selected_player_key = ld1.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -1904,29 +2061,28 @@ function update_ld1() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("ld1_player_age").textContent = "Age";
+        document.getElementById("ld1_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("ld1_player_position").textContent = "Position";
-        document.getElementById("ld1_player_handedness").textContent = "Handedness";
-        document.getElementById("ld1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("ld1_player_handedness").textContent = "Handed";
+        document.getElementById("ld1_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("ld1_player_term").textContent = "Expiry (Term)";
         document.getElementById("ld1_player_clause").textContent = "Clause";
 
-
-        if (ld1_flag == true) {
+        if (ld1_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             ld1_flag = false;
         }
 
-        if (ld1_last_player != null) {
+        if (ld1_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld1_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld1_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(ld1_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1934,9 +2090,11 @@ function update_ld1() {
             ld1_last_player = null;
         }
 
-        ld1.style.backgroundColor = '#fbcece';
+        ld1.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("ld1_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -1951,12 +2109,12 @@ function update_ld1() {
         document.getElementById("ld1_player_age").textContent = "Age " + age;
         document.getElementById("ld1_player_position").textContent = position;
         document.getElementById("ld1_player_handedness").textContent = handed;
-        document.getElementById("ld1_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("ld1_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("ld1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("ld1_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (ld1_flag == false) {
+        if (ld1_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -1965,27 +2123,27 @@ function update_ld1() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (ld1_last_player == null) {
+        if (ld1_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             ld1_last_player = selected_player;
         }
-
-        if (ld1_last_player != null) {
+ 
+        if (ld1_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(ld1_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -1993,25 +2151,34 @@ function update_ld1() {
             ld1_last_player = selected_player;
         }
 
-        ld1.style.backgroundColor = '#FFFFFF';
+        ld1.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("ld1_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("ld1_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- RD1 --------------------------------------
+
+//------------------------------ RD1 --------------------------------------
 
 document.getElementById("rd1");
 
-rd1.addEventListener('change', update_rd1);
+rd1.addEventListener('change', update_rd1); //Listens for Changes in Select
 
-rd1_flag = false;
-rd1_last_player = null;
+rd1_flag = false; //Used to keep track of roster size
+rd1_last_player = null; //Used to check what the previous selection was
 
 function update_rd1() {
     var selected_player_key = rd1.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2019,29 +2186,28 @@ function update_rd1() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("rd1_player_age").textContent = "Age";
+        document.getElementById("rd1_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("rd1_player_position").textContent = "Position";
-        document.getElementById("rd1_player_handedness").textContent = "Handedness";
-        document.getElementById("rd1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rd1_player_handedness").textContent = "Handed";
+        document.getElementById("rd1_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("rd1_player_term").textContent = "Expiry (Term)";
         document.getElementById("rd1_player_clause").textContent = "Clause";
 
-
-        if (rd1_flag == true) {
+        if (rd1_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             rd1_flag = false;
         }
 
-        if (rd1_last_player != null) {
+        if (rd1_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd1_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd1_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rd1_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2049,9 +2215,11 @@ function update_rd1() {
             rd1_last_player = null;
         }
 
-        rd1.style.backgroundColor = '#fbcece';
+        rd1.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("rd1_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2066,12 +2234,12 @@ function update_rd1() {
         document.getElementById("rd1_player_age").textContent = "Age " + age;
         document.getElementById("rd1_player_position").textContent = position;
         document.getElementById("rd1_player_handedness").textContent = handed;
-        document.getElementById("rd1_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("rd1_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("rd1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rd1_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (rd1_flag == false) {
+        if (rd1_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -2080,27 +2248,27 @@ function update_rd1() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (rd1_last_player == null) {
+        if (rd1_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             rd1_last_player = selected_player;
         }
-
-        if (rd1_last_player != null) {
+ 
+        if (rd1_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rd1_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2108,25 +2276,34 @@ function update_rd1() {
             rd1_last_player = selected_player;
         }
 
-        rd1.style.backgroundColor = '#FFFFFF';
+        rd1.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("rd1_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("rd1_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- LD2 --------------------------------------
+
+//------------------------------ LD2 --------------------------------------
 
 document.getElementById("ld2");
 
-ld2.addEventListener('change', update_ld2);
+ld2.addEventListener('change', update_ld2); //Listens for Changes in Select
 
-ld2_flag = false;
-ld2_last_player = null;
+ld2_flag = false; //Used to keep track of roster size
+ld2_last_player = null; //Used to check what the previous selection was
 
 function update_ld2() {
     var selected_player_key = ld2.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2134,29 +2311,28 @@ function update_ld2() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("ld2_player_age").textContent = "Age";
+        document.getElementById("ld2_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("ld2_player_position").textContent = "Position";
-        document.getElementById("ld2_player_handedness").textContent = "Handedness";
-        document.getElementById("ld2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("ld2_player_handedness").textContent = "Handed";
+        document.getElementById("ld2_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("ld2_player_term").textContent = "Expiry (Term)";
         document.getElementById("ld2_player_clause").textContent = "Clause";
 
-
-        if (ld2_flag == true) {
+        if (ld2_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             ld2_flag = false;
         }
 
-        if (ld2_last_player != null) {
+        if (ld2_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld2_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld2_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(ld2_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2164,9 +2340,11 @@ function update_ld2() {
             ld2_last_player = null;
         }
 
-        ld2.style.backgroundColor = '#fbcece';
+        ld2.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("ld2_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2181,12 +2359,12 @@ function update_ld2() {
         document.getElementById("ld2_player_age").textContent = "Age " + age;
         document.getElementById("ld2_player_position").textContent = position;
         document.getElementById("ld2_player_handedness").textContent = handed;
-        document.getElementById("ld2_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("ld2_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("ld2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("ld2_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (ld2_flag == false) {
+        if (ld2_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -2195,27 +2373,27 @@ function update_ld2() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (ld2_last_player == null) {
+        if (ld2_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             ld2_last_player = selected_player;
         }
-
-        if (ld2_last_player != null) {
+ 
+        if (ld2_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(ld2_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2223,25 +2401,34 @@ function update_ld2() {
             ld2_last_player = selected_player;
         }
 
-        ld2.style.backgroundColor = '#FFFFFF';
+        ld2.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("ld2_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("ld2_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- RD2 --------------------------------------
+
+//------------------------------ RD2 --------------------------------------
 
 document.getElementById("rd2");
 
-rd2.addEventListener('change', update_rd2);
+rd2.addEventListener('change', update_rd2); //Listens for Changes in Select
 
-rd2_flag = false;
-rd2_last_player = null;
+rd2_flag = false; //Used to keep track of roster size
+rd2_last_player = null; //Used to check what the previous selection was
 
 function update_rd2() {
     var selected_player_key = rd2.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2249,29 +2436,28 @@ function update_rd2() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("rd2_player_age").textContent = "Age";
+        document.getElementById("rd2_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("rd2_player_position").textContent = "Position";
-        document.getElementById("rd2_player_handedness").textContent = "Handedness";
-        document.getElementById("rd2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rd2_player_handedness").textContent = "Handed";
+        document.getElementById("rd2_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("rd2_player_term").textContent = "Expiry (Term)";
         document.getElementById("rd2_player_clause").textContent = "Clause";
 
-
-        if (rd2_flag == true) {
+        if (rd2_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             rd2_flag = false;
         }
 
-        if (rd2_last_player != null) {
+        if (rd2_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd2_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd2_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rd2_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2279,9 +2465,11 @@ function update_rd2() {
             rd2_last_player = null;
         }
 
-        rd2.style.backgroundColor = '#fbcece';
+        rd2.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("rd2_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2296,12 +2484,12 @@ function update_rd2() {
         document.getElementById("rd2_player_age").textContent = "Age " + age;
         document.getElementById("rd2_player_position").textContent = position;
         document.getElementById("rd2_player_handedness").textContent = handed;
-        document.getElementById("rd2_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("rd2_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("rd2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rd2_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (rd2_flag == false) {
+        if (rd2_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -2310,27 +2498,27 @@ function update_rd2() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (rd2_last_player == null) {
+        if (rd2_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             rd2_last_player = selected_player;
         }
-
-        if (rd2_last_player != null) {
+ 
+        if (rd2_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rd2_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2338,25 +2526,34 @@ function update_rd2() {
             rd2_last_player = selected_player;
         }
 
-        rd2.style.backgroundColor = '#FFFFFF';
+        rd2.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("rd2_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("rd2_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- LD3 --------------------------------------
+
+//------------------------------ LD3 --------------------------------------
 
 document.getElementById("ld3");
 
-ld3.addEventListener('change', update_ld3);
+ld3.addEventListener('change', update_ld3); //Listens for Changes in Select
 
-ld3_flag = false;
-ld3_last_player = null;
+ld3_flag = false; //Used to keep track of roster size
+ld3_last_player = null; //Used to check what the previous selection was
 
 function update_ld3() {
     var selected_player_key = ld3.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2364,29 +2561,28 @@ function update_ld3() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("ld3_player_age").textContent = "Age";
+        document.getElementById("ld3_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("ld3_player_position").textContent = "Position";
-        document.getElementById("ld3_player_handedness").textContent = "Handedness";
-        document.getElementById("ld3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("ld3_player_handedness").textContent = "Handed";
+        document.getElementById("ld3_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("ld3_player_term").textContent = "Expiry (Term)";
         document.getElementById("ld3_player_clause").textContent = "Clause";
 
-
-        if (ld3_flag == true) {
+        if (ld3_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             ld3_flag = false;
         }
 
-        if (ld3_last_player != null) {
+        if (ld3_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld3_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld3_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(ld3_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2394,9 +2590,11 @@ function update_ld3() {
             ld3_last_player = null;
         }
 
-        ld3.style.backgroundColor = '#fbcece';
+        ld3.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("ld3_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2411,12 +2609,12 @@ function update_ld3() {
         document.getElementById("ld3_player_age").textContent = "Age " + age;
         document.getElementById("ld3_player_position").textContent = position;
         document.getElementById("ld3_player_handedness").textContent = handed;
-        document.getElementById("ld3_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("ld3_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("ld3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("ld3_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (ld3_flag == false) {
+        if (ld3_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -2425,27 +2623,27 @@ function update_ld3() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (ld3_last_player == null) {
+        if (ld3_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             ld3_last_player = selected_player;
         }
-
-        if (ld3_last_player != null) {
+ 
+        if (ld3_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(ld3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(ld3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(ld3_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2453,25 +2651,34 @@ function update_ld3() {
             ld3_last_player = selected_player;
         }
 
-        ld3.style.backgroundColor = '#FFFFFF';
+        ld3.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("ld3_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("ld3_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- RD3 --------------------------------------
+
+//------------------------------ RD3 --------------------------------------
 
 document.getElementById("rd3");
 
-rd3.addEventListener('change', update_rd3);
+rd3.addEventListener('change', update_rd3); //Listens for Changes in Select
 
-rd3_flag = false;
-rd3_last_player = null;
+rd3_flag = false; //Used to keep track of roster size
+rd3_last_player = null; //Used to check what the previous selection was
 
 function update_rd3() {
     var selected_player_key = rd3.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2479,29 +2686,28 @@ function update_rd3() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("rd3_player_age").textContent = "Age";
+        document.getElementById("rd3_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("rd3_player_position").textContent = "Position";
-        document.getElementById("rd3_player_handedness").textContent = "Handedness";
-        document.getElementById("rd3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("rd3_player_handedness").textContent = "Handed";
+        document.getElementById("rd3_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("rd3_player_term").textContent = "Expiry (Term)";
         document.getElementById("rd3_player_clause").textContent = "Clause";
 
-
-        if (rd3_flag == true) {
+        if (rd3_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             rd3_flag = false;
         }
 
-        if (rd3_last_player != null) {
+        if (rd3_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd3_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd3_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rd3_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2509,9 +2715,11 @@ function update_rd3() {
             rd3_last_player = null;
         }
 
-        rd3.style.backgroundColor = '#fbcece';
+        rd3.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("rd3_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2526,12 +2734,12 @@ function update_rd3() {
         document.getElementById("rd3_player_age").textContent = "Age " + age;
         document.getElementById("rd3_player_position").textContent = position;
         document.getElementById("rd3_player_handedness").textContent = handed;
-        document.getElementById("rd3_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("rd3_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("rd3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("rd3_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (rd3_flag == false) {
+        if (rd3_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -2540,27 +2748,27 @@ function update_rd3() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (rd3_last_player == null) {
+        if (rd3_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             rd3_last_player = selected_player;
         }
-
-        if (rd3_last_player != null) {
+ 
+        if (rd3_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(rd3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(rd3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(rd3_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2568,25 +2776,34 @@ function update_rd3() {
             rd3_last_player = selected_player;
         }
 
-        rd3.style.backgroundColor = '#FFFFFF';
+        rd3.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("rd3_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("rd3_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- G1 --------------------------------------
+
+//------------------------------ G1 --------------------------------------
 
 document.getElementById("g1");
 
-g1.addEventListener('change', update_g1);
+g1.addEventListener('change', update_g1); //Listens for Changes in Select
 
-g1_flag = false;
-g1_last_player = null;
+g1_flag = false; //Used to keep track of roster size
+g1_last_player = null; //Used to check what the previous selection was
 
 function update_g1() {
     var selected_player_key = g1.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2594,29 +2811,28 @@ function update_g1() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("g1_player_age").textContent = "Age";
+        document.getElementById("g1_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("g1_player_position").textContent = "Position";
-        document.getElementById("g1_player_handedness").textContent = "Handedness";
-        document.getElementById("g1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("g1_player_handedness").textContent = "Handed";
+        document.getElementById("g1_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("g1_player_term").textContent = "Expiry (Term)";
         document.getElementById("g1_player_clause").textContent = "Clause";
 
-
-        if (g1_flag == true) {
+        if (g1_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             g1_flag = false;
         }
 
-        if (g1_last_player != null) {
+        if (g1_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(g1_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(g1_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(g1_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2624,9 +2840,11 @@ function update_g1() {
             g1_last_player = null;
         }
 
-        g1.style.backgroundColor = '#fbcece';
+        g1.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("g1_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2641,12 +2859,12 @@ function update_g1() {
         document.getElementById("g1_player_age").textContent = "Age " + age;
         document.getElementById("g1_player_position").textContent = position;
         document.getElementById("g1_player_handedness").textContent = handed;
-        document.getElementById("g1_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("g1_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("g1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("g1_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (g1_flag == false) {
+        if (g1_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -2655,27 +2873,27 @@ function update_g1() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (g1_last_player == null) {
+        if (g1_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             g1_last_player = selected_player;
         }
-
-        if (g1_last_player != null) {
+ 
+        if (g1_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(g1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(g1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(g1_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2683,26 +2901,34 @@ function update_g1() {
             g1_last_player = selected_player;
         }
 
-        g1.style.backgroundColor = '#FFFFFF';
+        g1.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("g1_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("g1_headshot").src = `../photos/Select.png`;
+        }
+
     }
-    
+
 }
 
 
-//---------------------------------- G2 --------------------------------------
+
+//------------------------------ G2 --------------------------------------
 
 document.getElementById("g2");
 
-g2.addEventListener('change', update_g2);
+g2.addEventListener('change', update_g2); //Listens for Changes in Select
 
-g2_flag = false;
-g2_last_player = null;
+g2_flag = false; //Used to keep track of roster size
+g2_last_player = null; //Used to check what the previous selection was
 
 function update_g2() {
     var selected_player_key = g2.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2710,29 +2936,28 @@ function update_g2() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("g2_player_age").textContent = "Age";
+        document.getElementById("g2_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("g2_player_position").textContent = "Position";
-        document.getElementById("g2_player_handedness").textContent = "Handedness";
-        document.getElementById("g2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("g2_player_handedness").textContent = "Handed";
+        document.getElementById("g2_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("g2_player_term").textContent = "Expiry (Term)";
         document.getElementById("g2_player_clause").textContent = "Clause";
 
-
-        if (g2_flag == true) {
+        if (g2_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             g2_flag = false;
         }
 
-        if (g2_last_player != null) {
+        if (g2_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(g2_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(g2_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(g2_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2740,9 +2965,11 @@ function update_g2() {
             g2_last_player = null;
         }
 
-        g2.style.backgroundColor = '#fbcece';
+        g2.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("g2_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2757,12 +2984,12 @@ function update_g2() {
         document.getElementById("g2_player_age").textContent = "Age " + age;
         document.getElementById("g2_player_position").textContent = position;
         document.getElementById("g2_player_handedness").textContent = handed;
-        document.getElementById("g2_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("g2_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("g2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("g2_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (g2_flag == false) {
+        if (g2_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -2771,27 +2998,27 @@ function update_g2() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (g2_last_player == null) {
+        if (g2_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             g2_last_player = selected_player;
         }
-
-        if (g2_last_player != null) {
+ 
+        if (g2_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(g2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(g2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(g2_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2799,25 +3026,34 @@ function update_g2() {
             g2_last_player = selected_player;
         }
 
-        g2.style.backgroundColor = '#FFFFFF';
+        g2.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("g2_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("g2_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- S1 --------------------------------------
+
+//------------------------------ S1 --------------------------------------
 
 document.getElementById("s1");
 
-s1.addEventListener('change', update_s1);
+s1.addEventListener('change', update_s1); //Listens for Changes in Select
 
-s1_flag = false;
-s1_last_player = null;
+s1_flag = false; //Used to keep track of roster size
+s1_last_player = null; //Used to check what the previous selection was
 
 function update_s1() {
     var selected_player_key = s1.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2825,29 +3061,28 @@ function update_s1() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("s1_player_age").textContent = "Age";
+        document.getElementById("s1_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("s1_player_position").textContent = "Position";
-        document.getElementById("s1_player_handedness").textContent = "Handedness";
-        document.getElementById("s1_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("s1_player_handedness").textContent = "Handed";
+        document.getElementById("s1_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("s1_player_term").textContent = "Expiry (Term)";
         document.getElementById("s1_player_clause").textContent = "Clause";
 
-
-        if (s1_flag == true) {
+        if (s1_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             s1_flag = false;
         }
 
-        if (s1_last_player != null) {
+        if (s1_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s1_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s1_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(s1_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2855,9 +3090,11 @@ function update_s1() {
             s1_last_player = null;
         }
 
-        s1.style.backgroundColor = '#fbcece';
+        s1.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("s1_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2872,12 +3109,12 @@ function update_s1() {
         document.getElementById("s1_player_age").textContent = "Age " + age;
         document.getElementById("s1_player_position").textContent = position;
         document.getElementById("s1_player_handedness").textContent = handed;
-        document.getElementById("s1_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("s1_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("s1_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("s1_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (s1_flag == false) {
+        if (s1_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -2886,27 +3123,27 @@ function update_s1() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (s1_last_player == null) {
+        if (s1_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             s1_last_player = selected_player;
         }
-
-        if (s1_last_player != null) {
+ 
+        if (s1_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s1_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s1_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(s1_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2914,25 +3151,34 @@ function update_s1() {
             s1_last_player = selected_player;
         }
 
-        s1.style.backgroundColor = '#FFFFFF';
+        s1.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("s1_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("s1_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
 
-//---------------------------------- S2 --------------------------------------
+
+//------------------------------ S2 --------------------------------------
 
 document.getElementById("s2");
 
-s2.addEventListener('change', update_s2);
+s2.addEventListener('change', update_s2); //Listens for Changes in Select
 
-s2_flag = false;
-s2_last_player = null;
+s2_flag = false; //Used to keep track of roster size
+s2_last_player = null; //Used to check what the previous selection was
 
 function update_s2() {
     var selected_player_key = s2.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -2940,29 +3186,28 @@ function update_s2() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("s2_player_age").textContent = "Age";
+        document.getElementById("s2_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("s2_player_position").textContent = "Position";
-        document.getElementById("s2_player_handedness").textContent = "Handedness";
-        document.getElementById("s2_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("s2_player_handedness").textContent = "Handed";
+        document.getElementById("s2_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("s2_player_term").textContent = "Expiry (Term)";
         document.getElementById("s2_player_clause").textContent = "Clause";
 
-
-        if (s2_flag == true) {
+        if (s2_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             s2_flag = false;
         }
 
-        if (s2_last_player != null) {
+        if (s2_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s2_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s2_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(s2_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -2970,9 +3215,11 @@ function update_s2() {
             s2_last_player = null;
         }
 
-        s2.style.backgroundColor = '#fbcece';
+        s2.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("s2_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -2987,12 +3234,12 @@ function update_s2() {
         document.getElementById("s2_player_age").textContent = "Age " + age;
         document.getElementById("s2_player_position").textContent = position;
         document.getElementById("s2_player_handedness").textContent = handed;
-        document.getElementById("s2_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("s2_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("s2_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("s2_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (s2_flag == false) {
+        if (s2_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -3001,27 +3248,27 @@ function update_s2() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (s2_last_player == null) {
+        if (s2_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             s2_last_player = selected_player;
         }
-
-        if (s2_last_player != null) {
+ 
+        if (s2_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s2_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s2_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(s2_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -3029,24 +3276,33 @@ function update_s2() {
             s2_last_player = selected_player;
         }
 
-        s2.style.backgroundColor = '#FFFFFF';
+        s2.style.backgroundColor = '#FFFFFF';  //white background for select
+
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("s2_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("s2_headshot").src = `../photos/Select.png`;
+        }
+
     }
+
 }
 
-//---------------------------------- S3 --------------------------------------
+
+//------------------------------ S3 --------------------------------------
 
 document.getElementById("s3");
 
-s3.addEventListener('change', update_s3);
+s3.addEventListener('change', update_s3); //Listens for Changes in Select
 
-s3_flag = false;
-s3_last_player = null;
+s3_flag = false; //Used to keep track of roster size
+s3_last_player = null; //Used to check what the previous selection was
 
 function update_s3() {
     var selected_player_key = s3.value;
     var selected_player;
 
-    for (let i = 0; i < player_list.length; i++) {
+    for (let i = 0; i < player_list.length; i++) {      //gets us the selected player object
         if (player_list[i].get_name() == selected_player_key) {
             selected_player = player_list[i];
         }
@@ -3054,29 +3310,28 @@ function update_s3() {
 
     if (selected_player_key == "Select") {
 
-        document.getElementById("s3_player_age").textContent = "Age";
+        document.getElementById("s3_player_age").textContent = "Age"   //reset info box to default
         document.getElementById("s3_player_position").textContent = "Position";
-        document.getElementById("s3_player_handedness").textContent = "Handedness";
-        document.getElementById("s3_player_salary").textContent = "Salary (Bonus)";
+        document.getElementById("s3_player_handedness").textContent = "Handed";
+        document.getElementById("s3_player_salary").textContent = "Salary (Bonus)"
         document.getElementById("s3_player_term").textContent = "Expiry (Term)";
         document.getElementById("s3_player_clause").textContent = "Clause";
 
-
-        if (s3_flag == true) {
+        if (s3_flag == true) {     //adjust roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) - 1;
             document.getElementById("roster_size").textContent = new_roster_size;
             s3_flag = false;
         }
 
-        if (s3_last_player != null) {
+        if (s3_last_player != null) {      //if there was a player selected previously subtract
 
-            const cap_hit = document.getElementById("cap_hit").innerHTML;
+            const cap_hit = document.getElementById("cap_hit").innerHTML; 
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s3_last_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s3_last_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(s3_last_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -3084,9 +3339,11 @@ function update_s3() {
             s3_last_player = null;
         }
 
-        s3.style.backgroundColor = '#fbcece';
+        s3.style.backgroundColor = '#fbcece';  //make Select option light red
 
-    } else {
+        document.getElementById("s3_headshot").src = `../photos/Select.png`; //add no player headshot
+
+    } else { //if a player was selected, populate the info box with their info
         var salary = selected_player.get_salary();
         var bonus = selected_player.get_bonus();
         var term = selected_player.get_term();
@@ -3101,12 +3358,12 @@ function update_s3() {
         document.getElementById("s3_player_age").textContent = "Age " + age;
         document.getElementById("s3_player_position").textContent = position;
         document.getElementById("s3_player_handedness").textContent = handed;
-        document.getElementById("s3_player_salary").textContent = salary + " (" + bonus + ")";
+        document.getElementById("s3_player_salary").textContent = salary + "\n" + " (" + bonus + ")";
         document.getElementById("s3_player_term").textContent = expiry + " (" + term + ")";
         document.getElementById("s3_player_clause").textContent = clause;
 
         //---------------------------------------------------
-        if (s3_flag == false) {
+        if (s3_flag == false) { //update roster size if necessary
             const roster_size = document.getElementById("roster_size").innerHTML;
             const new_roster_size = Number(roster_size) + 1;
             document.getElementById("roster_size").textContent = new_roster_size;
@@ -3115,27 +3372,27 @@ function update_s3() {
 
         //------------------------ CHANGE CAP INFO -----------------------------------------
 
-        if (s3_last_player == null) {
+        if (s3_last_player == null) { //update with no previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
 
             s3_last_player = selected_player;
         }
-
-        if (s3_last_player != null) {
+ 
+        if (s3_last_player != null) { //update with previous player selection
             const cap_hit = document.getElementById("cap_hit").innerHTML;
             const new_cap_hit = Number(parseMoneyToString(cap_hit)) - Number(parseMoneyToString(s3_last_player.get_salary())) + Number(parseMoneyToString(selected_player.get_salary()));
             document.getElementById("cap_hit").textContent = formatMoney(new_cap_hit);
 
             const bonuses = document.getElementById("bonuses").innerHTML;
-            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseMoneyToString(s3_last_player.get_bonus())) + Number(parseMoneyToString(selected_player.get_bonus()));
+            const new_bonuses = Number(parseMoneyToString(bonuses)) - Number(parseBonusToString(s3_last_player.get_bonus())) + Number(parseBonusToString(selected_player.get_bonus()));
             document.getElementById("bonuses").textContent = formatMoney(new_bonuses);
 
             calculate_cap_space();
@@ -3143,10 +3400,17 @@ function update_s3() {
             s3_last_player = selected_player;
         }
 
-        s3.style.backgroundColor = '#FFFFFF';
-    }
-}
+        s3.style.backgroundColor = '#FFFFFF';  //white background for select
 
+        if (has_headshot.includes(selected_player.get_name())) {  //if the player headshot exists, use it, if not use no player
+            document.getElementById("s3_headshot").src = `../photos/${selected_player.get_name()}.png`;
+        } else {
+            document.getElementById("s3_headshot").src = `../photos/Select.png`;
+        }
+
+    }
+
+}
 
 
 
@@ -3173,7 +3437,7 @@ function create_player() {
 
 
 
-    var new_player = new Player(create_name, formatMoney(create_salary), formatMoney(create_bonus), create_term, create_expiry, create_position, create_age, create_handed, create_clause);
+    var new_player = new Player(create_name, formatMoney(create_salary), formatBonus(create_bonus), create_term, create_expiry, create_position, create_age, create_handed, create_clause);
 
     player_list.push(new_player);
 
@@ -3378,18 +3642,4 @@ function set_selected() {
     document.getElementById('s3').value = "Select";
     update_s3();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
