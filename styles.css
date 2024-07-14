@@ -11,9 +11,9 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 22px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    font-size: 17px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     min-width: 676px;
 }
 
@@ -29,8 +29,8 @@ h2 {
     gap: 5px;
     justify-content: space-evenly;
     background-color: #003089;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     min-width: 676px;
     max-width: 676px;
     margin: auto;
@@ -101,7 +101,7 @@ select {
     width: 224px;
     border: 2px solid black;
     border-radius: 0px 0px 5px 5px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
 }
