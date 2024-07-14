@@ -134,7 +134,7 @@ label {
 #create_name,
 #create_salary,
 #create_bonus {
-    width: 110px;
+    width: 150px;
     text-align: center;
     border-radius: 5px;
     border: 2px solid black;
@@ -150,7 +150,7 @@ label {
 #create_clause,
 #create_age,
 #create_term {
-    width: 110px;
+    width: 150px;
     cursor: hover;
     text-align: center;
     font-weight: normal;
@@ -162,7 +162,7 @@ label {
 }
 
 button {
-    width: 70px;
+    width: 90px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 2px solid black;
@@ -219,7 +219,7 @@ button:active {
 
 #reset_button {
     background-color: #bf0000;
-    width: 70px;
+    width: 90px;
     height: 20px;
 }
 
