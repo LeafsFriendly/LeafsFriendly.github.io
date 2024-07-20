@@ -405,12 +405,19 @@ populateSelects("s3_populate");
 
 has_headshot = ["Matthew Knies", "Auston Matthews", "Mitchell Marner", "Bobby McMann", "John Tavares",
                 "William Nylander", "Easton Cowan", "Max Domi", "Calle Jarnkrok", "Pontus Holmberg",
-                "David Kampf", "Ryan Reaves", "Morgan Rielly", "Christopher Tanev", "Oliver Ekman-Larsson",
-                "Jake McCabe", "Simon Benoit", "Timothy Liljegren", "Joseph Woll", "Anthony Stolarz", 
-                "Nick Abruzzese", "Fraser Minten", "Jani Hakanpaa", "Conor Timmins", "Topi Niemela",
-                "Matt Murray", "Nicholas Robertson", "Connor Dewar", "Alex Steeves", "Dennis Hildeby"];
-
-
+                "David Kampf", "Ryan Reaves", "Nick Abruzzese", "Fraser Minten", "Nicholas Robertson", 
+                "Connor Dewar", "Alex Steeves", "Jacob Quillan", "Roni Hirvonen", "Nikita Grebyonkin", 
+                "Ryan Tverberg", "Braeden Kressler", "Ty Voit", "Cedric Pare", 
+                
+                "Morgan Rielly", "Christopher Tanev", "Oliver Ekman-Larsson",
+                "Jake McCabe", "Simon Benoit", "Timothy Liljegren", "Jani Hakanpaa", "Conor Timmins", 
+                "Topi Niemela", "Marshall Rifai", "Cade Webber", "Dakota Mermis", "Philippe Myers",
+                "Nicolas Mattinen", "William Villeneuve", "Mikko Kokkonen", "Noah Chadwick", 
+                
+                "Joseph Woll", "Anthony Stolarz", "Matt Murray", "Dennis Hildeby", "Artur Akhtiamov",
+                "Vyacheslav Peksa"
+                ];
+                
 //--------------------------------Prefill RFA or Reserve Player----------------------------------
 
 
