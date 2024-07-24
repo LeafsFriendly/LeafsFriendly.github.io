@@ -242,7 +242,7 @@ var tanev_christopher = new Player("Christopher Tanev", formatMoney(4500000), fo
 var hakanpaa_jani = new Player("Jani Hakanpaa", formatMoney(1500000), formatBonus(0), 1, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
 
 
-var woll_joseph = new Player("Joseph Woll", formatMoney(3660000), formatBonus(0), 3, "UFA", "G", woll_joseph_age, "LH", "None");
+var woll_joseph = new Player("Joseph Woll", formatMoney(3666667), formatBonus(0), 3, "UFA", "G", woll_joseph_age, "LH", "None");
 var akhtiamov_artur = new Player("Artur Akhtiamov", formatMoney(851667), formatBonus(0), 1, "RFA", "G", akhtiamov_artur_age, "LH", "None");
 var peksa_vyacheslav = new Player("Vyacheslav Peksa", formatMoney(851667), formatBonus(0), 1, "RFA", "G", peksa_vyacheslav_age, "LH", "None");
 var stolarz_anthony = new Player("Anthony Stolarz", formatMoney(2500000), formatBonus(0), 1, "UFA", "G", stolarz_anthony_age, "LH", "None");
