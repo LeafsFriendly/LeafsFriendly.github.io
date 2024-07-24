@@ -75,6 +75,7 @@ var voit_ty_birthday = '2003-06-10';
 var abruzzese_nick_birthday = '1999-06-04';
 var domi_max_birthday = '1995-05-02';
 var pare_cedric_birthday = '1999-01-24';
+var dewar_connor_birthday = '1999-06-26';
 
 var rielly_morgan_birthday = '1994-03-09';
 var mccabe_jake_birthday = '1993-10-12';
@@ -176,6 +177,7 @@ var voit_ty_age = calculateAge(voit_ty_birthday);
 var abruzzese_nick_age = calculateAge(abruzzese_nick_birthday);
 var domi_max_age = calculateAge(domi_max_birthday);
 var pare_cedric_age = calculateAge(pare_cedric_birthday);
+var dewar_connor_age = calculateAge(dewar_connor_birthday);
 
 var rielly_morgan_age = calculateAge(rielly_morgan_birthday);
 var mccabe_jake_age = calculateAge(mccabe_jake_birthday);
@@ -227,6 +229,7 @@ var voit_ty = new Player("Ty Voit", formatMoney(800556), formatBonus(0), 2, "RFA
 var abruzzese_nick = new Player("Nick Abruzzese", formatMoney(775000), formatBonus(0), 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
 var domi_max = new Player("Max Domi", formatMoney(3750000), formatBonus(0), 4, "UFA", "C", domi_max_age, "LH", "M-NTC");
 var pare_cedric = new Player("Cedric Pare", formatMoney(775000), formatBonus(0), 1, "RFA", "C", pare_cedric_age, "LH", "None");
+var dewar_connor = new Player("Connor Dewar", formatMoney(1180000), formatBonus(0), 1, "RFA", "LW", dewar_connor_age, "LH", "None");
 
 var rielly_morgan = new Player("Morgan Rielly", formatMoney(7500000), formatBonus(0), 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
 var mccabe_jake = new Player("Jake McCabe", formatMoney(2000000), formatBonus(0), 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
@@ -302,6 +305,7 @@ player_list.push(stolarz_anthony);
 player_list.push(pare_cedric);
 player_list.push(mermis_dakota);
 player_list.push(myers_philippe);
+player_list.push(dewar_connor);
 
 //------------------------------- PLAYER SELECT OPTIONS---------------------------------------------
 
@@ -326,6 +330,7 @@ function populateSelects(selectId) {
                         <option value="Ryan Reaves">Ryan Reaves</option>
                         <option value="Bobby McMann">Bobby McMann</option>
                         <option value="Matthew Knies">Matthew Knies</option>
+                        <option value="Connor Dewar">Connor Dewar</option>
                         <option value="Pontus Holmberg">Pontus Holmberg</option>
                         <option value="Easton Cowan">Easton Cowan</option>
                         <option value="Fraser Minten">Fraser Minten</option>
@@ -424,7 +429,7 @@ has_headshot = ["Matthew Knies", "Auston Matthews", "Mitchell Marner", "Bobby Mc
 //Step 1/5
 
 var robertson_nicholas_birthday = '2001-09-11';
-var dewar_connor_birthday = '1999-06-26';
+
 var steeves_alex_birthday = '1999-12-10';
 
 var danford_ben_birthday = '2006-02-06';
@@ -433,7 +438,7 @@ var danford_ben_birthday = '2006-02-06';
 //Step 2/5
 
 var robertson_nicholas_age = calculateAge(robertson_nicholas_birthday);
-var dewar_connor_age = calculateAge(dewar_connor_birthday);
+
 var steeves_alex_age = calculateAge(steeves_alex_birthday);
 
 var danford_ben_age = calculateAge(danford_ben_birthday);
@@ -441,7 +446,7 @@ var danford_ben_age = calculateAge(danford_ben_birthday);
 //Step 3/5
 
 var robertson_nicholas = new Player("Nicholas Robertson", 775000, 0, 1, "RFA", "LW", robertson_nicholas_age, "LH", "None");
-var dewar_connor = new Player("Connor Dewar", 775000, 0, 1, "RFA", "LW", dewar_connor_age, "LH", "None");
+
 var steeves_alex = new Player("Alex Steeves", 775000, 0, 1, "RFA", "LW", steeves_alex_age, "LH", "None");
 
 var danford_ben = new Player("Ben Danford", 775000, 0, 1, "RFA", "RD", danford_ben_age, "RH", "None");
@@ -451,7 +456,6 @@ var danford_ben = new Player("Ben Danford", 775000, 0, 1, "RFA", "RD", danford_b
 prefill_list = [];
 prefill_list.push(robertson_nicholas);
 prefill_list.push(danford_ben);
-prefill_list.push(dewar_connor);
 prefill_list.push(steeves_alex);
 
 
@@ -462,7 +466,6 @@ const prefillOptions = `
 <option value="Select">Select</option>
 <optgroup label="RFA">
     <option value="Nicholas Robertson">Nicholas Robertson</option>
-    <option value="Connor Dewar">Connor Dewar</option>
     <option value="Alex Steeves">Alex Steeves</option>
 
 </optgroup>
@@ -3615,11 +3618,11 @@ function set_selected() {
     document.getElementById('rw3').value = "Calle Jarnkrok";
     update_rw3();
     //
-    document.getElementById('lw4').value = "Pontus Holmberg";
+    document.getElementById('lw4').value = "Connor Dewar";
     update_lw4();
     document.getElementById('c4').value = "David Kampf";
     update_c4();
-    document.getElementById('rw4').value = "Ryan Reaves";
+    document.getElementById('rw4').value = "Pontus Holmberg";
     update_rw4();
     //
     document.getElementById('ld1').value = "Morgan Rielly";
@@ -3642,7 +3645,7 @@ function set_selected() {
     document.getElementById('g2').value = "Anthony Stolarz";
     update_g2();
     //
-    document.getElementById('s1').value = "Select";
+    document.getElementById('s1').value = "Ryan Reaves";
     update_s1();
     document.getElementById('s2').value = "Select";
     update_s2();
