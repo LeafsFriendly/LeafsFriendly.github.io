@@ -226,10 +226,10 @@ var quillan_jacob = new Player("Jacob Quillan", formatMoney(875000), formatBonus
 var tverberg_ryan = new Player("Ryan Tverberg", formatMoney(851667), formatBonus(0), 2, "RFA", "RW", tverberg_ryan_age, "RH", "None");
 var kressler_braeden = new Player("Braeden Kressler", formatMoney(800556), formatBonus(0), 2, "RFA", "C", kressler_braeden_age, "RH", "None");
 var voit_ty = new Player("Ty Voit", formatMoney(800556), formatBonus(0), 2, "RFA", "LW", voit_ty_age, "RH", "None");
-var abruzzese_nick = new Player("Nick Abruzzese", formatMoney(775000), formatBonus(0), 1, "RFA(Arb)", "LW", abruzzese_nick_age, "LH", "None");
+var abruzzese_nick = new Player("Nick Abruzzese", formatMoney(775000), formatBonus(0), 1, "RFA (Arb)", "LW", abruzzese_nick_age, "LH", "None");
 var domi_max = new Player("Max Domi", formatMoney(3750000), formatBonus(0), 4, "UFA", "C", domi_max_age, "LH", "M-NTC");
 var pare_cedric = new Player("Cedric Pare", formatMoney(775000), formatBonus(0), 1, "RFA", "C", pare_cedric_age, "LH", "None");
-var dewar_connor = new Player("Connor Dewar", formatMoney(1180000), formatBonus(0), 1, "RFA", "LW", dewar_connor_age, "LH", "None");
+var dewar_connor = new Player("Connor Dewar", formatMoney(1180000), formatBonus(0), 1, "RFA (Arb)", "LW", dewar_connor_age, "LH", "None");
 
 var rielly_morgan = new Player("Morgan Rielly", formatMoney(7500000), formatBonus(0), 6, "UFA", "LD", rielly_morgan_age, "LH", "NMC");
 var mccabe_jake = new Player("Jake McCabe", formatMoney(2000000), formatBonus(0), 1, "UFA", "LD", mccabe_jake_age, "LH", "M-NTC");
