@@ -240,6 +240,7 @@ var liljegren_timothy = new Player("Timothy Liljegren", formatMoney(3000000), fo
 var ekman_larsson_oliver = new Player("Oliver Ekman-Larsson", formatMoney(3500000), formatBonus(0), 3, "UFA", "LD", ekman_larsson_oliver_age, "LH", "M-NTC");
 var tanev_christopher = new Player("Christopher Tanev", formatMoney(4500000), formatBonus(0), 5, "UFA", "RD", tanev_christopher_age, "RH", "NMC");
 var hakanpaa_jani = new Player("Jani Hakanpaa", formatMoney(1500000), formatBonus(0), 1, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
+var danford_ben = new Player("Ben Danford", formatMoney(964000), formatBonus(0), 2, "RFA", "RD", danford_ben_age, "RH", "None");
 
 
 var woll_joseph = new Player("Joseph Woll", formatMoney(3666667), formatBonus(0), 3, "UFA", "G", woll_joseph_age, "LH", "None");
@@ -276,6 +277,7 @@ player_list.push(ekman_larsson_oliver);
 player_list.push(tanev_christopher);
 player_list.push(hakanpaa_jani);
 player_list.push(stolarz_anthony);
+player_list.push(danford_ben);
 
 //------------------------------- PLAYER SELECT OPTIONS---------------------------------------------
 
@@ -314,6 +316,7 @@ function populateSelects(selectId) {
                         <option value="Jani Hakanpaa">Jani Hakanpaa</option>
                         <option value="Simon Benoit">Simon Benoit</option>
                         <option value="Noah Chadwick">Noah Chadwick</option>
+                        <option value="Ben Danford">Ben Danford</option>
                     </optgroup>
 
                     <optgroup label="Goaltenders">
@@ -367,6 +370,7 @@ has_headshot = ["Matthew Knies", "Auston Matthews", "Mitchell Marner", "Bobby Mc
     "Jake McCabe", "Simon Benoit", "Timothy Liljegren", "Jani Hakanpaa", "Conor Timmins", 
     "Topi Niemela", "Marshall Rifai", "Cade Webber", "Dakota Mermis", "Philippe Myers",
     "Nicolas Mattinen", "William Villeneuve", "Mikko Kokkonen", "Noah Chadwick", 
+    "Ben Danford",
     
     "Joseph Woll", "Anthony Stolarz", "Matt Murray", "Dennis Hildeby", "Artur Akhtiamov",
     "Vyacheslav Peksa"
@@ -400,8 +404,6 @@ var kokkonen_mikko = new Player("Mikko Kokkonen", 775000, 0, 1, "RFA", "LD", kok
 var villeneuve_william = new Player("William Villeneuve", 775000, 0, 1, "RFA", "RD", villeneuve_william_age, "RH", "None");
 var hildeby_dennis = new Player("Dennis Hildeby", 775000, 0, 1, "RFA", "G", hildeby_dennis_age, "LH", "None");
 
-var danford_ben = new Player("Ben Danford", 775000, 0, 1, "RFA", "RD", danford_ben_age, "RH", "None");
-
 //Step 2/3
 
 prefill_list = [];
@@ -428,7 +430,6 @@ prefill_list.push(niemela_topi);
 prefill_list.push(kokkonen_mikko);
 prefill_list.push(villeneuve_william);
 prefill_list.push(hildeby_dennis);
-prefill_list.push(danford_ben);
 
 
 //Step 3/3
@@ -463,7 +464,6 @@ const prefillOptions = `
     <option value="Dennis Hildeby">Dennis Hildeby</option>
 </optgroup>
 <optgroup label="Reserve">
-    <option value="Ben Danford">Ben Danford</option>
 </optgroup>
 </select>`;
 

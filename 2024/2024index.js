@@ -94,6 +94,7 @@ var tanev_christopher_birthday = '1989-12-20';
 var hakanpaa_jani_birthday = '1992-03-31';
 var mermis_dakota_birthday = '1994-01-05';
 var myers_philippe_birthday = '1997-01-25';
+var danford_ben_birthday = '2006-02-06';
 
 var woll_joseph_birthday = '1998-07-12';
 var hildeby_dennis_birthday = '2001-08-19';
@@ -196,6 +197,7 @@ var tanev_christopher_age = calculateAge(tanev_christopher_birthday);
 var hakanpaa_jani_age = calculateAge(hakanpaa_jani_birthday);
 var mermis_dakota_age = calculateAge(mermis_dakota_birthday);
 var myers_philippe_age = calculateAge(myers_philippe_birthday);
+var danford_ben_age = calculateAge(danford_ben_birthday);
 
 var woll_joseph_age = calculateAge(woll_joseph_birthday);
 var hildeby_dennis_age = calculateAge(hildeby_dennis_birthday);
@@ -248,6 +250,7 @@ var tanev_christopher = new Player("Christopher Tanev", formatMoney(4500000), fo
 var hakanpaa_jani = new Player("Jani Hakanpaa", formatMoney(1500000), formatBonus(0), 2, "UFA", "RD", hakanpaa_jani_age, "RH", "None");
 var mermis_dakota = new Player("Dakota Mermis", formatMoney(775000), formatBonus(0), 1, "UFA", "LD", mermis_dakota_age, "LH", "None");
 var myers_philippe = new Player("Philippe Myers", formatMoney(775000), formatBonus(0), 1, "UFA", "RD", myers_philippe_age, "RH", "None");
+var danford_ben = new Player("Ben Danford", formatMoney(964000), formatBonus(0), 3, "RFA", "RD", danford_ben_age, "RH", "None");
 
 
 var woll_joseph = new Player("Joseph Woll", formatMoney(766667), formatBonus(0), 4, "UFA", "G", woll_joseph_age, "LH", "None");
@@ -306,6 +309,7 @@ player_list.push(pare_cedric);
 player_list.push(mermis_dakota);
 player_list.push(myers_philippe);
 player_list.push(dewar_connor);
+player_list.push(danford_ben);
 
 //------------------------------- PLAYER SELECT OPTIONS---------------------------------------------
 
@@ -362,6 +366,7 @@ function populateSelects(selectId) {
                         <option value="William Villeneuve">William Villeneuve</option>
                         <option value="Mikko Kokkonen">Mikko Kokkonen</option>
                         <option value="Noah Chadwick">Noah Chadwick</option>
+                        <option value="Ben Danford">Ben Danford</option>
                     </optgroup>
 
                     <optgroup label="Goaltenders">
@@ -418,6 +423,7 @@ has_headshot = ["Matthew Knies", "Auston Matthews", "Mitchell Marner", "Bobby Mc
                 "Jake McCabe", "Simon Benoit", "Timothy Liljegren", "Jani Hakanpaa", "Conor Timmins", 
                 "Topi Niemela", "Marshall Rifai", "Cade Webber", "Dakota Mermis", "Philippe Myers",
                 "Nicolas Mattinen", "William Villeneuve", "Mikko Kokkonen", "Noah Chadwick", 
+                "Ben Danford",
                 
                 "Joseph Woll", "Anthony Stolarz", "Matt Murray", "Dennis Hildeby", "Artur Akhtiamov",
                 "Vyacheslav Peksa"
@@ -432,7 +438,7 @@ var robertson_nicholas_birthday = '2001-09-11';
 
 var steeves_alex_birthday = '1999-12-10';
 
-var danford_ben_birthday = '2006-02-06';
+
 
 
 //Step 2/5
@@ -441,7 +447,7 @@ var robertson_nicholas_age = calculateAge(robertson_nicholas_birthday);
 
 var steeves_alex_age = calculateAge(steeves_alex_birthday);
 
-var danford_ben_age = calculateAge(danford_ben_birthday);
+
 
 //Step 3/5
 
@@ -449,13 +455,12 @@ var robertson_nicholas = new Player("Nicholas Robertson", 775000, 0, 1, "RFA", "
 
 var steeves_alex = new Player("Alex Steeves", 775000, 0, 1, "RFA", "LW", steeves_alex_age, "LH", "None");
 
-var danford_ben = new Player("Ben Danford", 775000, 0, 1, "RFA", "RD", danford_ben_age, "RH", "None");
+
 
 //Step 4/5
 
 prefill_list = [];
 prefill_list.push(robertson_nicholas);
-prefill_list.push(danford_ben);
 prefill_list.push(steeves_alex);
 
 
@@ -471,7 +476,6 @@ const prefillOptions = `
 </optgroup>
 
 <optgroup label="Reserve">
-    <option value="Ben Danford">Ben Danford</option>
 </optgroup>
 </select>`;
 
